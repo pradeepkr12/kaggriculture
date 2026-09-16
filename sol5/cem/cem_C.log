@@ -1,0 +1,9 @@
+baseline margin=+58504 my_mean=88090
+{"gen": 0, "best_margin": 61569.166666666664, "best_my_mean": 94390.66666666667, "elite_mean_margin": 61206.375, "mean": {"thr_fragile": 0.84, "thr_elastic": 0.615, "fert_reserve": 6.755, "taper_start_day": 26.861, "wheat_buy_buffer": 2.201, "drop_threshold": 8.727}, "t": 134}
+{"gen": 1, "best_margin": 63858.0, "best_my_mean": 97718.0, "elite_mean_margin": 61339.354166666664, "mean": {"thr_fragile": 0.839, "thr_elastic": 0.689, "fert_reserve": 6.936, "taper_start_day": 26.362, "wheat_buy_buffer": 2.12, "drop_threshold": 9.368}, "t": 260}
+{"gen": 2, "best_margin": 62371.583333333336, "best_my_mean": 95433.83333333333, "elite_mean_margin": 61226.1875, "mean": {"thr_fragile": 0.859, "thr_elastic": 0.654, "fert_reserve": 7.156, "taper_start_day": 26.178, "wheat_buy_buffer": 2.383, "drop_threshold": 9.305}, "t": 383}
+{"gen": 3, "best_margin": 64143.583333333336, "best_my_mean": 97797.41666666667, "elite_mean_margin": 63151.72916666667, "mean": {"thr_fragile": 0.871, "thr_elastic": 0.659, "fert_reserve": 3.205, "taper_start_day": 26.641, "wheat_buy_buffer": 2.281, "drop_threshold": 8.893}, "t": 508}
+{"gen": 4, "best_margin": 65207.166666666664, "best_my_mean": 96871.08333333333, "elite_mean_margin": 64174.4375, "mean": {"thr_fragile": 0.873, "thr_elastic": 0.677, "fert_reserve": 3.01, "taper_start_day": 26.556, "wheat_buy_buffer": 2.445, "drop_threshold": 8.727}, "t": 638}
+{"gen": 5, "best_margin": 63344.833333333336, "best_my_mean": 96364.58333333333, "elite_mean_margin": 63153.85416666667, "mean": {"thr_fragile": 0.859, "thr_elastic": 0.687, "fert_reserve": 2.77, "taper_start_day": 26.602, "wheat_buy_buffer": 2.531, "drop_threshold": 8.63}, "t": 760}
+BEST margin=+65207 (baseline +58504)  vec=[10, 8, 5, 4, 34, 8, 20, 6, 8, 12, 0.7, 0.862, 0.709, 2.328, 26.768, 2.587, 9.175, 6, 15]
+saved cem_C_market.json

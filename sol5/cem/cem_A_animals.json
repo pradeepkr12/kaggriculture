@@ -1,0 +1,169 @@
+{
+ "dims": [
+  "n_cows",
+  "n_sheep",
+  "n_geese",
+  "animal_day2",
+  "melon_tiles"
+ ],
+ "pool": [
+  "pass",
+  "seed"
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "baseline_margin": 58503.5,
+ "best_margin": 76068.58333333333,
+ "best_vec": [
+  14.179760238033396,
+  9.705196032375888,
+  4.238929072076863,
+  1.2677556038099553,
+  34,
+  8,
+  20,
+  6,
+  8,
+  12,
+  0.7,
+  0.87,
+  0.75,
+  6,
+  27,
+  3,
+  8,
+  5.601030565485495,
+  15
+ ],
+ "best_params": {
+  "melon_tiles": 14,
+  "n_cows": 10,
+  "n_sheep": 4,
+  "n_geese": 1,
+  "straw_tiles": 34,
+  "tomato_tiles": 8,
+  "wheat_tiles": 20,
+  "hands_early": 6,
+  "hands_mid": 8,
+  "hands_late": 12,
+  "buy_SE": true,
+  "thr_fragile": 0.87,
+  "thr_elastic": 0.75,
+  "fert_reserve": 6,
+  "taper_start_day": 27,
+  "wheat_buy_buffer": 3,
+  "drop_threshold": 8,
+  "animal_day2": 6,
+  "straw_deadline": 15
+ },
+ "final_mean": [
+  14.003803178086015,
+  9.637323132838098,
+  4.0472131438245125,
+  1.6316222688605115,
+  34,
+  8,
+  20,
+  6,
+  8,
+  12,
+  0.7,
+  0.87,
+  0.75,
+  6,
+  27,
+  3,
+  8,
+  5.303834671642713,
+  15
+ ],
+ "log": [
+  {
+   "gen": 0,
+   "best_margin": 66792.58333333333,
+   "best_my_mean": 100545.16666666667,
+   "elite_mean_margin": 65564.70833333333,
+   "mean": {
+    "n_cows": 8.682,
+    "n_sheep": 4.808,
+    "n_geese": 3.429,
+    "animal_day2": 5.719,
+    "melon_tiles": 8.802
+   },
+   "t": 128
+  },
+  {
+   "gen": 1,
+   "best_margin": 67113.25,
+   "best_my_mean": 103566.91666666667,
+   "elite_mean_margin": 65780.4375,
+   "mean": {
+    "n_cows": 8.971,
+    "n_sheep": 4.611,
+    "n_geese": 2.95,
+    "animal_day2": 4.71,
+    "melon_tiles": 8.584
+   },
+   "t": 254
+  },
+  {
+   "gen": 2,
+   "best_margin": 70874.16666666667,
+   "best_my_mean": 105705.25,
+   "elite_mean_margin": 68745.89583333334,
+   "mean": {
+    "n_cows": 9.774,
+    "n_sheep": 3.982,
+    "n_geese": 2.767,
+    "animal_day2": 4.633,
+    "melon_tiles": 9.819
+   },
+   "t": 378
+  },
+  {
+   "gen": 3,
+   "best_margin": 70976.5,
+   "best_my_mean": 105884.75,
+   "elite_mean_margin": 69229.97916666667,
+   "mean": {
+    "n_cows": 9.679,
+    "n_sheep": 3.966,
+    "n_geese": 2.336,
+    "animal_day2": 4.76,
+    "melon_tiles": 11.03
+   },
+   "t": 501
+  },
+  {
+   "gen": 4,
+   "best_margin": 74720.58333333333,
+   "best_my_mean": 110171.16666666667,
+   "elite_mean_margin": 73074.10416666666,
+   "mean": {
+    "n_cows": 9.77,
+    "n_sheep": 3.916,
+    "n_geese": 1.726,
+    "animal_day2": 5.056,
+    "melon_tiles": 13.302
+   },
+   "t": 631
+  },
+  {
+   "gen": 5,
+   "best_margin": 76068.58333333333,
+   "best_my_mean": 108567.75,
+   "elite_mean_margin": 73711.29166666666,
+   "mean": {
+    "n_cows": 9.637,
+    "n_sheep": 4.047,
+    "n_geese": 1.632,
+    "animal_day2": 5.304,
+    "melon_tiles": 14.004
+   },
+   "t": 760
+  }
+ ]
+}
