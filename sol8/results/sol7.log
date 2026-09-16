@@ -1,0 +1,14 @@
+== sol7 ==
+  vs sol5      me=   92578 opp=   75224 margin=  +17354 wins=24/28 min=60652 lat_max=285ms p99=26ms
+     by schedule: milk_starved=72368  yarnless=83245  yarn_x3=118086  milk_rich=135570  late_milk=62261  random_a=77285  random_b=99233
+  vs gideon    me=   90827 opp=   70019 margin=  +20808 wins=24/28 min=57939 lat_max=288ms p99=30ms
+     by schedule: milk_starved=60762  yarnless=89784  yarn_x3=110489  milk_rich=137036  late_milk=62049  random_a=78513  random_b=97155
+  vs sol6      me=   96970 opp=   86185 margin=  +10785 wins=20/28 min=64793 lat_max=245ms p99=21ms
+     by schedule: milk_starved=65044  yarnless=90728  yarn_x3=117046  milk_rich=151510  late_milk=75750  random_a=84524  random_b=94188
+  vs sol7      me=   80108 opp=   80108 margin=      +0 wins=9/28 min=59764 lat_max=249ms p99=34ms
+     by schedule: milk_starved=60363  yarnless=73844  yarn_x3=95466  milk_rich=113620  late_milk=60450  random_a=70730  random_b=86280
+  vs pass      me=  141872 opp=    3000 margin= +138872 wins=28/28 min=90641 lat_max=218ms p99=20ms
+     by schedule: milk_starved=94484  yarnless=132468  yarn_x3=165902  milk_rich=188155  late_milk=133517  random_a=112033  random_b=166544
+  vs mirror    me=   80108 opp=   80108 margin=      +0 wins=9/28 min=59764 lat_max=234ms p99=37ms
+     by schedule: milk_starved=60363  yarnless=73844  yarn_x3=95466  milk_rich=113620  late_milk=60450  random_a=70730  random_b=86280
+saved results/sol7.json (81s)
