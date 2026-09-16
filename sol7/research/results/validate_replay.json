@@ -1,0 +1,50 @@
+{
+ "rng": {
+  "mode": "rng",
+  "replay_seed": 1296760754,
+  "steps_compared": 719,
+  "exact_match": true,
+  "divergent_steps": 0,
+  "first_divergence": null,
+  "sample_divergences": [],
+  "final_money_sim": [
+   95542.0,
+   91465.0
+  ],
+  "final_money_recorded": [
+   95542.0,
+   91465.0
+  ],
+  "replay_plus_compare_seconds": 0.21457012498285621
+ },
+ "patch": {
+  "mode": "patch",
+  "replay_seed": 1296760754,
+  "steps_compared": 719,
+  "exact_match": true,
+  "divergent_steps": 0,
+  "first_divergence": null,
+  "sample_divergences": [],
+  "final_money_sim": [
+   95542.0,
+   91465.0
+  ],
+  "final_money_recorded": [
+   95542.0,
+   91465.0
+  ],
+  "replay_plus_compare_seconds": 0.2141738340142183,
+  "weed_patches_tiles": 0,
+  "weed_patch_days": 0,
+  "forced_shops": [
+   "BAKERY",
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE"
+  ]
+ }
+}

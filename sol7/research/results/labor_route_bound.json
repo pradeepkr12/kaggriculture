@@ -1,0 +1,5079 @@
+{
+ "command": "cd sol7/research/labor && /opt/miniconda3/envs/env2/bin/python route_bound.py",
+ "game": {
+  "specs": [
+   "('labor', {'hungarian': False})",
+   "('sol5', None)"
+  ],
+  "schedule": "milk_starved",
+  "seed": 1000,
+  "rewards": [
+   55672.0,
+   55522.0
+  ]
+ },
+ "method": "Task 4: route-planning bound from one recorded control game (sol5-identical,\nvs sol5, milk_starved, seed 1000, seat 0). Per day and unit: tiles where the unit\nacted (animals count once for FEED/CARE/HARVEST/COLLECT; plants once per action\ntile; shed tiles for PICKUP/DROP) -> nearest-neighbour open tour from the unit's\nhour-0 position, plus a 2-opt polish; compared with the unit's actual moves.\nReproduce: /opt/miniconda3/envs/env2/bin/python route_bound.py\n",
+ "total": {
+  "moves": 4327,
+  "actions": 2515,
+  "idle": 582,
+  "nn": 2653,
+  "opt2": 2629,
+  "tiles_visited_sum": 1430,
+  "distinct_tiles_farm": 1192,
+  "global_bound": 866,
+  "unit_turns": 7424,
+  "avoidable_vs_nn": 1674,
+  "avoidable_vs_opt2": 1698,
+  "avoidable_vs_global": 3461,
+  "walk_share_actual": 0.5828394396551724,
+  "walk_share_if_nn": 0.35735452586206895,
+  "walk_share_if_global": 0.11664870689655173
+ },
+ "days": [
+  {
+   "day": 0,
+   "units": 7,
+   "unit_turns": 162,
+   "moves": 84,
+   "actions": 54,
+   "idle": 24,
+   "tiles_visited_sum": 27,
+   "distinct_tiles_farm": 22,
+   "nn": 44,
+   "opt2": 44,
+   "global_bound": 15,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 3,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 12,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 5,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 15,
+     "actions": 5,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 11,
+     "actions": 7,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 8,
+     "actions": 8,
+     "idle": 7,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 12,
+     "actions": 4,
+     "idle": 7,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    }
+   ],
+   "avoidable_vs_nn": 40
+  },
+  {
+   "day": 1,
+   "units": 5,
+   "unit_turns": 116,
+   "moves": 19,
+   "actions": 15,
+   "idle": 82,
+   "tiles_visited_sum": 5,
+   "distinct_tiles_farm": 5,
+   "nn": 4,
+   "opt2": 4,
+   "global_bound": 0,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 8,
+     "actions": 14,
+     "idle": 2,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 1,
+     "moves": 2,
+     "actions": 1,
+     "idle": 20,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 0,
+     "moves": 3,
+     "actions": 0,
+     "idle": 20,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 0,
+     "moves": 3,
+     "actions": 0,
+     "idle": 20,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 0,
+     "moves": 3,
+     "actions": 0,
+     "idle": 20,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    }
+   ],
+   "avoidable_vs_nn": 15
+  },
+  {
+   "day": 2,
+   "units": 7,
+   "unit_turns": 162,
+   "moves": 102,
+   "actions": 36,
+   "idle": 24,
+   "tiles_visited_sum": 23,
+   "distinct_tiles_farm": 23,
+   "nn": 55,
+   "opt2": 55,
+   "global_bound": 16,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 14,
+     "idle": 4,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 4,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 15,
+     "actions": 2,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 4,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 4,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    }
+   ],
+   "avoidable_vs_nn": 47
+  },
+  {
+   "day": 3,
+   "units": 7,
+   "unit_turns": 162,
+   "moves": 78,
+   "actions": 20,
+   "idle": 64,
+   "tiles_visited_sum": 10,
+   "distinct_tiles_farm": 10,
+   "nn": 33,
+   "opt2": 33,
+   "global_bound": 3,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 14,
+     "idle": 4,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 16,
+     "actions": 2,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 12,
+     "actions": 2,
+     "idle": 9,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 0,
+     "moves": 13,
+     "actions": 0,
+     "idle": 10,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 1,
+     "moves": 11,
+     "actions": 1,
+     "idle": 11,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 0,
+     "moves": 10,
+     "actions": 0,
+     "idle": 13,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 1,
+     "moves": 10,
+     "actions": 1,
+     "idle": 12,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    }
+   ],
+   "avoidable_vs_nn": 45
+  },
+  {
+   "day": 4,
+   "units": 7,
+   "unit_turns": 162,
+   "moves": 106,
+   "actions": 47,
+   "idle": 9,
+   "tiles_visited_sum": 30,
+   "distinct_tiles_farm": 23,
+   "nn": 63,
+   "opt2": 61,
+   "global_bound": 16,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 14,
+     "idle": 4,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 17,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 11
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 4,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    }
+   ],
+   "avoidable_vs_nn": 43
+  },
+  {
+   "day": 5,
+   "units": 7,
+   "unit_turns": 162,
+   "moves": 51,
+   "actions": 17,
+   "idle": 94,
+   "tiles_visited_sum": 7,
+   "distinct_tiles_farm": 7,
+   "nn": 21,
+   "opt2": 21,
+   "global_bound": 0,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 14,
+     "idle": 4,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 16,
+     "actions": 2,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 1,
+     "moves": 14,
+     "actions": 1,
+     "idle": 8,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 0,
+     "moves": 15,
+     "actions": 0,
+     "idle": 8,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 0,
+     "moves": 0,
+     "actions": 0,
+     "idle": 23,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 0,
+     "moves": 0,
+     "actions": 0,
+     "idle": 23,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 0,
+     "moves": 0,
+     "actions": 0,
+     "idle": 23,
+     "feeder_turns": 0,
+     "nn": 0,
+     "opt2": 0
+    }
+   ],
+   "avoidable_vs_nn": 30
+  },
+  {
+   "day": 6,
+   "units": 8,
+   "unit_turns": 185,
+   "moves": 109,
+   "actions": 46,
+   "idle": 30,
+   "tiles_visited_sum": 30,
+   "distinct_tiles_farm": 25,
+   "nn": 62,
+   "opt2": 62,
+   "global_bound": 17,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 17,
+     "idle": 1,
+     "feeder_turns": 20,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 5,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 7,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 14,
+     "actions": 2,
+     "idle": 7,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 12,
+     "actions": 2,
+     "idle": 9,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 1,
+     "moves": 13,
+     "actions": 1,
+     "idle": 9,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    }
+   ],
+   "avoidable_vs_nn": 47
+  },
+  {
+   "day": 7,
+   "units": 8,
+   "unit_turns": 185,
+   "moves": 117,
+   "actions": 68,
+   "idle": 0,
+   "tiles_visited_sum": 39,
+   "distinct_tiles_farm": 35,
+   "nn": 95,
+   "opt2": 93,
+   "global_bound": 27,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 10,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 11
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 17,
+     "opt2": 17
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 14,
+     "opt2": 14
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    }
+   ],
+   "avoidable_vs_nn": 22
+  },
+  {
+   "day": 8,
+   "units": 8,
+   "unit_turns": 185,
+   "moves": 132,
+   "actions": 53,
+   "idle": 0,
+   "tiles_visited_sum": 32,
+   "distinct_tiles_farm": 29,
+   "nn": 70,
+   "opt2": 70,
+   "global_bound": 21,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 11,
+     "actions": 12,
+     "idle": 0,
+     "feeder_turns": 13,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 17,
+     "opt2": 17
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 8,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 14,
+     "opt2": 14
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 21,
+     "actions": 2,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 20,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 20,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    }
+   ],
+   "avoidable_vs_nn": 62
+  },
+  {
+   "day": 9,
+   "units": 8,
+   "unit_turns": 185,
+   "moves": 124,
+   "actions": 61,
+   "idle": 0,
+   "tiles_visited_sum": 38,
+   "distinct_tiles_farm": 38,
+   "nn": 91,
+   "opt2": 91,
+   "global_bound": 30,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 20,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 15,
+     "opt2": 15
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    }
+   ],
+   "avoidable_vs_nn": 33
+  },
+  {
+   "day": 10,
+   "units": 13,
+   "unit_turns": 296,
+   "moves": 180,
+   "actions": 116,
+   "idle": 0,
+   "tiles_visited_sum": 64,
+   "distinct_tiles_farm": 50,
+   "nn": 104,
+   "opt2": 104,
+   "global_bound": 37,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 13,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 7,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 76
+  },
+  {
+   "day": 11,
+   "units": 13,
+   "unit_turns": 295,
+   "moves": 192,
+   "actions": 103,
+   "idle": 0,
+   "tiles_visited_sum": 64,
+   "distinct_tiles_farm": 45,
+   "nn": 121,
+   "opt2": 119,
+   "global_bound": 32,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 13,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 11
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 15,
+     "opt2": 15
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 18,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 19,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 11,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    }
+   ],
+   "avoidable_vs_nn": 71
+  },
+  {
+   "day": 12,
+   "units": 13,
+   "unit_turns": 297,
+   "moves": 187,
+   "actions": 108,
+   "idle": 2,
+   "tiles_visited_sum": 58,
+   "distinct_tiles_farm": 51,
+   "nn": 104,
+   "opt2": 104,
+   "global_bound": 38,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 7,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 12,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 14,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 15,
+     "opt2": 15
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 18,
+     "actions": 3,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    }
+   ],
+   "avoidable_vs_nn": 83
+  },
+  {
+   "day": 13,
+   "units": 13,
+   "unit_turns": 296,
+   "moves": 181,
+   "actions": 104,
+   "idle": 11,
+   "tiles_visited_sum": 60,
+   "distinct_tiles_farm": 53,
+   "nn": 102,
+   "opt2": 102,
+   "global_bound": 40,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 13,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 18,
+     "actions": 3,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 5,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 3,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 14,
+     "actions": 3,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 79
+  },
+  {
+   "day": 14,
+   "units": 13,
+   "unit_turns": 296,
+   "moves": 173,
+   "actions": 111,
+   "idle": 12,
+   "tiles_visited_sum": 64,
+   "distinct_tiles_farm": 51,
+   "nn": 103,
+   "opt2": 103,
+   "global_bound": 38,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 13,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 13,
+     "actions": 8,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 12,
+     "actions": 9,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 14,
+     "actions": 5,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 12,
+     "actions": 4,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    }
+   ],
+   "avoidable_vs_nn": 70
+  },
+  {
+   "day": 15,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 174,
+   "actions": 107,
+   "idle": 13,
+   "tiles_visited_sum": 59,
+   "distinct_tiles_farm": 47,
+   "nn": 109,
+   "opt2": 105,
+   "global_bound": 34,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 20,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 11,
+     "actions": 12,
+     "idle": 0,
+     "feeder_turns": 14,
+     "nn": 14,
+     "opt2": 10
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 12,
+     "actions": 7,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 5,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 13,
+     "actions": 7,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 3,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 15,
+     "actions": 5,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 15,
+     "actions": 6,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    }
+   ],
+   "avoidable_vs_nn": 65
+  },
+  {
+   "day": 16,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 174,
+   "actions": 105,
+   "idle": 15,
+   "tiles_visited_sum": 54,
+   "distinct_tiles_farm": 49,
+   "nn": 87,
+   "opt2": 87,
+   "global_bound": 36,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 12,
+     "idle": 2,
+     "feeder_turns": 15,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 13,
+     "actions": 9,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 7,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 13,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 5,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 1,
+     "moves": 15,
+     "actions": 1,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 3,
+     "opt2": 3
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 87
+  },
+  {
+   "day": 17,
+   "units": 13,
+   "unit_turns": 297,
+   "moves": 169,
+   "actions": 97,
+   "idle": 31,
+   "tiles_visited_sum": 54,
+   "distinct_tiles_farm": 48,
+   "nn": 96,
+   "opt2": 96,
+   "global_bound": 35,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 10,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 20,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 13,
+     "actions": 6,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 17,
+     "actions": 2,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 8,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 6,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 14,
+     "actions": 3,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 12,
+     "actions": 4,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 12,
+     "actions": 2,
+     "idle": 8,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 73
+  },
+  {
+   "day": 18,
+   "units": 13,
+   "unit_turns": 296,
+   "moves": 172,
+   "actions": 103,
+   "idle": 21,
+   "tiles_visited_sum": 62,
+   "distinct_tiles_farm": 54,
+   "nn": 113,
+   "opt2": 113,
+   "global_bound": 41,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 7,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 7,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 11,
+     "idle": 3,
+     "feeder_turns": 15,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 4,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 14,
+     "actions": 4,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 14,
+     "opt2": 14
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 19,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 15,
+     "opt2": 15
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 2,
+     "moves": 14,
+     "actions": 2,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    }
+   ],
+   "avoidable_vs_nn": 59
+  },
+  {
+   "day": 19,
+   "units": 13,
+   "unit_turns": 295,
+   "moves": 165,
+   "actions": 130,
+   "idle": 0,
+   "tiles_visited_sum": 73,
+   "distinct_tiles_farm": 56,
+   "nn": 113,
+   "opt2": 113,
+   "global_bound": 43,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 7,
+     "moves": 7,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 16,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 7,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    }
+   ],
+   "avoidable_vs_nn": 52
+  },
+  {
+   "day": 20,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 167,
+   "actions": 114,
+   "idle": 13,
+   "tiles_visited_sum": 65,
+   "distinct_tiles_farm": 50,
+   "nn": 103,
+   "opt2": 103,
+   "global_bound": 37,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 20,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 7,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 7,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 13,
+     "actions": 4,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 12,
+     "actions": 4,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 14,
+     "actions": 7,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    }
+   ],
+   "avoidable_vs_nn": 64
+  },
+  {
+   "day": 21,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 163,
+   "actions": 114,
+   "idle": 17,
+   "tiles_visited_sum": 64,
+   "distinct_tiles_farm": 55,
+   "nn": 114,
+   "opt2": 112,
+   "global_bound": 42,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 5,
+     "actions": 18,
+     "idle": 0,
+     "feeder_turns": 21,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 11,
+     "actions": 12,
+     "idle": 0,
+     "feeder_turns": 16,
+     "nn": 11,
+     "opt2": 9
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 6,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 4,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 13,
+     "actions": 3,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 12,
+     "actions": 5,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 5,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    }
+   ],
+   "avoidable_vs_nn": 49
+  },
+  {
+   "day": 22,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 184,
+   "actions": 109,
+   "idle": 1,
+   "tiles_visited_sum": 66,
+   "distinct_tiles_farm": 54,
+   "nn": 121,
+   "opt2": 119,
+   "global_bound": 41,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 1,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 20,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 9,
+     "opt2": 7
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 5,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    }
+   ],
+   "avoidable_vs_nn": 63
+  },
+  {
+   "day": 23,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 187,
+   "actions": 107,
+   "idle": 0,
+   "tiles_visited_sum": 58,
+   "distinct_tiles_farm": 50,
+   "nn": 126,
+   "opt2": 124,
+   "global_bound": 37,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 10,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 18,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 7,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 9,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 20,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 18,
+     "opt2": 18
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 13,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 19,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 20,
+     "actions": 2,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 14,
+     "opt2": 14
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 8,
+     "moves": 11,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 14,
+     "opt2": 14
+    }
+   ],
+   "avoidable_vs_nn": 61
+  },
+  {
+   "day": 24,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 184,
+   "actions": 110,
+   "idle": 0,
+   "tiles_visited_sum": 63,
+   "distinct_tiles_farm": 48,
+   "nn": 116,
+   "opt2": 114,
+   "global_bound": 35,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 15,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 7,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 18,
+     "opt2": 16
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 9,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 19,
+     "actions": 3,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 14,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 11,
+     "opt2": 11
+    }
+   ],
+   "avoidable_vs_nn": 68
+  },
+  {
+   "day": 25,
+   "units": 13,
+   "unit_turns": 295,
+   "moves": 164,
+   "actions": 125,
+   "idle": 6,
+   "tiles_visited_sum": 59,
+   "distinct_tiles_farm": 48,
+   "nn": 114,
+   "opt2": 112,
+   "global_bound": 35,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 16,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 8,
+     "actions": 15,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 10,
+     "opt2": 8
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 13,
+     "opt2": 13
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 6,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 9,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 11,
+     "actions": 8,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 50
+  },
+  {
+   "day": 26,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 170,
+   "actions": 107,
+   "idle": 17,
+   "tiles_visited_sum": 58,
+   "distinct_tiles_farm": 44,
+   "nn": 106,
+   "opt2": 104,
+   "global_bound": 31,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 16,
+     "idle": 2,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 8,
+     "idle": 0,
+     "feeder_turns": 1,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 20,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 11,
+     "actions": 12,
+     "idle": 0,
+     "feeder_turns": 14,
+     "nn": 9,
+     "opt2": 7
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 17,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 13,
+     "actions": 6,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 8,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 18,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 13,
+     "actions": 6,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 14,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 11,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 17,
+     "actions": 3,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 12,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 12,
+     "actions": 6,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 5,
+     "opt2": 5
+    }
+   ],
+   "avoidable_vs_nn": 64
+  },
+  {
+   "day": 27,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 169,
+   "actions": 93,
+   "idle": 32,
+   "tiles_visited_sum": 52,
+   "distinct_tiles_farm": 45,
+   "nn": 106,
+   "opt2": 106,
+   "global_bound": 32,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 6,
+     "moves": 7,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 18,
+     "actions": 5,
+     "idle": 0,
+     "feeder_turns": 1,
+     "nn": 16,
+     "opt2": 16
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 6,
+     "actions": 17,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 23,
+     "nn": 3,
+     "opt2": 3
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 12,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 16,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 19,
+     "actions": 4,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 15,
+     "opt2": 15
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 15,
+     "actions": 6,
+     "idle": 2,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 15,
+     "actions": 3,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 15,
+     "actions": 4,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 12,
+     "actions": 4,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 10,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 12,
+     "actions": 3,
+     "idle": 7,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 13,
+     "actions": 2,
+     "idle": 7,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    }
+   ],
+   "avoidable_vs_nn": 63
+  },
+  {
+   "day": 28,
+   "units": 13,
+   "unit_turns": 294,
+   "moves": 157,
+   "actions": 91,
+   "idle": 46,
+   "tiles_visited_sum": 53,
+   "distinct_tiles_farm": 43,
+   "nn": 93,
+   "opt2": 93,
+   "global_bound": 30,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 16,
+     "idle": 2,
+     "feeder_turns": 19,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 14,
+     "actions": 7,
+     "idle": 2,
+     "feeder_turns": 1,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 10,
+     "actions": 13,
+     "idle": 0,
+     "feeder_turns": 19,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 5,
+     "moves": 9,
+     "actions": 14,
+     "idle": 0,
+     "feeder_turns": 21,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 16,
+     "actions": 4,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 10,
+     "opt2": 10
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 6,
+     "actions": 12,
+     "idle": 5,
+     "feeder_turns": 15,
+     "nn": 5,
+     "opt2": 5
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 7,
+     "moves": 16,
+     "actions": 7,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 12,
+     "opt2": 12
+    },
+    {
+     "unit": 7,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 1,
+     "moves": 15,
+     "actions": 1,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 4,
+     "opt2": 4
+    },
+    {
+     "unit": 8,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 11,
+     "actions": 5,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 9,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 2,
+     "moves": 10,
+     "actions": 2,
+     "idle": 10,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 10,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 3,
+     "moves": 11,
+     "actions": 3,
+     "idle": 8,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 11,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 17,
+     "actions": 4,
+     "idle": 1,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 12,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 3,
+     "moves": 16,
+     "actions": 3,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 8,
+     "opt2": 8
+    }
+   ],
+   "avoidable_vs_nn": 64
+  },
+  {
+   "day": 29,
+   "units": 7,
+   "unit_turns": 155,
+   "moves": 93,
+   "actions": 44,
+   "idle": 18,
+   "tiles_visited_sum": 39,
+   "distinct_tiles_farm": 34,
+   "nn": 64,
+   "opt2": 62,
+   "global_bound": 27,
+   "per_unit": [
+    {
+     "unit": 0,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 9,
+     "moves": 13,
+     "actions": 10,
+     "idle": 0,
+     "feeder_turns": 17,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 1,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 7,
+     "moves": 11,
+     "actions": 11,
+     "idle": 0,
+     "feeder_turns": 22,
+     "nn": 11,
+     "opt2": 11
+    },
+    {
+     "unit": 2,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 6,
+     "moves": 16,
+     "actions": 6,
+     "idle": 0,
+     "feeder_turns": 0,
+     "nn": 16,
+     "opt2": 14
+    },
+    {
+     "unit": 3,
+     "start": [
+      5,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 14,
+     "actions": 4,
+     "idle": 4,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    },
+    {
+     "unit": 4,
+     "start": [
+      4,
+      4
+     ],
+     "n_tiles": 4,
+     "moves": 13,
+     "actions": 4,
+     "idle": 5,
+     "feeder_turns": 0,
+     "nn": 7,
+     "opt2": 7
+    },
+    {
+     "unit": 5,
+     "start": [
+      5,
+      4
+     ],
+     "n_tiles": 5,
+     "moves": 14,
+     "actions": 5,
+     "idle": 3,
+     "feeder_turns": 0,
+     "nn": 9,
+     "opt2": 9
+    },
+    {
+     "unit": 6,
+     "start": [
+      4,
+      5
+     ],
+     "n_tiles": 4,
+     "moves": 12,
+     "actions": 4,
+     "idle": 6,
+     "feeder_turns": 0,
+     "nn": 6,
+     "opt2": 6
+    }
+   ],
+   "avoidable_vs_nn": 29
+  }
+ ]
+}

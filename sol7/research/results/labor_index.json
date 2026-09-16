@@ -1,0 +1,39 @@
+{
+ "python": "/opt/miniconda3/envs/env2/bin/python",
+ "note": "all commands run from the labor dir; farmlib_labor.py is generated from sol5/farmlib.py by _patch.py (control path verified reward-identical to sol5)",
+ "steps": [
+  {
+   "task": "build farmlib_labor.py",
+   "cmd": "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor && cp ../../../sol5/farmlib.py farmlib_labor.py && /opt/miniconda3/envs/env2/bin/python _patch.py"
+  },
+  {
+   "task": "1 walking share (sol5 vs pass / vs sol5, milk_starved, seed 1000) + equivalence check",
+   "cmd": "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor && /opt/miniconda3/envs/env2/bin/python measure_walk.py",
+   "out": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/labor_walking.json"
+  },
+  {
+   "task": "2 offline greedy vs Hungarian on logged score matrices",
+   "cmd": "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor && /opt/miniconda3/envs/env2/bin/python offline_assign.py",
+   "out": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/labor_offline_assign.json"
+  },
+  {
+   "task": "3 online control vs Hungarian, harness.run_matrix, 24 games each, workers=4",
+   "cmd": "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor && /opt/miniconda3/envs/env2/bin/python online_run.py",
+   "out": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/labor_hungarian.json"
+  },
+  {
+   "task": "4 route-planning NN-tour bound on one recorded game",
+   "cmd": "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor && /opt/miniconda3/envs/env2/bin/python route_bound.py",
+   "out": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/labor_route_bound.json"
+  }
+ ],
+ "files": [
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/farmlib_labor.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/_patch.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/labrun.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/measure_walk.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/offline_assign.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/online_run.py",
+  "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/route_bound.py"
+ ]
+}

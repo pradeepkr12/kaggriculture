@@ -1,0 +1,12 @@
+== planner+hungarian ==
+  vs sol5      me=   97746 opp=   71366 margin=  +26380 wins=12/12 min=73379 lat_max=93ms p99=1ms
+     by schedule: milk_starved=73485  yarnless=82738  yarn_x3=117398  milk_rich=136767  random_a=77492  random_b=98598
+  vs gideon    me=   96760 opp=   66793 margin=  +29968 wins=12/12 min=60704 lat_max=87ms p99=1ms
+     by schedule: milk_starved=61456  yarnless=91103  yarn_x3=112008  milk_rich=139472  random_a=79420  random_b=97102
+  vs pass      me=  142625 opp=    3000 margin= +139625 wins=12/12 min=90641 lat_max=60ms p99=1ms
+     by schedule: milk_starved=92326  yarnless=133876  yarn_x3=165579  milk_rich=185109  random_a=113106  random_b=165754
+  vs mirror    me=   83329 opp=   83329 margin=      +0 wins=4/12 min=59764 lat_max=75ms p99=1ms
+     by schedule: milk_starved=59932  yarnless=73600  yarn_x3=95811  milk_rich=113620  random_a=70730  random_b=86280
+  margin by schedule vs sol5: milk_starved=+17237  yarnless=+19078  yarn_x3=+43509  milk_rich=+35972  random_a=+18734  random_b=+23750
+  margin by schedule vs gideon: milk_starved=+11486  yarnless=+33794  yarn_x3=+17480  milk_rich=+63980  random_a=+24416  random_b=+28648
+14s

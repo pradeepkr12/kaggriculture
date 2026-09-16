@@ -1,0 +1,33 @@
+== planner:both ==
+  vs sol5      me=   91901 opp=   74756 margin=  +17145 wins=12/12 min=68829 lat_max=78ms p99=1ms
+     by schedule: milk_starved=69209  yarnless=77573  yarn_x3=105350  milk_rich=133984  random_a=72330  random_b=92960
+  vs gideon    me=   90731 opp=   69136 margin=  +21596 wins=12/12 min=58645 lat_max=71ms p99=1ms
+     by schedule: milk_starved=59016  yarnless=85811  yarn_x3=105812  milk_rich=131296  random_a=71548  random_b=90905
+  vs pass      me=  134795 opp=    3000 margin= +131795 wins=12/12 min=78660 lat_max=52ms p99=1ms
+     by schedule: milk_starved=80121  yarnless=128605  yarn_x3=162612  milk_rich=180502  random_a=99972  random_b=156958
+  vs mirror    me=   80942 opp=   80942 margin=      +0 wins=3/12 min=61423 lat_max=74ms p99=1ms
+     by schedule: milk_starved=63114  yarnless=73250  yarn_x3=96440  milk_rich=105665  random_a=65324  random_b=81860
+saved /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/planner_both.json (15s)
+
+== planner:plan_only ==
+  vs sol5      me=   87388 opp=   75447 margin=  +11941 wins=12/12 min=67268 lat_max=89ms p99=1ms
+     by schedule: milk_starved=67414  yarnless=75976  yarn_x3=103664  milk_rich=110456  random_a=71462  random_b=95355
+  vs gideon    me=   86990 opp=   70744 margin=  +16246 wins=12/12 min=57483 lat_max=84ms p99=1ms
+     by schedule: milk_starved=57702  yarnless=82295  yarn_x3=105322  milk_rich=110617  random_a=74116  random_b=91892
+  vs pass      me=  136594 opp=    3000 margin= +133594 wins=12/12 min=90800 lat_max=51ms p99=1ms
+     by schedule: milk_starved=90907  yarnless=128462  yarn_x3=162060  milk_rich=181610  random_a=102860  random_b=153666
+  vs mirror    me=   84825 opp=   84825 margin=      +0 wins=3/12 min=65437 lat_max=72ms p99=1ms
+     by schedule: milk_starved=65560  yarnless=77261  yarn_x3=103514  milk_rich=101354  random_a=70134  random_b=91129
+saved /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/planner_plan_only.json (15s)
+
+== planner:sell_only ==
+  vs sol5      me=   78780 opp=   79136 margin=    -356 wins=5/12 min=55213 lat_max=90ms p99=1ms
+     by schedule: milk_starved=55564  yarnless=64900  yarn_x3=77842  milk_rich=119248  random_a=60260  random_b=94865
+  vs gideon    me=   79193 opp=   72494 margin=   +6699 wins=9/12 min=45738 lat_max=80ms p99=1ms
+     by schedule: milk_starved=46188  yarnless=82304  yarn_x3=79136  milk_rich=112456  random_a=59650  random_b=95425
+  vs pass      me=  124958 opp=    3000 margin= +121958 wins=12/12 min=95513 lat_max=52ms p99=1ms
+     by schedule: milk_starved=95608  yarnless=128940  yarn_x3=120358  milk_rich=151649  random_a=106575  random_b=146616
+  vs mirror    me=   79344 opp=   79344 margin=      +0 wins=2/12 min=56274 lat_max=68ms p99=1ms
+     by schedule: milk_starved=56274  yarnless=70069  yarn_x3=81060  milk_rich=113369  random_a=60014  random_b=95278
+saved /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/planner_sell_only.json (15s)
+

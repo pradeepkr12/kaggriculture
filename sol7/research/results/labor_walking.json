@@ -1,0 +1,2303 @@
+{
+ "command": "cd sol7/research/labor && /opt/miniconda3/envs/env2/bin/python measure_walk.py",
+ "schedule": "milk_starved",
+ "seed": 1000,
+ "equivalence_ctrl_vs_orig": {
+  "pass": true,
+  "sol5": true
+ },
+ "games": {
+  "sol5_orig_vs_pass": {
+   "rewards": [
+    90401.0,
+    3000.0
+   ],
+   "latency": {
+    "max": 0.0012377920211292803,
+    "p99": 0.00031587504781782627,
+    "mean": 0.00015432557809362201,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4367,
+     "actions": 2491,
+     "idle": 562,
+     "unit_turns": 7420,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.588544474393531,
+     "action_share": 0.3357142857142857,
+     "idle_share": 0.07574123989218329
+    },
+    "d00_09": {
+     "moves": 921,
+     "actions": 414,
+     "idle": 331,
+     "unit_turns": 1666,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.5528211284513805,
+     "action_share": 0.24849939975990396,
+     "idle_share": 0.19867947178871548
+    },
+    "d10_19": {
+     "moves": 1830,
+     "actions": 1071,
+     "idle": 51,
+     "unit_turns": 2952,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.6199186991869918,
+     "action_share": 0.3628048780487805,
+     "idle_share": 0.017276422764227643
+    },
+    "d20_29": {
+     "moves": 1616,
+     "actions": 1006,
+     "idle": 180,
+     "unit_turns": 2802,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.5767309064953604,
+     "action_share": 0.3590292648108494,
+     "idle_share": 0.06423982869379015
+    }
+   },
+   "hung_turns": null,
+   "hung_ncols_max": null,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 84,
+     "actions": 54
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15
+    },
+    "2": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 102,
+     "actions": 36
+    },
+    "3": {
+     "animals": 4,
+     "idle": 64,
+     "moves": 78,
+     "actions": 20
+    },
+    "4": {
+     "animals": 4,
+     "idle": 9,
+     "moves": 106,
+     "actions": 47
+    },
+    "5": {
+     "animals": 4,
+     "idle": 94,
+     "moves": 51,
+     "actions": 17
+    },
+    "6": {
+     "animals": 4,
+     "idle": 28,
+     "moves": 110,
+     "actions": 47
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 119,
+     "actions": 66
+    },
+    "8": {
+     "animals": 7,
+     "idle": 6,
+     "moves": 129,
+     "actions": 50
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 123,
+     "actions": 62
+    },
+    "10": {
+     "animals": 12,
+     "idle": 0,
+     "moves": 185,
+     "actions": 111
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 202,
+     "actions": 93
+    },
+    "12": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 181,
+     "actions": 117
+    },
+    "13": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 201,
+     "actions": 90
+    },
+    "14": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 187,
+     "actions": 108
+    },
+    "15": {
+     "animals": 15,
+     "idle": 10,
+     "moves": 175,
+     "actions": 109
+    },
+    "16": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 163,
+     "actions": 126
+    },
+    "17": {
+     "animals": 15,
+     "idle": 25,
+     "moves": 176,
+     "actions": 93
+    },
+    "18": {
+     "animals": 15,
+     "idle": 4,
+     "moves": 184,
+     "actions": 107
+    },
+    "19": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 176,
+     "actions": 117
+    },
+    "20": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 186,
+     "actions": 108
+    },
+    "21": {
+     "animals": 15,
+     "idle": 22,
+     "moves": 164,
+     "actions": 108
+    },
+    "22": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 173,
+     "actions": 116
+    },
+    "23": {
+     "animals": 15,
+     "idle": 9,
+     "moves": 173,
+     "actions": 112
+    },
+    "24": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 184,
+     "actions": 110
+    },
+    "25": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 167,
+     "actions": 115
+    },
+    "26": {
+     "animals": 15,
+     "idle": 27,
+     "moves": 159,
+     "actions": 108
+    },
+    "27": {
+     "animals": 15,
+     "idle": 46,
+     "moves": 158,
+     "actions": 91
+    },
+    "28": {
+     "animals": 15,
+     "idle": 44,
+     "moves": 156,
+     "actions": 94
+    },
+    "29": {
+     "animals": 15,
+     "idle": 15,
+     "moves": 96,
+     "actions": 44
+    }
+   }
+  },
+  "labor_ctrl_vs_pass": {
+   "rewards": [
+    90401.0,
+    3000.0
+   ],
+   "latency": {
+    "max": 0.002138708019629121,
+    "p99": 0.00043808395275846124,
+    "mean": 0.00019988296053181914,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4367,
+     "actions": 2491,
+     "idle": 562,
+     "unit_turns": 7420,
+     "feeder_turns": 1535,
+     "feeder_moves": 396,
+     "crew_turns": 5885,
+     "crew_moves": 3688,
+     "home_moves": 283,
+     "walk_share": 0.588544474393531,
+     "action_share": 0.3357142857142857,
+     "idle_share": 0.07574123989218329,
+     "feeder_walk_share": 0.2579804560260586,
+     "crew_walk_share": 0.6747663551401869,
+     "crew_task_walk_share": 0.6266779949022939
+    },
+    "d00_09": {
+     "moves": 921,
+     "actions": 414,
+     "idle": 331,
+     "unit_turns": 1666,
+     "feeder_turns": 191,
+     "feeder_moves": 44,
+     "crew_turns": 1475,
+     "crew_moves": 738,
+     "home_moves": 139,
+     "walk_share": 0.5528211284513805,
+     "action_share": 0.24849939975990396,
+     "idle_share": 0.19867947178871548,
+     "feeder_walk_share": 0.23036649214659685,
+     "crew_walk_share": 0.5945762711864406,
+     "crew_task_walk_share": 0.5003389830508475
+    },
+    "d10_19": {
+     "moves": 1830,
+     "actions": 1071,
+     "idle": 51,
+     "unit_turns": 2952,
+     "feeder_turns": 651,
+     "feeder_moves": 170,
+     "crew_turns": 2301,
+     "crew_moves": 1622,
+     "home_moves": 38,
+     "walk_share": 0.6199186991869918,
+     "action_share": 0.3628048780487805,
+     "idle_share": 0.017276422764227643,
+     "feeder_walk_share": 0.261136712749616,
+     "crew_walk_share": 0.721425467188179,
+     "crew_task_walk_share": 0.7049109083007388
+    },
+    "d20_29": {
+     "moves": 1616,
+     "actions": 1006,
+     "idle": 180,
+     "unit_turns": 2802,
+     "feeder_turns": 693,
+     "feeder_moves": 182,
+     "crew_turns": 2109,
+     "crew_moves": 1328,
+     "home_moves": 106,
+     "walk_share": 0.5767309064953604,
+     "action_share": 0.3590292648108494,
+     "idle_share": 0.06423982869379015,
+     "feeder_walk_share": 0.26262626262626265,
+     "crew_walk_share": 0.6799431009957326,
+     "crew_task_walk_share": 0.6296823138928402
+    }
+   },
+   "hung_turns": 0,
+   "hung_ncols_max": 0,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 84,
+     "actions": 54,
+     "unit_turns": 162,
+     "feeder_turns": 3,
+     "feeder_moves": 0,
+     "crew_turns": 159,
+     "crew_moves": 62,
+     "home_moves": 22
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15,
+     "unit_turns": 116,
+     "feeder_turns": 19,
+     "feeder_moves": 6,
+     "crew_turns": 97,
+     "crew_moves": 13,
+     "home_moves": 0
+    },
+    "2": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 102,
+     "actions": 36,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 68,
+     "home_moves": 30
+    },
+    "3": {
+     "animals": 4,
+     "idle": 64,
+     "moves": 78,
+     "actions": 20,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 46,
+     "home_moves": 28
+    },
+    "4": {
+     "animals": 4,
+     "idle": 9,
+     "moves": 106,
+     "actions": 47,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 89,
+     "home_moves": 13
+    },
+    "5": {
+     "animals": 4,
+     "idle": 94,
+     "moves": 51,
+     "actions": 17,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 28,
+     "home_moves": 19
+    },
+    "6": {
+     "animals": 4,
+     "idle": 28,
+     "moves": 110,
+     "actions": 47,
+     "unit_turns": 185,
+     "feeder_turns": 20,
+     "feeder_moves": 4,
+     "crew_turns": 165,
+     "crew_moves": 86,
+     "home_moves": 20
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 119,
+     "actions": 66,
+     "unit_turns": 185,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 168,
+     "crew_moves": 114,
+     "home_moves": 1
+    },
+    "8": {
+     "animals": 7,
+     "idle": 6,
+     "moves": 129,
+     "actions": 50,
+     "unit_turns": 185,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 154,
+     "crew_moves": 116,
+     "home_moves": 6
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 123,
+     "actions": 62,
+     "unit_turns": 185,
+     "feeder_turns": 33,
+     "feeder_moves": 7,
+     "crew_turns": 152,
+     "crew_moves": 116,
+     "home_moves": 0
+    },
+    "10": {
+     "animals": 12,
+     "idle": 0,
+     "moves": 185,
+     "actions": 111,
+     "unit_turns": 296,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 265,
+     "crew_moves": 178,
+     "home_moves": 0
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 202,
+     "actions": 93,
+     "unit_turns": 295,
+     "feeder_turns": 54,
+     "feeder_moves": 15,
+     "crew_turns": 241,
+     "crew_moves": 187,
+     "home_moves": 0
+    },
+    "12": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 181,
+     "actions": 117,
+     "unit_turns": 298,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 227,
+     "crew_moves": 161,
+     "home_moves": 2
+    },
+    "13": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 201,
+     "actions": 90,
+     "unit_turns": 296,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 229,
+     "crew_moves": 176,
+     "home_moves": 7
+    },
+    "14": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 187,
+     "actions": 108,
+     "unit_turns": 296,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 229,
+     "crew_moves": 168,
+     "home_moves": 1
+    },
+    "15": {
+     "animals": 15,
+     "idle": 10,
+     "moves": 175,
+     "actions": 109,
+     "unit_turns": 294,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 223,
+     "crew_moves": 152,
+     "home_moves": 5
+    },
+    "16": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 163,
+     "actions": 126,
+     "unit_turns": 294,
+     "feeder_turns": 69,
+     "feeder_moves": 18,
+     "crew_turns": 225,
+     "crew_moves": 136,
+     "home_moves": 9
+    },
+    "17": {
+     "animals": 15,
+     "idle": 25,
+     "moves": 176,
+     "actions": 93,
+     "unit_turns": 294,
+     "feeder_turns": 70,
+     "feeder_moves": 18,
+     "crew_turns": 224,
+     "crew_moves": 153,
+     "home_moves": 5
+    },
+    "18": {
+     "animals": 15,
+     "idle": 4,
+     "moves": 184,
+     "actions": 107,
+     "unit_turns": 295,
+     "feeder_turns": 77,
+     "feeder_moves": 19,
+     "crew_turns": 218,
+     "crew_moves": 159,
+     "home_moves": 6
+    },
+    "19": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 176,
+     "actions": 117,
+     "unit_turns": 294,
+     "feeder_turns": 74,
+     "feeder_moves": 21,
+     "crew_turns": 220,
+     "crew_moves": 152,
+     "home_moves": 3
+    },
+    "20": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 186,
+     "actions": 108,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 21,
+     "crew_turns": 221,
+     "crew_moves": 165,
+     "home_moves": 0
+    },
+    "21": {
+     "animals": 15,
+     "idle": 22,
+     "moves": 164,
+     "actions": 108,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 126,
+     "home_moves": 20
+    },
+    "22": {
+     "animals": 15,
+     "idle": 5,
+     "moves": 173,
+     "actions": 116,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 19,
+     "crew_turns": 219,
+     "crew_moves": 143,
+     "home_moves": 11
+    },
+    "23": {
+     "animals": 15,
+     "idle": 9,
+     "moves": 173,
+     "actions": 112,
+     "unit_turns": 294,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 223,
+     "crew_moves": 146,
+     "home_moves": 9
+    },
+    "24": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 184,
+     "actions": 110,
+     "unit_turns": 294,
+     "feeder_turns": 76,
+     "feeder_moves": 18,
+     "crew_turns": 218,
+     "crew_moves": 164,
+     "home_moves": 2
+    },
+    "25": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 167,
+     "actions": 115,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 137,
+     "home_moves": 12
+    },
+    "26": {
+     "animals": 15,
+     "idle": 27,
+     "moves": 159,
+     "actions": 108,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 127,
+     "home_moves": 14
+    },
+    "27": {
+     "animals": 15,
+     "idle": 46,
+     "moves": 158,
+     "actions": 91,
+     "unit_turns": 295,
+     "feeder_turns": 75,
+     "feeder_moves": 19,
+     "crew_turns": 220,
+     "crew_moves": 113,
+     "home_moves": 26
+    },
+    "28": {
+     "animals": 15,
+     "idle": 44,
+     "moves": 156,
+     "actions": 94,
+     "unit_turns": 294,
+     "feeder_turns": 74,
+     "feeder_moves": 18,
+     "crew_turns": 220,
+     "crew_moves": 126,
+     "home_moves": 12
+    },
+    "29": {
+     "animals": 15,
+     "idle": 15,
+     "moves": 96,
+     "actions": 44,
+     "unit_turns": 155,
+     "feeder_turns": 30,
+     "feeder_moves": 15,
+     "crew_turns": 125,
+     "crew_moves": 81,
+     "home_moves": 0
+    }
+   }
+  },
+  "labor_hung_vs_pass": {
+   "rewards": [
+    99473.0,
+    3000.0
+   ],
+   "latency": {
+    "max": 0.06242308299988508,
+    "p99": 0.0005806660046800971,
+    "mean": 0.0003491583707229453,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4168,
+     "actions": 2618,
+     "idle": 639,
+     "unit_turns": 7425,
+     "feeder_turns": 1551,
+     "feeder_moves": 396,
+     "crew_turns": 5874,
+     "crew_moves": 3421,
+     "home_moves": 351,
+     "walk_share": 0.5613468013468014,
+     "action_share": 0.35259259259259257,
+     "idle_share": 0.08606060606060606,
+     "feeder_walk_share": 0.2553191489361702,
+     "crew_walk_share": 0.6421518556350017,
+     "crew_task_walk_share": 0.5823970037453183
+    },
+    "d00_09": {
+     "moves": 856,
+     "actions": 432,
+     "idle": 378,
+     "unit_turns": 1666,
+     "feeder_turns": 196,
+     "feeder_moves": 45,
+     "crew_turns": 1470,
+     "crew_moves": 632,
+     "home_moves": 179,
+     "walk_share": 0.5138055222088835,
+     "action_share": 0.25930372148859543,
+     "idle_share": 0.226890756302521,
+     "feeder_walk_share": 0.22959183673469388,
+     "crew_walk_share": 0.5517006802721088,
+     "crew_task_walk_share": 0.42993197278911566
+    },
+    "d10_19": {
+     "moves": 1696,
+     "actions": 1103,
+     "idle": 158,
+     "unit_turns": 2957,
+     "feeder_turns": 656,
+     "feeder_moves": 170,
+     "crew_turns": 2301,
+     "crew_moves": 1415,
+     "home_moves": 111,
+     "walk_share": 0.5735542779844437,
+     "action_share": 0.37301318904294894,
+     "idle_share": 0.053432532972607374,
+     "feeder_walk_share": 0.25914634146341464,
+     "crew_walk_share": 0.6631899174272056,
+     "crew_task_walk_share": 0.6149500217296827
+    },
+    "d20_29": {
+     "moves": 1616,
+     "actions": 1083,
+     "idle": 103,
+     "unit_turns": 2802,
+     "feeder_turns": 699,
+     "feeder_moves": 181,
+     "crew_turns": 2103,
+     "crew_moves": 1374,
+     "home_moves": 61,
+     "walk_share": 0.5767309064953604,
+     "action_share": 0.38650963597430404,
+     "idle_share": 0.03675945753033547,
+     "feeder_walk_share": 0.25894134477825465,
+     "crew_walk_share": 0.6823585354255824,
+     "crew_task_walk_share": 0.6533523537803139
+    }
+   },
+   "hung_turns": 640,
+   "hung_ncols_max": 62,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 35,
+     "moves": 73,
+     "actions": 54,
+     "unit_turns": 162,
+     "feeder_turns": 3,
+     "feeder_moves": 0,
+     "crew_turns": 159,
+     "crew_moves": 46,
+     "home_moves": 27
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15,
+     "unit_turns": 116,
+     "feeder_turns": 19,
+     "feeder_moves": 6,
+     "crew_turns": 97,
+     "crew_moves": 13,
+     "home_moves": 0
+    },
+    "2": {
+     "animals": 4,
+     "idle": 38,
+     "moves": 88,
+     "actions": 36,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 52,
+     "home_moves": 32
+    },
+    "3": {
+     "animals": 4,
+     "idle": 70,
+     "moves": 72,
+     "actions": 20,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 41,
+     "home_moves": 27
+    },
+    "4": {
+     "animals": 4,
+     "idle": 19,
+     "moves": 93,
+     "actions": 50,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 65,
+     "home_moves": 24
+    },
+    "5": {
+     "animals": 4,
+     "idle": 96,
+     "moves": 49,
+     "actions": 17,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 26,
+     "home_moves": 19
+    },
+    "6": {
+     "animals": 5,
+     "idle": 31,
+     "moves": 104,
+     "actions": 50,
+     "unit_turns": 185,
+     "feeder_turns": 20,
+     "feeder_moves": 4,
+     "crew_turns": 165,
+     "crew_moves": 72,
+     "home_moves": 28
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 110,
+     "actions": 75,
+     "unit_turns": 185,
+     "feeder_turns": 22,
+     "feeder_moves": 5,
+     "crew_turns": 163,
+     "crew_moves": 99,
+     "home_moves": 6
+    },
+    "8": {
+     "animals": 7,
+     "idle": 7,
+     "moves": 124,
+     "actions": 54,
+     "unit_turns": 185,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 154,
+     "crew_moves": 101,
+     "home_moves": 16
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 124,
+     "actions": 61,
+     "unit_turns": 185,
+     "feeder_turns": 33,
+     "feeder_moves": 7,
+     "crew_turns": 152,
+     "crew_moves": 117,
+     "home_moves": 0
+    },
+    "10": {
+     "animals": 12,
+     "idle": 0,
+     "moves": 181,
+     "actions": 115,
+     "unit_turns": 296,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 265,
+     "crew_moves": 174,
+     "home_moves": 0
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 184,
+     "actions": 111,
+     "unit_turns": 295,
+     "feeder_turns": 59,
+     "feeder_moves": 17,
+     "crew_turns": 236,
+     "crew_moves": 167,
+     "home_moves": 0
+    },
+    "12": {
+     "animals": 15,
+     "idle": 24,
+     "moves": 150,
+     "actions": 122,
+     "unit_turns": 296,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 225,
+     "crew_moves": 112,
+     "home_moves": 20
+    },
+    "13": {
+     "animals": 15,
+     "idle": 51,
+     "moves": 144,
+     "actions": 103,
+     "unit_turns": 298,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 231,
+     "crew_moves": 90,
+     "home_moves": 36
+    },
+    "14": {
+     "animals": 15,
+     "idle": 2,
+     "moves": 192,
+     "actions": 102,
+     "unit_turns": 296,
+     "feeder_turns": 68,
+     "feeder_moves": 18,
+     "crew_turns": 228,
+     "crew_moves": 172,
+     "home_moves": 2
+    },
+    "15": {
+     "animals": 15,
+     "idle": 20,
+     "moves": 165,
+     "actions": 110,
+     "unit_turns": 295,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 224,
+     "crew_moves": 133,
+     "home_moves": 14
+    },
+    "16": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 177,
+     "actions": 119,
+     "unit_turns": 297,
+     "feeder_turns": 70,
+     "feeder_moves": 18,
+     "crew_turns": 227,
+     "crew_moves": 156,
+     "home_moves": 3
+    },
+    "17": {
+     "animals": 15,
+     "idle": 34,
+     "moves": 160,
+     "actions": 100,
+     "unit_turns": 294,
+     "feeder_turns": 69,
+     "feeder_moves": 18,
+     "crew_turns": 225,
+     "crew_moves": 122,
+     "home_moves": 20
+    },
+    "18": {
+     "animals": 15,
+     "idle": 25,
+     "moves": 168,
+     "actions": 103,
+     "unit_turns": 296,
+     "feeder_turns": 78,
+     "feeder_moves": 18,
+     "crew_turns": 218,
+     "crew_moves": 134,
+     "home_moves": 16
+    },
+    "19": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 175,
+     "actions": 118,
+     "unit_turns": 294,
+     "feeder_turns": 72,
+     "feeder_moves": 20,
+     "crew_turns": 222,
+     "crew_moves": 155,
+     "home_moves": 0
+    },
+    "20": {
+     "animals": 15,
+     "idle": 4,
+     "moves": 168,
+     "actions": 122,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 18,
+     "crew_turns": 219,
+     "crew_moves": 147,
+     "home_moves": 3
+    },
+    "21": {
+     "animals": 15,
+     "idle": 3,
+     "moves": 170,
+     "actions": 121,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 149,
+     "home_moves": 3
+    },
+    "22": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 171,
+     "actions": 123,
+     "unit_turns": 294,
+     "feeder_turns": 76,
+     "feeder_moves": 18,
+     "crew_turns": 218,
+     "crew_moves": 142,
+     "home_moves": 11
+    },
+    "23": {
+     "animals": 15,
+     "idle": 2,
+     "moves": 178,
+     "actions": 114,
+     "unit_turns": 294,
+     "feeder_turns": 74,
+     "feeder_moves": 22,
+     "crew_turns": 220,
+     "crew_moves": 150,
+     "home_moves": 6
+    },
+    "24": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 169,
+     "actions": 125,
+     "unit_turns": 294,
+     "feeder_turns": 78,
+     "feeder_moves": 18,
+     "crew_turns": 216,
+     "crew_moves": 151,
+     "home_moves": 0
+    },
+    "25": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 167,
+     "actions": 126,
+     "unit_turns": 294,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 223,
+     "crew_moves": 149,
+     "home_moves": 0
+    },
+    "26": {
+     "animals": 15,
+     "idle": 14,
+     "moves": 171,
+     "actions": 109,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 18,
+     "crew_turns": 219,
+     "crew_moves": 135,
+     "home_moves": 18
+    },
+    "27": {
+     "animals": 15,
+     "idle": 37,
+     "moves": 155,
+     "actions": 102,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 119,
+     "home_moves": 18
+    },
+    "28": {
+     "animals": 15,
+     "idle": 22,
+     "moves": 167,
+     "actions": 106,
+     "unit_turns": 295,
+     "feeder_turns": 76,
+     "feeder_moves": 18,
+     "crew_turns": 219,
+     "crew_moves": 148,
+     "home_moves": 1
+    },
+    "29": {
+     "animals": 15,
+     "idle": 20,
+     "moves": 100,
+     "actions": 35,
+     "unit_turns": 155,
+     "feeder_turns": 28,
+     "feeder_moves": 15,
+     "crew_turns": 127,
+     "crew_moves": 84,
+     "home_moves": 1
+    }
+   }
+  },
+  "sol5_orig_vs_sol5": {
+   "rewards": [
+    55672.0,
+    55522.0
+   ],
+   "latency": {
+    "max": 0.07436020899331197,
+    "p99": 0.0007711669895797968,
+    "mean": 0.00045174837586183685,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4327,
+     "actions": 2515,
+     "idle": 582,
+     "unit_turns": 7424,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.5828394396551724,
+     "action_share": 0.3387661637931034,
+     "idle_share": 0.07839439655172414
+    },
+    "d00_09": {
+     "moves": 922,
+     "actions": 417,
+     "idle": 327,
+     "unit_turns": 1666,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.553421368547419,
+     "action_share": 0.2503001200480192,
+     "idle_share": 0.19627851140456182
+    },
+    "d10_19": {
+     "moves": 1767,
+     "actions": 1084,
+     "idle": 105,
+     "unit_turns": 2956,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.597767253044655,
+     "action_share": 0.36671177266576455,
+     "idle_share": 0.035520974289580516
+    },
+    "d20_29": {
+     "moves": 1638,
+     "actions": 1014,
+     "idle": 150,
+     "unit_turns": 2802,
+     "feeder_turns": 0,
+     "feeder_moves": 0,
+     "crew_turns": 0,
+     "crew_moves": 0,
+     "home_moves": 0,
+     "walk_share": 0.5845824411134903,
+     "action_share": 0.3618843683083512,
+     "idle_share": 0.05353319057815846
+    }
+   },
+   "hung_turns": null,
+   "hung_ncols_max": null,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 84,
+     "actions": 54
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15
+    },
+    "2": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 102,
+     "actions": 36
+    },
+    "3": {
+     "animals": 4,
+     "idle": 64,
+     "moves": 78,
+     "actions": 20
+    },
+    "4": {
+     "animals": 4,
+     "idle": 9,
+     "moves": 106,
+     "actions": 47
+    },
+    "5": {
+     "animals": 4,
+     "idle": 94,
+     "moves": 51,
+     "actions": 17
+    },
+    "6": {
+     "animals": 4,
+     "idle": 30,
+     "moves": 109,
+     "actions": 46
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 117,
+     "actions": 68
+    },
+    "8": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 132,
+     "actions": 53
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 124,
+     "actions": 61
+    },
+    "10": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 180,
+     "actions": 116
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 192,
+     "actions": 103
+    },
+    "12": {
+     "animals": 15,
+     "idle": 2,
+     "moves": 187,
+     "actions": 108
+    },
+    "13": {
+     "animals": 15,
+     "idle": 11,
+     "moves": 181,
+     "actions": 104
+    },
+    "14": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 173,
+     "actions": 111
+    },
+    "15": {
+     "animals": 15,
+     "idle": 13,
+     "moves": 174,
+     "actions": 107
+    },
+    "16": {
+     "animals": 15,
+     "idle": 15,
+     "moves": 174,
+     "actions": 105
+    },
+    "17": {
+     "animals": 15,
+     "idle": 31,
+     "moves": 169,
+     "actions": 97
+    },
+    "18": {
+     "animals": 15,
+     "idle": 21,
+     "moves": 172,
+     "actions": 103
+    },
+    "19": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 165,
+     "actions": 130
+    },
+    "20": {
+     "animals": 15,
+     "idle": 13,
+     "moves": 167,
+     "actions": 114
+    },
+    "21": {
+     "animals": 15,
+     "idle": 17,
+     "moves": 163,
+     "actions": 114
+    },
+    "22": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 184,
+     "actions": 109
+    },
+    "23": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 187,
+     "actions": 107
+    },
+    "24": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 184,
+     "actions": 110
+    },
+    "25": {
+     "animals": 15,
+     "idle": 6,
+     "moves": 164,
+     "actions": 125
+    },
+    "26": {
+     "animals": 15,
+     "idle": 17,
+     "moves": 170,
+     "actions": 107
+    },
+    "27": {
+     "animals": 15,
+     "idle": 32,
+     "moves": 169,
+     "actions": 93
+    },
+    "28": {
+     "animals": 15,
+     "idle": 46,
+     "moves": 157,
+     "actions": 91
+    },
+    "29": {
+     "animals": 15,
+     "idle": 18,
+     "moves": 93,
+     "actions": 44
+    }
+   }
+  },
+  "labor_ctrl_vs_sol5": {
+   "rewards": [
+    55672.0,
+    55522.0
+   ],
+   "latency": {
+    "max": 0.059081625018734485,
+    "p99": 0.0007819999591447413,
+    "mean": 0.00037812869231603906,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4327,
+     "actions": 2515,
+     "idle": 582,
+     "unit_turns": 7424,
+     "feeder_turns": 1535,
+     "feeder_moves": 409,
+     "crew_turns": 5889,
+     "crew_moves": 3591,
+     "home_moves": 327,
+     "walk_share": 0.5828394396551724,
+     "action_share": 0.3387661637931034,
+     "idle_share": 0.07839439655172414,
+     "feeder_walk_share": 0.2664495114006515,
+     "crew_walk_share": 0.6653082017320427,
+     "crew_task_walk_share": 0.6097809475292919
+    },
+    "d00_09": {
+     "moves": 922,
+     "actions": 417,
+     "idle": 327,
+     "unit_turns": 1666,
+     "feeder_turns": 191,
+     "feeder_moves": 44,
+     "crew_turns": 1475,
+     "crew_moves": 730,
+     "home_moves": 148,
+     "walk_share": 0.553421368547419,
+     "action_share": 0.2503001200480192,
+     "idle_share": 0.19627851140456182,
+     "feeder_walk_share": 0.23036649214659685,
+     "crew_walk_share": 0.5952542372881356,
+     "crew_task_walk_share": 0.49491525423728816
+    },
+    "d10_19": {
+     "moves": 1767,
+     "actions": 1084,
+     "idle": 105,
+     "unit_turns": 2956,
+     "feeder_turns": 627,
+     "feeder_moves": 159,
+     "crew_turns": 2329,
+     "crew_moves": 1506,
+     "home_moves": 102,
+     "walk_share": 0.597767253044655,
+     "action_share": 0.36671177266576455,
+     "idle_share": 0.035520974289580516,
+     "feeder_walk_share": 0.2535885167464115,
+     "crew_walk_share": 0.6904250751395449,
+     "crew_task_walk_share": 0.6466294547015886
+    },
+    "d20_29": {
+     "moves": 1638,
+     "actions": 1014,
+     "idle": 150,
+     "unit_turns": 2802,
+     "feeder_turns": 717,
+     "feeder_moves": 206,
+     "crew_turns": 2085,
+     "crew_moves": 1355,
+     "home_moves": 77,
+     "walk_share": 0.5845824411134903,
+     "action_share": 0.3618843683083512,
+     "idle_share": 0.05353319057815846,
+     "feeder_walk_share": 0.28730822873082285,
+     "crew_walk_share": 0.686810551558753,
+     "crew_task_walk_share": 0.6498800959232613
+    }
+   },
+   "hung_turns": 0,
+   "hung_ncols_max": 0,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 84,
+     "actions": 54,
+     "unit_turns": 162,
+     "feeder_turns": 3,
+     "feeder_moves": 0,
+     "crew_turns": 159,
+     "crew_moves": 62,
+     "home_moves": 22
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15,
+     "unit_turns": 116,
+     "feeder_turns": 19,
+     "feeder_moves": 6,
+     "crew_turns": 97,
+     "crew_moves": 13,
+     "home_moves": 0
+    },
+    "2": {
+     "animals": 4,
+     "idle": 24,
+     "moves": 102,
+     "actions": 36,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 68,
+     "home_moves": 30
+    },
+    "3": {
+     "animals": 4,
+     "idle": 64,
+     "moves": 78,
+     "actions": 20,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 46,
+     "home_moves": 28
+    },
+    "4": {
+     "animals": 4,
+     "idle": 9,
+     "moves": 106,
+     "actions": 47,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 89,
+     "home_moves": 13
+    },
+    "5": {
+     "animals": 4,
+     "idle": 94,
+     "moves": 51,
+     "actions": 17,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 28,
+     "home_moves": 19
+    },
+    "6": {
+     "animals": 4,
+     "idle": 30,
+     "moves": 109,
+     "actions": 46,
+     "unit_turns": 185,
+     "feeder_turns": 20,
+     "feeder_moves": 4,
+     "crew_turns": 165,
+     "crew_moves": 74,
+     "home_moves": 31
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 117,
+     "actions": 68,
+     "unit_turns": 185,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 168,
+     "crew_moves": 113,
+     "home_moves": 0
+    },
+    "8": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 132,
+     "actions": 53,
+     "unit_turns": 185,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 154,
+     "crew_moves": 120,
+     "home_moves": 5
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 124,
+     "actions": 61,
+     "unit_turns": 185,
+     "feeder_turns": 33,
+     "feeder_moves": 7,
+     "crew_turns": 152,
+     "crew_moves": 117,
+     "home_moves": 0
+    },
+    "10": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 180,
+     "actions": 116,
+     "unit_turns": 296,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 265,
+     "crew_moves": 173,
+     "home_moves": 0
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 192,
+     "actions": 103,
+     "unit_turns": 295,
+     "feeder_turns": 30,
+     "feeder_moves": 7,
+     "crew_turns": 265,
+     "crew_moves": 185,
+     "home_moves": 0
+    },
+    "12": {
+     "animals": 15,
+     "idle": 2,
+     "moves": 187,
+     "actions": 108,
+     "unit_turns": 297,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 226,
+     "crew_moves": 157,
+     "home_moves": 12
+    },
+    "13": {
+     "animals": 15,
+     "idle": 11,
+     "moves": 181,
+     "actions": 104,
+     "unit_turns": 296,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 229,
+     "crew_moves": 153,
+     "home_moves": 10
+    },
+    "14": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 173,
+     "actions": 111,
+     "unit_turns": 296,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 229,
+     "crew_moves": 148,
+     "home_moves": 7
+    },
+    "15": {
+     "animals": 15,
+     "idle": 13,
+     "moves": 174,
+     "actions": 107,
+     "unit_turns": 294,
+     "feeder_turns": 72,
+     "feeder_moves": 18,
+     "crew_turns": 222,
+     "crew_moves": 140,
+     "home_moves": 16
+    },
+    "16": {
+     "animals": 15,
+     "idle": 15,
+     "moves": 174,
+     "actions": 105,
+     "unit_turns": 294,
+     "feeder_turns": 70,
+     "feeder_moves": 18,
+     "crew_turns": 224,
+     "crew_moves": 139,
+     "home_moves": 17
+    },
+    "17": {
+     "animals": 15,
+     "idle": 31,
+     "moves": 169,
+     "actions": 97,
+     "unit_turns": 297,
+     "feeder_turns": 70,
+     "feeder_moves": 18,
+     "crew_turns": 227,
+     "crew_moves": 125,
+     "home_moves": 26
+    },
+    "18": {
+     "animals": 15,
+     "idle": 21,
+     "moves": 172,
+     "actions": 103,
+     "unit_turns": 296,
+     "feeder_turns": 72,
+     "feeder_moves": 19,
+     "crew_turns": 224,
+     "crew_moves": 139,
+     "home_moves": 14
+    },
+    "19": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 165,
+     "actions": 130,
+     "unit_turns": 295,
+     "feeder_turns": 77,
+     "feeder_moves": 18,
+     "crew_turns": 218,
+     "crew_moves": 147,
+     "home_moves": 0
+    },
+    "20": {
+     "animals": 15,
+     "idle": 13,
+     "moves": 167,
+     "actions": 114,
+     "unit_turns": 294,
+     "feeder_turns": 70,
+     "feeder_moves": 21,
+     "crew_turns": 224,
+     "crew_moves": 140,
+     "home_moves": 6
+    },
+    "21": {
+     "animals": 15,
+     "idle": 17,
+     "moves": 163,
+     "actions": 114,
+     "unit_turns": 294,
+     "feeder_turns": 79,
+     "feeder_moves": 19,
+     "crew_turns": 215,
+     "crew_moves": 134,
+     "home_moves": 10
+    },
+    "22": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 184,
+     "actions": 109,
+     "unit_turns": 294,
+     "feeder_turns": 74,
+     "feeder_moves": 24,
+     "crew_turns": 220,
+     "crew_moves": 145,
+     "home_moves": 15
+    },
+    "23": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 187,
+     "actions": 107,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 18,
+     "crew_turns": 219,
+     "crew_moves": 169,
+     "home_moves": 0
+    },
+    "24": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 184,
+     "actions": 110,
+     "unit_turns": 294,
+     "feeder_turns": 72,
+     "feeder_moves": 18,
+     "crew_turns": 222,
+     "crew_moves": 166,
+     "home_moves": 0
+    },
+    "25": {
+     "animals": 15,
+     "idle": 6,
+     "moves": 164,
+     "actions": 125,
+     "unit_turns": 295,
+     "feeder_turns": 78,
+     "feeder_moves": 18,
+     "crew_turns": 217,
+     "crew_moves": 145,
+     "home_moves": 1
+    },
+    "26": {
+     "animals": 15,
+     "idle": 17,
+     "moves": 170,
+     "actions": 107,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 21,
+     "crew_turns": 221,
+     "crew_moves": 136,
+     "home_moves": 13
+    },
+    "27": {
+     "animals": 15,
+     "idle": 32,
+     "moves": 169,
+     "actions": 93,
+     "unit_turns": 294,
+     "feeder_turns": 82,
+     "feeder_moves": 26,
+     "crew_turns": 212,
+     "crew_moves": 126,
+     "home_moves": 17
+    },
+    "28": {
+     "animals": 15,
+     "idle": 46,
+     "moves": 157,
+     "actions": 91,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 22,
+     "crew_turns": 219,
+     "crew_moves": 124,
+     "home_moves": 11
+    },
+    "29": {
+     "animals": 15,
+     "idle": 18,
+     "moves": 93,
+     "actions": 44,
+     "unit_turns": 155,
+     "feeder_turns": 39,
+     "feeder_moves": 19,
+     "crew_turns": 116,
+     "crew_moves": 70,
+     "home_moves": 4
+    }
+   }
+  },
+  "labor_hung_vs_sol5": {
+   "rewards": [
+    63307.0,
+    52947.0
+   ],
+   "latency": {
+    "max": 0.059424292005132884,
+    "p99": 0.0008410000009462237,
+    "mean": 0.0004644172943892768,
+    "n": 719
+   },
+   "walk": {
+    "total": {
+     "moves": 4131,
+     "actions": 2596,
+     "idle": 730,
+     "unit_turns": 7457,
+     "feeder_turns": 1537,
+     "feeder_moves": 406,
+     "crew_turns": 5920,
+     "crew_moves": 3324,
+     "home_moves": 401,
+     "walk_share": 0.5539761298109159,
+     "action_share": 0.34812927450717446,
+     "idle_share": 0.09789459568190961,
+     "feeder_walk_share": 0.2641509433962264,
+     "crew_walk_share": 0.629222972972973,
+     "crew_task_walk_share": 0.5614864864864865
+    },
+    "d00_09": {
+     "moves": 851,
+     "actions": 422,
+     "idle": 393,
+     "unit_turns": 1666,
+     "feeder_turns": 191,
+     "feeder_moves": 44,
+     "crew_turns": 1475,
+     "crew_moves": 624,
+     "home_moves": 183,
+     "walk_share": 0.5108043217286915,
+     "action_share": 0.2533013205282113,
+     "idle_share": 0.23589435774309725,
+     "feeder_walk_share": 0.23036649214659685,
+     "crew_walk_share": 0.5471186440677966,
+     "crew_task_walk_share": 0.4230508474576271
+    },
+    "d10_19": {
+     "moves": 1676,
+     "actions": 1120,
+     "idle": 170,
+     "unit_turns": 2966,
+     "feeder_turns": 642,
+     "feeder_moves": 162,
+     "crew_turns": 2324,
+     "crew_moves": 1385,
+     "home_moves": 129,
+     "walk_share": 0.5650708024275118,
+     "action_share": 0.37761294672960216,
+     "idle_share": 0.057316250842886045,
+     "feeder_walk_share": 0.2523364485981308,
+     "crew_walk_share": 0.6514629948364888,
+     "crew_task_walk_share": 0.5959552495697074
+    },
+    "d20_29": {
+     "moves": 1604,
+     "actions": 1054,
+     "idle": 167,
+     "unit_turns": 2825,
+     "feeder_turns": 704,
+     "feeder_moves": 200,
+     "crew_turns": 2121,
+     "crew_moves": 1315,
+     "home_moves": 89,
+     "walk_share": 0.567787610619469,
+     "action_share": 0.37309734513274334,
+     "idle_share": 0.05911504424778761,
+     "feeder_walk_share": 0.2840909090909091,
+     "crew_walk_share": 0.6619519094766619,
+     "crew_task_walk_share": 0.61999057048562
+    }
+   },
+   "hung_turns": 632,
+   "hung_ncols_max": 60,
+   "per_day": {
+    "0": {
+     "animals": 4,
+     "idle": 35,
+     "moves": 73,
+     "actions": 54,
+     "unit_turns": 162,
+     "feeder_turns": 3,
+     "feeder_moves": 0,
+     "crew_turns": 159,
+     "crew_moves": 46,
+     "home_moves": 27
+    },
+    "1": {
+     "animals": 4,
+     "idle": 82,
+     "moves": 19,
+     "actions": 15,
+     "unit_turns": 116,
+     "feeder_turns": 19,
+     "feeder_moves": 6,
+     "crew_turns": 97,
+     "crew_moves": 13,
+     "home_moves": 0
+    },
+    "2": {
+     "animals": 4,
+     "idle": 38,
+     "moves": 88,
+     "actions": 36,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 52,
+     "home_moves": 32
+    },
+    "3": {
+     "animals": 4,
+     "idle": 70,
+     "moves": 72,
+     "actions": 20,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 41,
+     "home_moves": 27
+    },
+    "4": {
+     "animals": 4,
+     "idle": 19,
+     "moves": 93,
+     "actions": 50,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 65,
+     "home_moves": 24
+    },
+    "5": {
+     "animals": 4,
+     "idle": 96,
+     "moves": 49,
+     "actions": 17,
+     "unit_turns": 162,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 145,
+     "crew_moves": 26,
+     "home_moves": 19
+    },
+    "6": {
+     "animals": 4,
+     "idle": 38,
+     "moves": 100,
+     "actions": 47,
+     "unit_turns": 185,
+     "feeder_turns": 20,
+     "feeder_moves": 4,
+     "crew_turns": 165,
+     "crew_moves": 64,
+     "home_moves": 32
+    },
+    "7": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 112,
+     "actions": 73,
+     "unit_turns": 185,
+     "feeder_turns": 17,
+     "feeder_moves": 4,
+     "crew_turns": 168,
+     "crew_moves": 102,
+     "home_moves": 6
+    },
+    "8": {
+     "animals": 7,
+     "idle": 15,
+     "moves": 120,
+     "actions": 50,
+     "unit_turns": 185,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 154,
+     "crew_moves": 97,
+     "home_moves": 16
+    },
+    "9": {
+     "animals": 7,
+     "idle": 0,
+     "moves": 125,
+     "actions": 60,
+     "unit_turns": 185,
+     "feeder_turns": 33,
+     "feeder_moves": 7,
+     "crew_turns": 152,
+     "crew_moves": 118,
+     "home_moves": 0
+    },
+    "10": {
+     "animals": 9,
+     "idle": 0,
+     "moves": 174,
+     "actions": 123,
+     "unit_turns": 297,
+     "feeder_turns": 31,
+     "feeder_moves": 7,
+     "crew_turns": 266,
+     "crew_moves": 167,
+     "home_moves": 0
+    },
+    "11": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 188,
+     "actions": 109,
+     "unit_turns": 297,
+     "feeder_turns": 46,
+     "feeder_moves": 10,
+     "crew_turns": 251,
+     "crew_moves": 178,
+     "home_moves": 0
+    },
+    "12": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 162,
+     "actions": 123,
+     "unit_turns": 297,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 226,
+     "crew_moves": 131,
+     "home_moves": 13
+    },
+    "13": {
+     "animals": 15,
+     "idle": 48,
+     "moves": 153,
+     "actions": 97,
+     "unit_turns": 298,
+     "feeder_turns": 67,
+     "feeder_moves": 18,
+     "crew_turns": 231,
+     "crew_moves": 97,
+     "home_moves": 38
+    },
+    "14": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 189,
+     "actions": 108,
+     "unit_turns": 298,
+     "feeder_turns": 69,
+     "feeder_moves": 19,
+     "crew_turns": 229,
+     "crew_moves": 170,
+     "home_moves": 0
+    },
+    "15": {
+     "animals": 15,
+     "idle": 35,
+     "moves": 150,
+     "actions": 109,
+     "unit_turns": 294,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 223,
+     "crew_moves": 108,
+     "home_moves": 24
+    },
+    "16": {
+     "animals": 15,
+     "idle": 11,
+     "moves": 173,
+     "actions": 113,
+     "unit_turns": 297,
+     "feeder_turns": 69,
+     "feeder_moves": 18,
+     "crew_turns": 228,
+     "crew_moves": 142,
+     "home_moves": 13
+    },
+    "17": {
+     "animals": 15,
+     "idle": 47,
+     "moves": 147,
+     "actions": 103,
+     "unit_turns": 297,
+     "feeder_turns": 70,
+     "feeder_moves": 18,
+     "crew_turns": 227,
+     "crew_moves": 92,
+     "home_moves": 37
+    },
+    "18": {
+     "animals": 15,
+     "idle": 16,
+     "moves": 172,
+     "actions": 108,
+     "unit_turns": 296,
+     "feeder_turns": 74,
+     "feeder_moves": 18,
+     "crew_turns": 222,
+     "crew_moves": 150,
+     "home_moves": 4
+    },
+    "19": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 168,
+     "actions": 127,
+     "unit_turns": 295,
+     "feeder_turns": 74,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 150,
+     "home_moves": 0
+    },
+    "20": {
+     "animals": 15,
+     "idle": 6,
+     "moves": 171,
+     "actions": 117,
+     "unit_turns": 294,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 223,
+     "crew_moves": 144,
+     "home_moves": 9
+    },
+    "21": {
+     "animals": 15,
+     "idle": 4,
+     "moves": 172,
+     "actions": 118,
+     "unit_turns": 294,
+     "feeder_turns": 79,
+     "feeder_moves": 21,
+     "crew_turns": 215,
+     "crew_moves": 137,
+     "home_moves": 14
+    },
+    "22": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 180,
+     "actions": 114,
+     "unit_turns": 294,
+     "feeder_turns": 72,
+     "feeder_moves": 19,
+     "crew_turns": 222,
+     "crew_moves": 161,
+     "home_moves": 0
+    },
+    "23": {
+     "animals": 15,
+     "idle": 0,
+     "moves": 169,
+     "actions": 125,
+     "unit_turns": 294,
+     "feeder_turns": 74,
+     "feeder_moves": 21,
+     "crew_turns": 220,
+     "crew_moves": 148,
+     "home_moves": 0
+    },
+    "24": {
+     "animals": 15,
+     "idle": 1,
+     "moves": 171,
+     "actions": 122,
+     "unit_turns": 294,
+     "feeder_turns": 73,
+     "feeder_moves": 18,
+     "crew_turns": 221,
+     "crew_moves": 153,
+     "home_moves": 0
+    },
+    "25": {
+     "animals": 15,
+     "idle": 19,
+     "moves": 161,
+     "actions": 114,
+     "unit_turns": 294,
+     "feeder_turns": 75,
+     "feeder_moves": 21,
+     "crew_turns": 219,
+     "crew_moves": 126,
+     "home_moves": 14
+    },
+    "26": {
+     "animals": 15,
+     "idle": 12,
+     "moves": 172,
+     "actions": 111,
+     "unit_turns": 295,
+     "feeder_turns": 71,
+     "feeder_moves": 18,
+     "crew_turns": 224,
+     "crew_moves": 152,
+     "home_moves": 2
+    },
+    "27": {
+     "animals": 15,
+     "idle": 30,
+     "moves": 160,
+     "actions": 104,
+     "unit_turns": 294,
+     "feeder_turns": 80,
+     "feeder_moves": 24,
+     "crew_turns": 214,
+     "crew_moves": 118,
+     "home_moves": 18
+    },
+    "28": {
+     "animals": 15,
+     "idle": 37,
+     "moves": 164,
+     "actions": 94,
+     "unit_turns": 295,
+     "feeder_turns": 77,
+     "feeder_moves": 25,
+     "crew_turns": 218,
+     "crew_moves": 121,
+     "home_moves": 18
+    },
+    "29": {
+     "animals": 15,
+     "idle": 58,
+     "moves": 84,
+     "actions": 35,
+     "unit_turns": 177,
+     "feeder_turns": 32,
+     "feeder_moves": 15,
+     "crew_turns": 145,
+     "crew_moves": 55,
+     "home_moves": 14
+    }
+   }
+  }
+ }
+}

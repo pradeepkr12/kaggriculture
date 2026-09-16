@@ -1,0 +1,10 @@
+1152 games
+elapsed 512s
+milk_starved  best cfg={'n_cows': 2, 'n_geese': 8, 'n_sheep': 4, 'straw_tiles': 32} me=70592 opp=59077 margin=+11515
+yarnless      best cfg={'n_cows': 10, 'n_geese': 4, 'n_sheep': 4, 'straw_tiles': 32} me=69369 opp=67692 margin=+1676
+yarn_x3       best cfg={'n_cows': 2, 'n_geese': 1, 'n_sheep': 10, 'straw_tiles': 32} me=109556 opp=86637 margin=+22919
+milk_rich     best cfg={'n_cows': 10, 'n_geese': 1, 'n_sheep': 2, 'straw_tiles': 32} me=121654 opp=119738 margin=+1915
+random_a      best cfg={'n_cows': 4, 'n_geese': 4, 'n_sheep': 2, 'straw_tiles': 32} me=74917 opp=65092 margin=+9826
+random_b      best cfg={'n_cows': 10, 'n_geese': 1, 'n_sheep': 7, 'straw_tiles': 32} me=94751 opp=89924 margin=+4828
+best fixed: (17.583333333333332, 81937.33333333333) {'n_cows': 6, 'n_geese': 1, 'n_sheep': 7, 'straw_tiles': 32}
+oracle mean margin: 8779.75  fixed-best mean margin: 17.583333333333332

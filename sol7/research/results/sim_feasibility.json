@@ -1,0 +1,549 @@
+{
+ "generated_at": "2026-09-16 12:48:37",
+ "machine": {
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.13.13",
+  "cpu_count_used": 1
+ },
+ "assumptions": {
+  "act_timeout_s": 1.0,
+  "usable_per_turn_s": 0.4,
+  "overage_total_s": 60.0,
+  "turns": 720,
+  "kaggle_slowdown_factor": 2.0
+ },
+ "summary": {
+  "engine_direct_interpreter_steps_per_s": {
+   "pass": 61418.43455947985,
+   "busy": 35215.32038834221,
+   "replay": 20968.645859322696
+  },
+  "engine_env_step_steps_per_s": {
+   "pass": 2229.0573438945785,
+   "busy": 1496.797835221353,
+   "replay": 737.6428157105098
+  },
+  "engine_full_game_seconds_direct": {
+   "pass": 0.01170658296905458,
+   "busy": 0.02041724999435246,
+   "replay": 0.034289291012100875
+  },
+  "engine_full_game_seconds_env_step": {
+   "pass": 0.3225578749552369,
+   "busy": 0.48035879200324416,
+   "replay": 0.9747264999896288
+  },
+  "fastsim_steps_per_s": {
+   "pass": 800000.0222336109,
+   "busy": 159770.35716833244,
+   "replay": 74675.75766399743
+  },
+  "fastsim_full_game_seconds": {
+   "pass": 0.0008987499750219285,
+   "busy": 0.0045002090046182275,
+   "replay": 0.009628291998524219
+  },
+  "fastsim_speedup_vs_engine_direct_replay": 3.561305683017983,
+  "validation_replay_109564916": {
+   "rng_mode_exact_match": true,
+   "rng_mode_first_divergence": null,
+   "patch_mode_exact_match": true,
+   "patch_mode_first_divergence": null,
+   "patch_mode_weed_patches_tiles": 0,
+   "patch_mode_weed_patch_days": 0,
+   "steps_compared": 719,
+   "note": "all 19 end-game WEED tiles in this replay are dead plants (unwatered/decayed), not RNG spawns, hence 0 patches"
+  },
+  "validation_fresh_engine_games_seed1": {
+   "pass": {
+    "rng": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      3000.0,
+      3000.0
+     ],
+     "final_money_recorded": [
+      3000.0,
+      3000.0
+     ]
+    },
+    "patch": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      3000.0,
+      3000.0
+     ],
+     "final_money_recorded": [
+      3000.0,
+      3000.0
+     ],
+     "weed_patches_tiles": 5,
+     "weed_patch_days": 3
+    }
+   },
+   "busy": {
+    "rng": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      4573.0,
+      4573.0
+     ],
+     "final_money_recorded": [
+      4573.0,
+      4573.0
+     ]
+    },
+    "patch": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      4573.0,
+      4573.0
+     ],
+     "final_money_recorded": [
+      4573.0,
+      4573.0
+     ],
+     "weed_patches_tiles": 4,
+     "weed_patch_days": 3
+    }
+   }
+  },
+  "budget": {
+   "kaggle_seconds_per_turn": 0.48333333333333334,
+   "kaggle_slowdown_factor": 2.0,
+   "rollouts_per_turn": {
+    "1day_realistic": 575.8,
+    "1day_pass": 4463.8,
+    "5day_realistic": 138.5,
+    "5day_pass": 1070.6,
+    "full_game_realistic": 25.1,
+    "full_game_pass": 268.9,
+    "market_only_24step": 21522.1,
+    "market_only_120step": 4145.8
+   },
+   "kaggle_ms_per_rollout": {
+    "1day_realistic": 0.839,
+    "1day_pass": 0.108,
+    "5day_realistic": 3.491,
+    "5day_pass": 0.451,
+    "full_game_realistic": 19.257,
+    "full_game_pass": 1.797,
+    "market_only_24step": 0.022,
+    "market_only_120step": 0.117
+   }
+  },
+  "verdict": {
+   "receding_horizon_macro_plan_search_8_to_30_candidates_x_5day": true,
+   "candidates_5day_per_turn_sim_only": 138.5,
+   "candidates_1day_per_turn_sim_only": 575.8,
+   "full_game_rollouts_per_turn_sim_only": 25.1,
+   "market_only_24step_rollouts_per_s_local": 89056.88847715594,
+   "market_only_120step_rollouts_per_s_local": 17154.926863860925,
+   "caveat": "rollout numbers count only the simulator transition with pre-recorded actions; the rollout policy that generates actions inside the planner adds its own cost (typically 1-3x the transition), so divide by ~2-4 for an end-to-end estimate"
+  }
+ },
+ "validate_replay": {
+  "rng": {
+   "mode": "rng",
+   "replay_seed": 1296760754,
+   "steps_compared": 719,
+   "exact_match": true,
+   "divergent_steps": 0,
+   "first_divergence": null,
+   "sample_divergences": [],
+   "final_money_sim": [
+    95542.0,
+    91465.0
+   ],
+   "final_money_recorded": [
+    95542.0,
+    91465.0
+   ],
+   "replay_plus_compare_seconds": 0.21457012498285621
+  },
+  "patch": {
+   "mode": "patch",
+   "replay_seed": 1296760754,
+   "steps_compared": 719,
+   "exact_match": true,
+   "divergent_steps": 0,
+   "first_divergence": null,
+   "sample_divergences": [],
+   "final_money_sim": [
+    95542.0,
+    91465.0
+   ],
+   "final_money_recorded": [
+    95542.0,
+    91465.0
+   ],
+   "replay_plus_compare_seconds": 0.2141738340142183,
+   "weed_patches_tiles": 0,
+   "weed_patch_days": 0,
+   "forced_shops": [
+    "BAKERY",
+    "BAKERY",
+    "BRUNCH_SPOT",
+    "FARMERS_MARKET",
+    "YARN_STORE",
+    "BAKERY",
+    "SMOOTHIE_SHOP",
+    "PET_CAFE"
+   ]
+  }
+ },
+ "bench_engine": {
+  "n_steps_per_game": 719,
+  "repeats": 3,
+  "python": "3.13.13",
+  "workloads": {
+   "pass": {
+    "description": "both players PASS, no market orders",
+    "seed": 1,
+    "fastsim_cross_validation": {
+     "rng": {
+      "exact_match": true,
+      "divergent_steps": 0,
+      "first_divergence": null,
+      "final_money_sim": [
+       3000.0,
+       3000.0
+      ],
+      "final_money_recorded": [
+       3000.0,
+       3000.0
+      ]
+     },
+     "patch": {
+      "exact_match": true,
+      "divergent_steps": 0,
+      "first_divergence": null,
+      "final_money_sim": [
+       3000.0,
+       3000.0
+      ],
+      "final_money_recorded": [
+       3000.0,
+       3000.0
+      ],
+      "weed_patches_tiles": 5,
+      "weed_patch_days": 3
+     }
+    },
+    "direct": {
+     "runs": [
+      0.01186141703510657,
+      0.011736000014934689,
+      0.01170658296905458
+     ],
+     "best_s": 0.01170658296905458,
+     "median_s": 0.011736000014934689,
+     "best_steps_per_s": 61418.43455947985,
+     "median_steps_per_s": 61264.4852662776,
+     "n_steps": 719
+    },
+    "final_money": [
+     3000.0,
+     3000.0
+    ],
+    "env_step": {
+     "runs": [
+      0.3761319170007482,
+      0.3225578749552369,
+      0.3596721250214614
+     ],
+     "best_s": 0.3225578749552369,
+     "median_s": 0.3596721250214614,
+     "best_steps_per_s": 2229.0573438945785,
+     "median_steps_per_s": 1999.042878168826,
+     "n_steps": 719
+    }
+   },
+   "busy": {
+    "description": "scripted wheat loop: 11 units WATER/HARVEST/PLANT + SELL/BUY_SEED each step + 10 HIRE at hour 0",
+    "seed": 1,
+    "mean_units_per_farm": 10.180806675938804,
+    "mean_market_orders_per_player_step": 0.47844228094575797,
+    "final_money_engine": [
+     4573.0,
+     4573.0
+    ],
+    "fastsim_cross_validation": {
+     "rng": {
+      "exact_match": true,
+      "divergent_steps": 0,
+      "first_divergence": null,
+      "final_money_sim": [
+       4573.0,
+       4573.0
+      ],
+      "final_money_recorded": [
+       4573.0,
+       4573.0
+      ]
+     },
+     "patch": {
+      "exact_match": true,
+      "divergent_steps": 0,
+      "first_divergence": null,
+      "final_money_sim": [
+       4573.0,
+       4573.0
+      ],
+      "final_money_recorded": [
+       4573.0,
+       4573.0
+      ],
+      "weed_patches_tiles": 4,
+      "weed_patch_days": 3
+     }
+    },
+    "direct": {
+     "runs": [
+      0.020684832998085767,
+      0.02041724999435246,
+      0.020619582966901362
+     ],
+     "best_s": 0.02041724999435246,
+     "median_s": 0.020619582966901362,
+     "best_steps_per_s": 35215.32038834221,
+     "median_steps_per_s": 34869.76439601818,
+     "n_steps": 719
+    },
+    "env_step": {
+     "runs": [
+      0.4974857500055805,
+      0.48035879200324416,
+      0.49401570798363537
+     ],
+     "best_s": 0.48035879200324416,
+     "median_s": 0.49401570798363537,
+     "best_steps_per_s": 1496.797835221353,
+     "median_steps_per_s": 1455.4193082941756,
+     "n_steps": 719
+    }
+   },
+   "replay": {
+    "description": "recorded top-player actions from replay 109564916 (mean 9.4 units/farm)",
+    "seed": 1296760754,
+    "replay": "/private/tmp/109564916.json",
+    "direct": {
+     "runs": [
+      0.03598633303772658,
+      0.034289291012100875,
+      0.035296791000291705
+     ],
+     "best_s": 0.034289291012100875,
+     "median_s": 0.035296791000291705,
+     "best_steps_per_s": 20968.645859322696,
+     "median_steps_per_s": 20370.123731476266,
+     "n_steps": 719
+    },
+    "final_money_engine": [
+     95542.0,
+     91465.0
+    ],
+    "final_money_recorded": [
+     95542.0,
+     91465.0
+    ],
+    "engine_reproduces_recorded_final_money": true,
+    "env_step": {
+     "runs": [
+      1.0254107500077225,
+      0.9845619169645943,
+      0.9747264999896288
+     ],
+     "best_s": 0.9747264999896288,
+     "median_s": 0.9845619169645943,
+     "best_steps_per_s": 737.6428157105098,
+     "median_steps_per_s": 730.274031131204,
+     "n_steps": 719
+    }
+   }
+  },
+  "make_env_seconds": 0.008664624998345971
+ },
+ "bench_fastsim": {
+  "n_steps_per_game": 719,
+  "repeats": 5,
+  "python": "3.13.13",
+  "workloads": {
+   "pass": {
+    "description": "both players PASS",
+    "full_game": {
+     "runs": [
+      0.0009407919715158641,
+      0.00090637500397861,
+      0.0008987499750219285,
+      0.0009036670089699328,
+      0.0009177500032819808
+     ],
+     "best_s": 0.0008987499750219285,
+     "median_s": 0.00090637500397861,
+     "best_steps_per_s": 800000.0222336109,
+     "median_steps_per_s": 793269.8903256251,
+     "n_steps": 719
+    },
+    "final_money": [
+     3000.0,
+     3000.0
+    ]
+   },
+   "busy": {
+    "description": "scripted wheat loop, ~10 units/farm + market orders (see bench_engine.py)",
+    "full_game": {
+     "runs": [
+      0.004656374978367239,
+      0.004559541994240135,
+      0.0045302079524844885,
+      0.0045002090046182275,
+      0.004546625015791506
+     ],
+     "best_s": 0.0045002090046182275,
+     "median_s": 0.004546625015791506,
+     "best_steps_per_s": 159770.35716833244,
+     "median_steps_per_s": 158139.2785863674,
+     "n_steps": 719
+    },
+    "final_money": [
+     5819.0,
+     5819.0
+    ]
+   },
+   "replay": {
+    "description": "recorded top-player actions, replay 109564916 (mean 9.4 units/farm)",
+    "full_game": {
+     "runs": [
+      0.010147999972105026,
+      0.009852416987996548,
+      0.00966674997471273,
+      0.009628291998524219,
+      0.009664707991760224
+     ],
+     "best_s": 0.009628291998524219,
+     "median_s": 0.00966674997471273,
+     "best_steps_per_s": 74675.75766399743,
+     "median_steps_per_s": 74378.6693439712,
+     "n_steps": 719
+    },
+    "final_money": [
+     95542.0,
+     91465.0
+    ]
+   }
+  },
+  "rollouts": {
+   "from_step_240": {
+    "clone_us": 8.071583491982892,
+    "units_per_farm": [
+     1,
+     1
+    ],
+    "1day_replay_actions_ms": 0.41972947990871035,
+    "1day_pass_actions_ms": 0.05413885257439688,
+    "5day_replay_actions_ms": 1.7455066600814462,
+    "5day_pass_actions_ms": 0.22572209010832012
+   },
+   "from_step_480": {
+    "clone_us": 8.461729012196884,
+    "units_per_farm": [
+     1,
+     1
+    ],
+    "1day_replay_actions_ms": 0.4069483350031078,
+    "1day_pass_actions_ms": 0.06015864491928369,
+    "5day_replay_actions_ms": 1.9712349999463186,
+    "5day_pass_actions_ms": 0.2642254199599847
+   }
+  },
+  "market_only": {
+   "24step": {
+    "seconds_per_rollout": 1.1228777662230035e-05,
+    "rollouts_per_s": 89056.88847715594,
+    "units_sold_per_rollout": 32,
+    "shops": 3
+   },
+   "120step": {
+    "seconds_per_rollout": 5.8292291651014236e-05,
+    "rollouts_per_s": 17154.926863860925,
+    "units_sold_per_rollout": 160,
+    "shops": 3
+   },
+   "market_price_call_us": 0.14941040135454386
+  },
+  "budget": {
+   "kaggle_seconds_per_turn": 0.48333333333333334,
+   "usable_per_turn_s": 0.4,
+   "overage_per_turn_s": 0.08333333333333333,
+   "kaggle_slowdown_factor": 2.0,
+   "local_seconds_per_turn_equivalent": 0.24166666666666667,
+   "rollouts_per_turn": {
+    "1day_realistic": {
+     "local_seconds_per_rollout": 0.00041972947990871035,
+     "kaggle_seconds_per_rollout": 0.0008394589598174207,
+     "rollouts_per_turn": 575.767674739521
+    },
+    "1day_pass": {
+     "local_seconds_per_rollout": 5.413885257439688e-05,
+     "kaggle_seconds_per_rollout": 0.00010827770514879376,
+     "rollouts_per_turn": 4463.8305980824325
+    },
+    "5day_realistic": {
+     "local_seconds_per_rollout": 0.001745506660081446,
+     "kaggle_seconds_per_rollout": 0.003491013320162892,
+     "rollouts_per_turn": 138.45072734090306
+    },
+    "5day_pass": {
+     "local_seconds_per_rollout": 0.00022572209010832012,
+     "kaggle_seconds_per_rollout": 0.00045144418021664023,
+     "rollouts_per_turn": 1070.6380866431593
+    },
+    "full_game_realistic": {
+     "local_seconds_per_rollout": 0.009628291998524219,
+     "kaggle_seconds_per_rollout": 0.019256583997048438,
+     "rollouts_per_turn": 25.099640383123845
+    },
+    "full_game_pass": {
+     "local_seconds_per_rollout": 0.0008987499750219285,
+     "kaggle_seconds_per_rollout": 0.001797499950043857,
+     "rollouts_per_turn": 268.89198707434764
+    },
+    "market_only_24step": {
+     "local_seconds_per_rollout": 1.1228777662230035e-05,
+     "kaggle_seconds_per_rollout": 2.245755532446007e-05,
+     "rollouts_per_turn": 21522.08138197935
+    },
+    "market_only_120step": {
+     "local_seconds_per_rollout": 5.8292291651014236e-05,
+     "kaggle_seconds_per_rollout": 0.00011658458330202847,
+     "rollouts_per_turn": 4145.773992099724
+    }
+   }
+  }
+ },
+ "files": {
+  "fastsim": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim/fastsim.py",
+  "validate_replay": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim/validate_replay.py",
+  "bench_engine": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim/bench_engine.py",
+  "bench_fastsim": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim/bench_fastsim.py",
+  "run_all": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim/run_all.py",
+  "busy_actions_trace": "/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/results/busy_actions.json"
+ },
+ "reproduce": [
+  "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim && /opt/miniconda3/envs/env2/bin/python run_all.py",
+  "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim && /opt/miniconda3/envs/env2/bin/python validate_replay.py /private/tmp/109564916.json --mode both",
+  "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim && /opt/miniconda3/envs/env2/bin/python bench_engine.py --repeats 3",
+  "cd /Users/pradeepmahato/pradeep/kaggriculture/sol7/research/sim && /opt/miniconda3/envs/env2/bin/python bench_fastsim.py --repeats 5"
+ ],
+ "total_wall_seconds": 8.268704375019297
+}

@@ -1,0 +1,19 @@
+turns checked 719
+mismatch rate of inferred opponent sales (excluding $1-price turns):
+  WHEAT       mismatches=  71/719  units sold at floor (unobservable)=0
+  CARROT      mismatches=   1/719  units sold at floor (unobservable)=0
+  TOMATO      mismatches=   1/719  units sold at floor (unobservable)=0
+  STRAWBERRY  mismatches=   8/719  units sold at floor (unobservable)=0
+  MELON       mismatches=   0/719  units sold at floor (unobservable)=0
+  EGG         mismatches=   2/719  units sold at floor (unobservable)=0
+  MILK        mismatches=  12/607  units sold at floor (unobservable)=2
+  WOOL        mismatches=   3/719  units sold at floor (unobservable)=0
+  FERTILIZER  mismatches=  54/719  units sold at floor (unobservable)=0
+
+visible tiles (day 12 / day 20) vs season sales per player
+  Majkel1337   day12: {'STRAWBERRY': 23, 'MELON': 2, 'TOMATO': 2, 'WHEAT': 32, 'COW': 7, 'SHEEP': 3, 'GOOSE': 4}
+  Majkel1337   day20: {'TOMATO': 4, 'STRAWBERRY': 24, 'WHEAT': 27, 'COW': 5, 'SHEEP': 6, 'GOOSE': 4}
+  Majkel1337   season units sold: {'WHEAT': 559, 'FERTILIZER': 196, 'WOOL': 129, 'MILK': 120, 'MELON': 72, 'EGG': 162, 'STRAWBERRY': 165, 'TOMATO': 45, 'CARROT': 95}
+  M & M & P &  day12: {'GOOSE': 13, 'STRAWBERRY': 17, 'WHEAT': 17, 'SHEEP': 4, 'MELON': 15, 'CARROT': 1, 'TOMATO': 2, 'COW': 5}
+  M & M & P &  day20: {'GOOSE': 13, 'STRAWBERRY': 21, 'WHEAT': 17, 'SHEEP': 6, 'TOMATO': 11, 'MELON': 2, 'CARROT': 4}
+  M & M & P &  season units sold: {'FERTILIZER': 212, 'WHEAT': 414, 'CARROT': 152, 'WOOL': 109, 'EGG': 375, 'MILK': 47, 'MELON': 90, 'STRAWBERRY': 156, 'TOMATO': 84}

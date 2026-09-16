@@ -1,0 +1,3047 @@
+{
+ "command": "cd sol7/research/labor && /opt/miniconda3/envs/env2/bin/python online_run.py",
+ "seed": 1000,
+ "schedules": [
+  "milk_starved",
+  "yarnless",
+  "yarn_x3",
+  "milk_rich",
+  "random_a",
+  "random_b"
+ ],
+ "opponents": {
+  "sol5": "('sol5', None)",
+  "pass": "'pass'"
+ },
+ "matrix": {
+  "control": {
+   "label": "control",
+   "cand": "('file', '/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/farmlib_labor.py', 'build_agent', [])",
+   "summary": {
+    "sol5": {
+     "me_mean": 79195.33333333333,
+     "opp_mean": 79195.33333333333,
+     "margin": 0.0,
+     "wins": 6,
+     "n": 12,
+     "me_min": 55522.0,
+     "lat_max": 0.0777631250093691,
+     "lat_p99": 0.000976166978944093,
+     "by_schedule": {
+      "milk_starved": 55597.0,
+      "yarnless": 68766.5,
+      "yarn_x3": 80252.0,
+      "milk_rich": 118977.5,
+      "random_a": 60152.0,
+      "random_b": 91427.0
+     },
+     "by_schedule_margin": {
+      "milk_starved": 0.0,
+      "yarnless": 0.0,
+      "yarn_x3": 0.0,
+      "milk_rich": 0.0,
+      "random_a": 0.0,
+      "random_b": 0.0
+     }
+    },
+    "pass": {
+     "me_mean": 121206.91666666667,
+     "opp_mean": 3000.0,
+     "margin": 118206.91666666667,
+     "wins": 12,
+     "n": 12,
+     "me_min": 90401.0,
+     "lat_max": 0.05185179098043591,
+     "lat_p99": 0.0010020000045187771,
+     "by_schedule": {
+      "milk_starved": 91215.5,
+      "yarnless": 125795.0,
+      "yarn_x3": 118355.5,
+      "milk_rich": 148161.5,
+      "random_a": 101223.0,
+      "random_b": 142491.0
+     },
+     "by_schedule_margin": {
+      "milk_starved": 88215.5,
+      "yarnless": 122795.0,
+      "yarn_x3": 115355.5,
+      "milk_rich": 145161.5,
+      "random_a": 98223.0,
+      "random_b": 139491.0
+     }
+    }
+   },
+   "games": {
+    "sol5": [
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 0,
+      "me": 55672.0,
+      "opp": 55522.0,
+      "me_rev": {
+       "FERTILIZER": 12768,
+       "WHEAT": 8483,
+       "WOOL": 14156,
+       "MILK": 4965,
+       "MELON": 15048,
+       "CARROT": 2667,
+       "EGG": 2160,
+       "STRAWBERRY": 25828,
+       "TOMATO": 1287
+      },
+      "opp_rev": {
+       "FERTILIZER": 12416,
+       "WHEAT": 6108,
+       "WOOL": 14169,
+       "MILK": 4964,
+       "MELON": 15048,
+       "CARROT": 2018,
+       "EGG": 1977,
+       "STRAWBERRY": 26505,
+       "TOMATO": 1154
+      },
+      "me_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 170,
+       "WOOL": 127,
+       "MILK": 213,
+       "MELON": 84,
+       "CARROT": 70,
+       "EGG": 30,
+       "STRAWBERRY": 131,
+       "TOMATO": 19
+      },
+      "opp_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 124,
+       "WOOL": 127,
+       "MILK": 210,
+       "MELON": 84,
+       "CARROT": 54,
+       "EGG": 28,
+       "STRAWBERRY": 135,
+       "TOMATO": 17
+      },
+      "me_lat": {
+       "max": 0.07398329098941758,
+       "p99": 0.0008152920054271817,
+       "mean": 0.0004453403418313748,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 1,
+      "me": 55522.0,
+      "opp": 55672.0,
+      "me_rev": {
+       "FERTILIZER": 12416,
+       "WHEAT": 6108,
+       "WOOL": 14169,
+       "MILK": 4964,
+       "MELON": 15048,
+       "CARROT": 2018,
+       "EGG": 1977,
+       "STRAWBERRY": 26505,
+       "TOMATO": 1154
+      },
+      "opp_rev": {
+       "FERTILIZER": 12768,
+       "WHEAT": 8483,
+       "WOOL": 14156,
+       "MILK": 4965,
+       "MELON": 15048,
+       "CARROT": 2667,
+       "EGG": 2160,
+       "STRAWBERRY": 25828,
+       "TOMATO": 1287
+      },
+      "me_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 124,
+       "WOOL": 127,
+       "MILK": 210,
+       "MELON": 84,
+       "CARROT": 54,
+       "EGG": 28,
+       "STRAWBERRY": 135,
+       "TOMATO": 17
+      },
+      "opp_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 170,
+       "WOOL": 127,
+       "MILK": 213,
+       "MELON": 84,
+       "CARROT": 70,
+       "EGG": 30,
+       "STRAWBERRY": 131,
+       "TOMATO": 19
+      },
+      "me_lat": {
+       "max": 0.0011074999929405749,
+       "p99": 0.0006600000197067857,
+       "mean": 0.00019990952751211956,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 0,
+      "me": 68714.0,
+      "opp": 68819.0,
+      "me_rev": {
+       "FERTILIZER": 12763,
+       "WHEAT": 4273,
+       "WOOL": 5406,
+       "MILK": 23830,
+       "MELON": 15194,
+       "CARROT": 1224,
+       "EGG": 1931,
+       "STRAWBERRY": 29909,
+       "TOMATO": 1335
+      },
+      "opp_rev": {
+       "FERTILIZER": 12423,
+       "WHEAT": 5766,
+       "WOOL": 5402,
+       "MILK": 23749,
+       "MELON": 14916,
+       "CARROT": 1773,
+       "EGG": 1933,
+       "STRAWBERRY": 30715,
+       "TOMATO": 1412
+      },
+      "me_units": {
+       "FERTILIZER": 303,
+       "WHEAT": 87,
+       "WOOL": 127,
+       "MILK": 235,
+       "MELON": 83,
+       "CARROT": 28,
+       "EGG": 32,
+       "STRAWBERRY": 140,
+       "TOMATO": 16
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 116,
+       "WOOL": 127,
+       "MILK": 232,
+       "MELON": 82,
+       "CARROT": 40,
+       "EGG": 32,
+       "STRAWBERRY": 144,
+       "TOMATO": 17
+      },
+      "me_lat": {
+       "max": 0.06752179202158004,
+       "p99": 0.0008250839891843498,
+       "mean": 0.0004011882630647037,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 1,
+      "me": 68819.0,
+      "opp": 68714.0,
+      "me_rev": {
+       "FERTILIZER": 12423,
+       "WHEAT": 5766,
+       "WOOL": 5402,
+       "MILK": 23749,
+       "MELON": 14916,
+       "CARROT": 1773,
+       "EGG": 1933,
+       "STRAWBERRY": 30715,
+       "TOMATO": 1412
+      },
+      "opp_rev": {
+       "FERTILIZER": 12763,
+       "WHEAT": 4273,
+       "WOOL": 5406,
+       "MILK": 23830,
+       "MELON": 15194,
+       "CARROT": 1224,
+       "EGG": 1931,
+       "STRAWBERRY": 29909,
+       "TOMATO": 1335
+      },
+      "me_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 116,
+       "WOOL": 127,
+       "MILK": 232,
+       "MELON": 82,
+       "CARROT": 40,
+       "EGG": 32,
+       "STRAWBERRY": 144,
+       "TOMATO": 17
+      },
+      "opp_units": {
+       "FERTILIZER": 303,
+       "WHEAT": 87,
+       "WOOL": 127,
+       "MILK": 235,
+       "MELON": 83,
+       "CARROT": 28,
+       "EGG": 32,
+       "STRAWBERRY": 140,
+       "TOMATO": 16
+      },
+      "me_lat": {
+       "max": 0.001190457958728075,
+       "p99": 0.0006290830206125975,
+       "mean": 0.00019863513149372892,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 0,
+      "me": 81874.0,
+      "opp": 78630.0,
+      "me_rev": {
+       "FERTILIZER": 12158,
+       "WHEAT": 4781,
+       "WOOL": 30554,
+       "MILK": 6997,
+       "MELON": 15009,
+       "CARROT": 1769,
+       "EGG": 1504,
+       "STRAWBERRY": 34686,
+       "TOMATO": 1159
+      },
+      "opp_rev": {
+       "FERTILIZER": 13020,
+       "WHEAT": 4028,
+       "WOOL": 30555,
+       "MILK": 7187,
+       "MELON": 15055,
+       "CARROT": 1159,
+       "EGG": 1463,
+       "STRAWBERRY": 31569,
+       "TOMATO": 1191
+      },
+      "me_units": {
+       "FERTILIZER": 293,
+       "WHEAT": 116,
+       "WOOL": 127,
+       "MILK": 220,
+       "MELON": 82,
+       "CARROT": 36,
+       "EGG": 32,
+       "STRAWBERRY": 171,
+       "TOMATO": 15
+      },
+      "opp_units": {
+       "FERTILIZER": 300,
+       "WHEAT": 99,
+       "WOOL": 127,
+       "MILK": 227,
+       "MELON": 83,
+       "CARROT": 24,
+       "EGG": 31,
+       "STRAWBERRY": 154,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.07260679197497666,
+       "p99": 0.0008640000014565885,
+       "mean": 0.00042561614704260056,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 1,
+      "me": 78630.0,
+      "opp": 81874.0,
+      "me_rev": {
+       "FERTILIZER": 13020,
+       "WHEAT": 4028,
+       "WOOL": 30555,
+       "MILK": 7187,
+       "MELON": 15055,
+       "CARROT": 1159,
+       "EGG": 1463,
+       "STRAWBERRY": 31569,
+       "TOMATO": 1191
+      },
+      "opp_rev": {
+       "FERTILIZER": 12158,
+       "WHEAT": 4781,
+       "WOOL": 30554,
+       "MILK": 6997,
+       "MELON": 15009,
+       "CARROT": 1769,
+       "EGG": 1504,
+       "STRAWBERRY": 34686,
+       "TOMATO": 1159
+      },
+      "me_units": {
+       "FERTILIZER": 300,
+       "WHEAT": 99,
+       "WOOL": 127,
+       "MILK": 227,
+       "MELON": 83,
+       "CARROT": 24,
+       "EGG": 31,
+       "STRAWBERRY": 154,
+       "TOMATO": 15
+      },
+      "opp_units": {
+       "FERTILIZER": 293,
+       "WHEAT": 116,
+       "WOOL": 127,
+       "MILK": 220,
+       "MELON": 82,
+       "CARROT": 36,
+       "EGG": 32,
+       "STRAWBERRY": 171,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.0014235000126063824,
+       "p99": 0.0005688340170308948,
+       "mean": 0.0001989386996651983,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 0,
+      "me": 118820.0,
+      "opp": 119135.0,
+      "me_rev": {
+       "FERTILIZER": 12383,
+       "WHEAT": 8551,
+       "WOOL": 5406,
+       "MILK": 70198,
+       "MELON": 14992,
+       "CARROT": 1225,
+       "EGG": 1508,
+       "STRAWBERRY": 33767,
+       "TOMATO": 1693
+      },
+      "opp_rev": {
+       "FERTILIZER": 12803,
+       "WHEAT": 8907,
+       "WOOL": 5406,
+       "MILK": 69995,
+       "MELON": 15097,
+       "CARROT": 1271,
+       "EGG": 1507,
+       "STRAWBERRY": 35202,
+       "TOMATO": 1446
+      },
+      "me_units": {
+       "FERTILIZER": 300,
+       "WHEAT": 174,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 40,
+       "EGG": 32,
+       "STRAWBERRY": 142,
+       "TOMATO": 21
+      },
+      "opp_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 179,
+       "WOOL": 127,
+       "MILK": 233,
+       "MELON": 84,
+       "CARROT": 42,
+       "EGG": 32,
+       "STRAWBERRY": 148,
+       "TOMATO": 18
+      },
+      "me_lat": {
+       "max": 0.07266545901075006,
+       "p99": 0.000976166978944093,
+       "mean": 0.0004833436098114247,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 1,
+      "me": 119135.0,
+      "opp": 118820.0,
+      "me_rev": {
+       "FERTILIZER": 12803,
+       "WHEAT": 8907,
+       "WOOL": 5406,
+       "MILK": 69995,
+       "MELON": 15097,
+       "CARROT": 1271,
+       "EGG": 1507,
+       "STRAWBERRY": 35202,
+       "TOMATO": 1446
+      },
+      "opp_rev": {
+       "FERTILIZER": 12383,
+       "WHEAT": 8551,
+       "WOOL": 5406,
+       "MILK": 70198,
+       "MELON": 14992,
+       "CARROT": 1225,
+       "EGG": 1508,
+       "STRAWBERRY": 33767,
+       "TOMATO": 1693
+      },
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 179,
+       "WOOL": 127,
+       "MILK": 233,
+       "MELON": 84,
+       "CARROT": 42,
+       "EGG": 32,
+       "STRAWBERRY": 148,
+       "TOMATO": 18
+      },
+      "opp_units": {
+       "FERTILIZER": 300,
+       "WHEAT": 174,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 40,
+       "EGG": 32,
+       "STRAWBERRY": 142,
+       "TOMATO": 21
+      },
+      "me_lat": {
+       "max": 0.0010264170123264194,
+       "p99": 0.0006953340489417315,
+       "mean": 0.00020972623454823945,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 0,
+      "me": 58467.0,
+      "opp": 61837.0,
+      "me_rev": {
+       "FERTILIZER": 12395,
+       "WHEAT": 8062,
+       "WOOL": 5402,
+       "MILK": 10983,
+       "MELON": 15048,
+       "CARROT": 3195,
+       "EGG": 1795,
+       "STRAWBERRY": 30698,
+       "TOMATO": 1915
+      },
+      "opp_rev": {
+       "FERTILIZER": 12784,
+       "WHEAT": 5044,
+       "WOOL": 5406,
+       "MILK": 12316,
+       "MELON": 15048,
+       "CARROT": 2855,
+       "EGG": 1796,
+       "STRAWBERRY": 32700,
+       "TOMATO": 2080
+      },
+      "me_units": {
+       "FERTILIZER": 296,
+       "WHEAT": 160,
+       "WOOL": 127,
+       "MILK": 216,
+       "MELON": 84,
+       "CARROT": 62,
+       "EGG": 30,
+       "STRAWBERRY": 134,
+       "TOMATO": 22
+      },
+      "opp_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 103,
+       "WOOL": 127,
+       "MILK": 216,
+       "MELON": 84,
+       "CARROT": 56,
+       "EGG": 30,
+       "STRAWBERRY": 143,
+       "TOMATO": 22
+      },
+      "me_lat": {
+       "max": 0.059288374963216484,
+       "p99": 0.0008546250173822045,
+       "mean": 0.00044142991053108875,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 1,
+      "me": 61837.0,
+      "opp": 58467.0,
+      "me_rev": {
+       "FERTILIZER": 12784,
+       "WHEAT": 5044,
+       "WOOL": 5406,
+       "MILK": 12316,
+       "MELON": 15048,
+       "CARROT": 2855,
+       "EGG": 1796,
+       "STRAWBERRY": 32700,
+       "TOMATO": 2080
+      },
+      "opp_rev": {
+       "FERTILIZER": 12395,
+       "WHEAT": 8062,
+       "WOOL": 5402,
+       "MILK": 10983,
+       "MELON": 15048,
+       "CARROT": 3195,
+       "EGG": 1795,
+       "STRAWBERRY": 30698,
+       "TOMATO": 1915
+      },
+      "me_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 103,
+       "WOOL": 127,
+       "MILK": 216,
+       "MELON": 84,
+       "CARROT": 56,
+       "EGG": 30,
+       "STRAWBERRY": 143,
+       "TOMATO": 22
+      },
+      "opp_units": {
+       "FERTILIZER": 296,
+       "WHEAT": 160,
+       "WOOL": 127,
+       "MILK": 216,
+       "MELON": 84,
+       "CARROT": 62,
+       "EGG": 30,
+       "STRAWBERRY": 134,
+       "TOMATO": 22
+      },
+      "me_lat": {
+       "max": 0.04735870903823525,
+       "p99": 0.0006904170149937272,
+       "mean": 0.00026372007393214714,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 0,
+      "me": 91550.0,
+      "opp": 91304.0,
+      "me_rev": {
+       "FERTILIZER": 12710,
+       "WHEAT": 4873,
+       "WOOL": 25946,
+       "MILK": 27011,
+       "MELON": 15310,
+       "CARROT": 2233,
+       "EGG": 1545,
+       "STRAWBERRY": 28852,
+       "TOMATO": 1337
+      },
+      "opp_rev": {
+       "FERTILIZER": 12482,
+       "WHEAT": 4022,
+       "WOOL": 26254,
+       "MILK": 26253,
+       "MELON": 14782,
+       "CARROT": 2125,
+       "EGG": 1549,
+       "STRAWBERRY": 30292,
+       "TOMATO": 872
+      },
+      "me_units": {
+       "FERTILIZER": 301,
+       "WHEAT": 109,
+       "WOOL": 127,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 32,
+       "EGG": 31,
+       "STRAWBERRY": 142,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 90,
+       "WOOL": 127,
+       "MILK": 229,
+       "MELON": 84,
+       "CARROT": 30,
+       "EGG": 31,
+       "STRAWBERRY": 148,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.0777631250093691,
+       "p99": 0.0008491669432260096,
+       "mean": 0.0004717729850031011,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 1,
+      "me": 91304.0,
+      "opp": 91550.0,
+      "me_rev": {
+       "FERTILIZER": 12482,
+       "WHEAT": 4022,
+       "WOOL": 26254,
+       "MILK": 26253,
+       "MELON": 14782,
+       "CARROT": 2125,
+       "EGG": 1549,
+       "STRAWBERRY": 30292,
+       "TOMATO": 872
+      },
+      "opp_rev": {
+       "FERTILIZER": 12710,
+       "WHEAT": 4873,
+       "WOOL": 25946,
+       "MILK": 27011,
+       "MELON": 15310,
+       "CARROT": 2233,
+       "EGG": 1545,
+       "STRAWBERRY": 28852,
+       "TOMATO": 1337
+      },
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 90,
+       "WOOL": 127,
+       "MILK": 229,
+       "MELON": 84,
+       "CARROT": 30,
+       "EGG": 31,
+       "STRAWBERRY": 148,
+       "TOMATO": 15
+      },
+      "opp_units": {
+       "FERTILIZER": 301,
+       "WHEAT": 109,
+       "WOOL": 127,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 32,
+       "EGG": 31,
+       "STRAWBERRY": 142,
+       "TOMATO": 23
+      },
+      "me_lat": {
+       "max": 0.04975362494587898,
+       "p99": 0.0004290000069886446,
+       "mean": 0.00025904356731588907,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     }
+    ],
+    "pass": [
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 0,
+      "me": 90401.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21150,
+       "WHEAT": 4112,
+       "WOOL": 26108,
+       "MILK": 9986,
+       "MELON": 20031,
+       "CARROT": 2293,
+       "EGG": 2498,
+       "STRAWBERRY": 29935,
+       "TOMATO": 1763
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 303,
+       "WHEAT": 91,
+       "WOOL": 126,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 58,
+       "EGG": 32,
+       "STRAWBERRY": 134,
+       "TOMATO": 26
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.00694066594587639,
+       "p99": 0.0010020000045187771,
+       "mean": 0.0002217704960648929,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 1,
+      "me": 92030.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21110,
+       "WHEAT": 2887,
+       "WOOL": 26108,
+       "MILK": 9952,
+       "MELON": 20047,
+       "CARROT": 1230,
+       "EGG": 2498,
+       "STRAWBERRY": 32365,
+       "TOMATO": 1577
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 302,
+       "WHEAT": 61,
+       "WOOL": 126,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 32,
+       "EGG": 32,
+       "STRAWBERRY": 147,
+       "TOMATO": 23
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.03444887499790639,
+       "p99": 0.000685166975017637,
+       "mean": 0.00024714941145613875,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 0,
+      "me": 125805.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21110,
+       "WHEAT": 5272,
+       "WOOL": 11845,
+       "MILK": 54661,
+       "MELON": 20034,
+       "CARROT": 2593,
+       "EGG": 2062,
+       "STRAWBERRY": 35529,
+       "TOMATO": 1985
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 302,
+       "WHEAT": 115,
+       "WOOL": 126,
+       "MILK": 231,
+       "MELON": 84,
+       "CARROT": 58,
+       "EGG": 34,
+       "STRAWBERRY": 151,
+       "TOMATO": 22
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.03242466598749161,
+       "p99": 0.0006822500145062804,
+       "mean": 0.0002495918665968545,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 1,
+      "me": 125785.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21150,
+       "WHEAT": 2827,
+       "WOOL": 11845,
+       "MILK": 55827,
+       "MELON": 20034,
+       "CARROT": 2391,
+       "EGG": 2063,
+       "STRAWBERRY": 35039,
+       "TOMATO": 1840
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 303,
+       "WHEAT": 65,
+       "WOOL": 126,
+       "MILK": 237,
+       "MELON": 84,
+       "CARROT": 56,
+       "EGG": 34,
+       "STRAWBERRY": 148,
+       "TOMATO": 22
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.036804875009693205,
+       "p99": 0.0008782920194789767,
+       "mean": 0.0002622787937164431,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 0,
+      "me": 118781.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21267,
+       "WHEAT": 2625,
+       "WOOL": 30775,
+       "MILK": 30236,
+       "MELON": 20026,
+       "CARROT": 3052,
+       "EGG": 1703,
+       "STRAWBERRY": 34705,
+       "TOMATO": 853
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 306,
+       "WHEAT": 70,
+       "WOOL": 126,
+       "MILK": 237,
+       "MELON": 84,
+       "CARROT": 70,
+       "EGG": 34,
+       "STRAWBERRY": 146,
+       "TOMATO": 11
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.05185179098043591,
+       "p99": 0.0007984170224517584,
+       "mean": 0.0002840844986692164,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 1,
+      "me": 117930.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21189,
+       "WHEAT": 2693,
+       "WOOL": 30775,
+       "MILK": 30417,
+       "MELON": 20026,
+       "CARROT": 1873,
+       "EGG": 1704,
+       "STRAWBERRY": 34714,
+       "TOMATO": 1425
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 304,
+       "WHEAT": 71,
+       "WOOL": 126,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 42,
+       "EGG": 34,
+       "STRAWBERRY": 147,
+       "TOMATO": 18
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0012253329623490572,
+       "p99": 0.0005930829793214798,
+       "mean": 0.0002065451480726736,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 0,
+      "me": 146702.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21189,
+       "WHEAT": 3862,
+       "WOOL": 11838,
+       "MILK": 76306,
+       "MELON": 20034,
+       "CARROT": 1595,
+       "EGG": 1613,
+       "STRAWBERRY": 35748,
+       "TOMATO": 1598
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 304,
+       "WHEAT": 87,
+       "WOOL": 126,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 48,
+       "EGG": 32,
+       "STRAWBERRY": 138,
+       "TOMATO": 18
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.05061999999452382,
+       "p99": 0.0006259579677134752,
+       "mean": 0.00027636166359848436,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 1,
+      "me": 149621.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20990,
+       "WHEAT": 2952,
+       "WOOL": 11886,
+       "MILK": 75617,
+       "MELON": 19836,
+       "CARROT": 1717,
+       "EGG": 1613,
+       "STRAWBERRY": 38740,
+       "TOMATO": 2033
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 67,
+       "WOOL": 122,
+       "MILK": 234,
+       "MELON": 83,
+       "CARROT": 52,
+       "EGG": 32,
+       "STRAWBERRY": 151,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0015013329684734344,
+       "p99": 0.0005337909678928554,
+       "mean": 0.00020778937374082328,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 0,
+      "me": 100848.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21228,
+       "WHEAT": 4951,
+       "WOOL": 11842,
+       "MILK": 30815,
+       "MELON": 20031,
+       "CARROT": 3083,
+       "EGG": 1960,
+       "STRAWBERRY": 32735,
+       "TOMATO": 2273
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 305,
+       "WHEAT": 107,
+       "WOOL": 126,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 60,
+       "EGG": 32,
+       "STRAWBERRY": 131,
+       "TOMATO": 26
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.04219687503064051,
+       "p99": 0.00044829200487583876,
+       "mean": 0.00025740473847564243,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 1,
+      "me": 101598.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20950,
+       "WHEAT": 2643,
+       "WOOL": 11842,
+       "MILK": 30768,
+       "MELON": 20047,
+       "CARROT": 1793,
+       "EGG": 1960,
+       "STRAWBERRY": 35198,
+       "TOMATO": 2377
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 298,
+       "WHEAT": 56,
+       "WOOL": 126,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 36,
+       "EGG": 32,
+       "STRAWBERRY": 142,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.03719775000354275,
+       "p99": 0.0006755410577170551,
+       "mean": 0.00025226959362185676,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 0,
+      "me": 142381.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21459,
+       "WHEAT": 3746,
+       "WOOL": 28933,
+       "MILK": 56552,
+       "MELON": 19837,
+       "CARROT": 2558,
+       "EGG": 1746,
+       "STRAWBERRY": 32336,
+       "TOMATO": 1231
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 311,
+       "WHEAT": 94,
+       "WOOL": 126,
+       "MILK": 236,
+       "MELON": 83,
+       "CARROT": 36,
+       "EGG": 34,
+       "STRAWBERRY": 138,
+       "TOMATO": 20
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.04779062501620501,
+       "p99": 0.0008469580207020044,
+       "mean": 0.0002604475556885738,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 1,
+      "me": 142601.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21189,
+       "WHEAT": 2554,
+       "WOOL": 28937,
+       "MILK": 56843,
+       "MELON": 20034,
+       "CARROT": 2936,
+       "EGG": 1650,
+       "STRAWBERRY": 32384,
+       "TOMATO": 1530
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 304,
+       "WHEAT": 63,
+       "WOOL": 126,
+       "MILK": 237,
+       "MELON": 84,
+       "CARROT": 40,
+       "EGG": 32,
+       "STRAWBERRY": 139,
+       "TOMATO": 25
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.043059540970716625,
+       "p99": 0.0005728329997509718,
+       "mean": 0.00026029699230411185,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     }
+    ]
+   }
+  },
+  "hungarian": {
+   "label": "hungarian",
+   "cand": "('file', '/Users/pradeepmahato/pradeep/kaggriculture/sol7/research/labor/farmlib_labor.py', 'build_agent_hungarian', [])",
+   "summary": {
+    "sol5": {
+     "me_mean": 86718.5,
+     "opp_mean": 76568.33333333333,
+     "margin": 10150.166666666666,
+     "wins": 12,
+     "n": 12,
+     "me_min": 62343.0,
+     "lat_max": 0.0796947079943493,
+     "lat_p99": 0.0009286249987781048,
+     "by_schedule": {
+      "milk_starved": 62825.0,
+      "yarnless": 79016.0,
+      "yarn_x3": 83378.5,
+      "milk_rich": 127433.0,
+      "random_a": 70117.0,
+      "random_b": 97541.5
+     },
+     "by_schedule_margin": {
+      "milk_starved": 9535.5,
+      "yarnless": 12511.5,
+      "yarn_x3": 6564.5,
+      "milk_rich": 11466.0,
+      "random_a": 15072.5,
+      "random_b": 5751.0
+     }
+    },
+    "pass": {
+     "me_mean": 128531.08333333333,
+     "opp_mean": 3000.0,
+     "margin": 125531.08333333333,
+     "wins": 12,
+     "n": 12,
+     "me_min": 97319.0,
+     "lat_max": 0.05721645802259445,
+     "lat_p99": 0.000721791002433747,
+     "by_schedule": {
+      "milk_starved": 98396.0,
+      "yarnless": 132007.5,
+      "yarn_x3": 124928.0,
+      "milk_rich": 154976.5,
+      "random_a": 110211.5,
+      "random_b": 150667.0
+     },
+     "by_schedule_margin": {
+      "milk_starved": 95396.0,
+      "yarnless": 129007.5,
+      "yarn_x3": 121928.0,
+      "milk_rich": 151976.5,
+      "random_a": 107211.5,
+      "random_b": 147667.0
+     }
+    }
+   },
+   "games": {
+    "sol5": [
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 0,
+      "me": 63307.0,
+      "opp": 52947.0,
+      "me_rev": {
+       "FERTILIZER": 12608,
+       "WHEAT": 6524,
+       "WOOL": 14399,
+       "MILK": 5400,
+       "MELON": 15279,
+       "CARROT": 2244,
+       "EGG": 2406,
+       "STRAWBERRY": 32082,
+       "TOMATO": 1496
+      },
+      "opp_rev": {
+       "FERTILIZER": 12554,
+       "WHEAT": 5806,
+       "WOOL": 13659,
+       "MILK": 4335,
+       "MELON": 14721,
+       "CARROT": 1861,
+       "EGG": 2258,
+       "STRAWBERRY": 25717,
+       "TOMATO": 1017
+      },
+      "me_units": {
+       "FERTILIZER": 289,
+       "WHEAT": 132,
+       "WOOL": 127,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 58,
+       "EGG": 33,
+       "STRAWBERRY": 180,
+       "TOMATO": 22
+      },
+      "opp_units": {
+       "FERTILIZER": 293,
+       "WHEAT": 119,
+       "WOOL": 127,
+       "MILK": 203,
+       "MELON": 83,
+       "CARROT": 48,
+       "EGG": 32,
+       "STRAWBERRY": 149,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.07717058301204816,
+       "p99": 0.000843334011733532,
+       "mean": 0.000466560978673642,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 1,
+      "me": 62343.0,
+      "opp": 53632.0,
+      "me_rev": {
+       "FERTILIZER": 12584,
+       "WHEAT": 8223,
+       "WOOL": 14703,
+       "MILK": 5416,
+       "MELON": 15279,
+       "CARROT": 2340,
+       "EGG": 2408,
+       "STRAWBERRY": 30444,
+       "TOMATO": 1484
+      },
+      "opp_rev": {
+       "FERTILIZER": 12572,
+       "WHEAT": 5947,
+       "WOOL": 13886,
+       "MILK": 4315,
+       "MELON": 14711,
+       "CARROT": 1285,
+       "EGG": 2172,
+       "STRAWBERRY": 25794,
+       "TOMATO": 1361
+      },
+      "me_units": {
+       "FERTILIZER": 289,
+       "WHEAT": 165,
+       "WOOL": 127,
+       "MILK": 236,
+       "MELON": 84,
+       "CARROT": 60,
+       "EGG": 33,
+       "STRAWBERRY": 180,
+       "TOMATO": 22
+      },
+      "opp_units": {
+       "FERTILIZER": 289,
+       "WHEAT": 124,
+       "WOOL": 127,
+       "MILK": 213,
+       "MELON": 82,
+       "CARROT": 34,
+       "EGG": 31,
+       "STRAWBERRY": 151,
+       "TOMATO": 20
+      },
+      "me_lat": {
+       "max": 0.0011788340052589774,
+       "p99": 0.0007222500280477107,
+       "mean": 0.00021023308653941427,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 0,
+      "me": 78662.0,
+      "opp": 64764.0,
+      "me_rev": {
+       "FERTILIZER": 12284,
+       "WHEAT": 6644,
+       "WOOL": 5403,
+       "MILK": 24363,
+       "MELON": 15661,
+       "CARROT": 2676,
+       "EGG": 1930,
+       "STRAWBERRY": 36633,
+       "TOMATO": 2061
+      },
+      "opp_rev": {
+       "FERTILIZER": 12885,
+       "WHEAT": 5414,
+       "WOOL": 5398,
+       "MILK": 23474,
+       "MELON": 14351,
+       "CARROT": 2083,
+       "EGG": 1801,
+       "STRAWBERRY": 26310,
+       "TOMATO": 1403
+      },
+      "me_units": {
+       "FERTILIZER": 290,
+       "WHEAT": 133,
+       "WOOL": 127,
+       "MILK": 229,
+       "MELON": 83,
+       "CARROT": 63,
+       "EGG": 32,
+       "STRAWBERRY": 177,
+       "TOMATO": 25
+      },
+      "opp_units": {
+       "FERTILIZER": 305,
+       "WHEAT": 110,
+       "WOOL": 127,
+       "MILK": 228,
+       "MELON": 82,
+       "CARROT": 46,
+       "EGG": 30,
+       "STRAWBERRY": 127,
+       "TOMATO": 17
+      },
+      "me_lat": {
+       "max": 0.0796947079943493,
+       "p99": 0.0009286249987781048,
+       "mean": 0.00037114253493999966,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 1,
+      "me": 79370.0,
+      "opp": 68245.0,
+      "me_rev": {
+       "FERTILIZER": 12756,
+       "WHEAT": 7544,
+       "WOOL": 5403,
+       "MILK": 23919,
+       "MELON": 15579,
+       "CARROT": 3606,
+       "EGG": 1931,
+       "STRAWBERRY": 36799,
+       "TOMATO": 2144
+      },
+      "opp_rev": {
+       "FERTILIZER": 12400,
+       "WHEAT": 6412,
+       "WOOL": 5398,
+       "MILK": 23743,
+       "MELON": 14405,
+       "CARROT": 1062,
+       "EGG": 1933,
+       "STRAWBERRY": 30450,
+       "TOMATO": 1516
+      },
+      "me_units": {
+       "FERTILIZER": 286,
+       "WHEAT": 149,
+       "WOOL": 127,
+       "MILK": 230,
+       "MELON": 83,
+       "CARROT": 82,
+       "EGG": 32,
+       "STRAWBERRY": 183,
+       "TOMATO": 26
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 126,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 82,
+       "CARROT": 24,
+       "EGG": 32,
+       "STRAWBERRY": 151,
+       "TOMATO": 18
+      },
+      "me_lat": {
+       "max": 0.0015634170267730951,
+       "p99": 0.0006724580307491124,
+       "mean": 0.00021578667088578842,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 0,
+      "me": 82067.0,
+      "opp": 77857.0,
+      "me_rev": {
+       "FERTILIZER": 12572,
+       "WHEAT": 5404,
+       "WOOL": 30572,
+       "MILK": 7535,
+       "MELON": 14942,
+       "CARROT": 2923,
+       "EGG": 1501,
+       "STRAWBERRY": 33216,
+       "TOMATO": 1735
+      },
+      "opp_rev": {
+       "FERTILIZER": 12596,
+       "WHEAT": 5586,
+       "WOOL": 30273,
+       "MILK": 6711,
+       "MELON": 15082,
+       "CARROT": 2295,
+       "EGG": 1552,
+       "STRAWBERRY": 31563,
+       "TOMATO": 1126
+      },
+      "me_units": {
+       "FERTILIZER": 294,
+       "WHEAT": 128,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 66,
+       "EGG": 32,
+       "STRAWBERRY": 162,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 298,
+       "WHEAT": 133,
+       "WOOL": 126,
+       "MILK": 216,
+       "MELON": 82,
+       "CARROT": 52,
+       "EGG": 33,
+       "STRAWBERRY": 154,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.0712736250134185,
+       "p99": 0.0008234999841079116,
+       "mean": 0.0004978875743104754,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 1,
+      "me": 84690.0,
+      "opp": 75771.0,
+      "me_rev": {
+       "FERTILIZER": 12654,
+       "WHEAT": 5386,
+       "WOOL": 30563,
+       "MILK": 7459,
+       "MELON": 14874,
+       "CARROT": 3120,
+       "EGG": 1501,
+       "STRAWBERRY": 35006,
+       "TOMATO": 1733
+      },
+      "opp_rev": {
+       "FERTILIZER": 12521,
+       "WHEAT": 5172,
+       "WOOL": 30528,
+       "MILK": 6723,
+       "MELON": 15161,
+       "CARROT": 2527,
+       "EGG": 1465,
+       "STRAWBERRY": 28595,
+       "TOMATO": 1122
+      },
+      "me_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 128,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 83,
+       "CARROT": 72,
+       "EGG": 32,
+       "STRAWBERRY": 169,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 125,
+       "WOOL": 127,
+       "MILK": 217,
+       "MELON": 84,
+       "CARROT": 58,
+       "EGG": 31,
+       "STRAWBERRY": 138,
+       "TOMATO": 15
+      },
+      "me_lat": {
+       "max": 0.0009973749984055758,
+       "p99": 0.0006354590295813978,
+       "mean": 0.00020967233749249008,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 0,
+      "me": 127185.0,
+      "opp": 113492.0,
+      "me_rev": {
+       "FERTILIZER": 12742,
+       "WHEAT": 6795,
+       "WOOL": 5413,
+       "MILK": 71188,
+       "MELON": 15069,
+       "CARROT": 1885,
+       "EGG": 1498,
+       "STRAWBERRY": 39665,
+       "TOMATO": 1857
+      },
+      "opp_rev": {
+       "FERTILIZER": 12422,
+       "WHEAT": 4689,
+       "WOOL": 5394,
+       "MILK": 66916,
+       "MELON": 14943,
+       "CARROT": 1572,
+       "EGG": 1598,
+       "STRAWBERRY": 31997,
+       "TOMATO": 1437
+      },
+      "me_units": {
+       "FERTILIZER": 291,
+       "WHEAT": 140,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 83,
+       "CARROT": 64,
+       "EGG": 32,
+       "STRAWBERRY": 171,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 302,
+       "WHEAT": 99,
+       "WOOL": 127,
+       "MILK": 223,
+       "MELON": 84,
+       "CARROT": 55,
+       "EGG": 34,
+       "STRAWBERRY": 138,
+       "TOMATO": 17
+      },
+      "me_lat": {
+       "max": 0.06854737497633323,
+       "p99": 0.0008182080346159637,
+       "mean": 0.0004311584303594649,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 1,
+      "me": 127681.0,
+      "opp": 118442.0,
+      "me_rev": {
+       "FERTILIZER": 12796,
+       "WHEAT": 5874,
+       "WOOL": 5409,
+       "MILK": 70942,
+       "MELON": 14857,
+       "CARROT": 1698,
+       "EGG": 1499,
+       "STRAWBERRY": 40224,
+       "TOMATO": 2172
+      },
+      "opp_rev": {
+       "FERTILIZER": 12362,
+       "WHEAT": 5792,
+       "WOOL": 5398,
+       "MILK": 69208,
+       "MELON": 15169,
+       "CARROT": 1556,
+       "EGG": 1596,
+       "STRAWBERRY": 34438,
+       "TOMATO": 1453
+      },
+      "me_units": {
+       "FERTILIZER": 291,
+       "WHEAT": 121,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 83,
+       "CARROT": 57,
+       "EGG": 32,
+       "STRAWBERRY": 174,
+       "TOMATO": 27
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 120,
+       "WOOL": 127,
+       "MILK": 232,
+       "MELON": 84,
+       "CARROT": 54,
+       "EGG": 34,
+       "STRAWBERRY": 149,
+       "TOMATO": 16
+      },
+      "me_lat": {
+       "max": 0.062031582987401634,
+       "p99": 0.0007743330206722021,
+       "mean": 0.00034335981567114364,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 0,
+      "me": 70300.0,
+      "opp": 55001.0,
+      "me_rev": {
+       "FERTILIZER": 12723,
+       "WHEAT": 6159,
+       "WOOL": 5418,
+       "MILK": 12451,
+       "MELON": 15691,
+       "CARROT": 2677,
+       "EGG": 1791,
+       "STRAWBERRY": 39407,
+       "TOMATO": 2041
+      },
+      "opp_rev": {
+       "FERTILIZER": 12431,
+       "WHEAT": 5503,
+       "WOOL": 5363,
+       "MILK": 10239,
+       "MELON": 14293,
+       "CARROT": 2172,
+       "EGG": 1902,
+       "STRAWBERRY": 29840,
+       "TOMATO": 1439
+      },
+      "me_units": {
+       "FERTILIZER": 286,
+       "WHEAT": 124,
+       "WOOL": 127,
+       "MILK": 233,
+       "MELON": 83,
+       "CARROT": 50,
+       "EGG": 30,
+       "STRAWBERRY": 176,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 300,
+       "WHEAT": 110,
+       "WOOL": 127,
+       "MILK": 213,
+       "MELON": 83,
+       "CARROT": 42,
+       "EGG": 32,
+       "STRAWBERRY": 134,
+       "TOMATO": 16
+      },
+      "me_lat": {
+       "max": 0.05442408297676593,
+       "p99": 0.0007712499937042594,
+       "mean": 0.00032112661276986727,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 1,
+      "me": 69934.0,
+      "opp": 55088.0,
+      "me_rev": {
+       "FERTILIZER": 12826,
+       "WHEAT": 6156,
+       "WOOL": 5427,
+       "MILK": 12410,
+       "MELON": 15671,
+       "CARROT": 2683,
+       "EGG": 1792,
+       "STRAWBERRY": 38957,
+       "TOMATO": 2057
+      },
+      "opp_rev": {
+       "FERTILIZER": 12323,
+       "WHEAT": 7185,
+       "WOOL": 5348,
+       "MILK": 10257,
+       "MELON": 14310,
+       "CARROT": 1674,
+       "EGG": 1900,
+       "STRAWBERRY": 30580,
+       "TOMATO": 1576
+      },
+      "me_units": {
+       "FERTILIZER": 286,
+       "WHEAT": 124,
+       "WOOL": 127,
+       "MILK": 233,
+       "MELON": 83,
+       "CARROT": 50,
+       "EGG": 30,
+       "STRAWBERRY": 176,
+       "TOMATO": 23
+      },
+      "opp_units": {
+       "FERTILIZER": 293,
+       "WHEAT": 147,
+       "WOOL": 127,
+       "MILK": 212,
+       "MELON": 82,
+       "CARROT": 34,
+       "EGG": 32,
+       "STRAWBERRY": 138,
+       "TOMATO": 17
+      },
+      "me_lat": {
+       "max": 0.0010781249729916453,
+       "p99": 0.0005027499864809215,
+       "mean": 0.0001981312725420974,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 0,
+      "me": 97621.0,
+      "opp": 91397.0,
+      "me_rev": {
+       "FERTILIZER": 12732,
+       "WHEAT": 6702,
+       "WOOL": 26392,
+       "MILK": 27373,
+       "MELON": 13470,
+       "CARROT": 2900,
+       "EGG": 1486,
+       "STRAWBERRY": 34032,
+       "TOMATO": 1617
+      },
+      "opp_rev": {
+       "FERTILIZER": 12448,
+       "WHEAT": 6274,
+       "WOOL": 25785,
+       "MILK": 25549,
+       "MELON": 16534,
+       "CARROT": 2845,
+       "EGG": 1651,
+       "STRAWBERRY": 28406,
+       "TOMATO": 1415
+      },
+      "me_units": {
+       "FERTILIZER": 296,
+       "WHEAT": 149,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 46,
+       "EGG": 30,
+       "STRAWBERRY": 171,
+       "TOMATO": 29
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 141,
+       "WOOL": 127,
+       "MILK": 231,
+       "MELON": 84,
+       "CARROT": 38,
+       "EGG": 33,
+       "STRAWBERRY": 142,
+       "TOMATO": 26
+      },
+      "me_lat": {
+       "max": 0.07286808302160352,
+       "p99": 0.0008496250375173986,
+       "mean": 0.0005512221735611983,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 1,
+      "me": 97462.0,
+      "opp": 92184.0,
+      "me_rev": {
+       "FERTILIZER": 12711,
+       "WHEAT": 6687,
+       "WOOL": 26384,
+       "MILK": 27368,
+       "MELON": 13470,
+       "CARROT": 2892,
+       "EGG": 1487,
+       "STRAWBERRY": 33961,
+       "TOMATO": 1587
+      },
+      "opp_rev": {
+       "FERTILIZER": 12471,
+       "WHEAT": 7863,
+       "WOOL": 25794,
+       "MILK": 25558,
+       "MELON": 16534,
+       "CARROT": 2446,
+       "EGG": 1701,
+       "STRAWBERRY": 28961,
+       "TOMATO": 1439
+      },
+      "me_units": {
+       "FERTILIZER": 296,
+       "WHEAT": 149,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 46,
+       "EGG": 30,
+       "STRAWBERRY": 171,
+       "TOMATO": 29
+      },
+      "opp_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 175,
+       "WOOL": 127,
+       "MILK": 235,
+       "MELON": 84,
+       "CARROT": 36,
+       "EGG": 34,
+       "STRAWBERRY": 145,
+       "TOMATO": 26
+      },
+      "me_lat": {
+       "max": 0.032023917010519654,
+       "p99": 0.0005109169869683683,
+       "mean": 0.00024886421538029325,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     }
+    ],
+    "pass": [
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 0,
+      "me": 99473.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20909,
+       "WHEAT": 5131,
+       "WOOL": 26191,
+       "MILK": 9895,
+       "MELON": 20034,
+       "CARROT": 2712,
+       "EGG": 2497,
+       "STRAWBERRY": 38321,
+       "TOMATO": 1409
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 111,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 84,
+       "CARROT": 66,
+       "EGG": 32,
+       "STRAWBERRY": 176,
+       "TOMATO": 20
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0012170829577371478,
+       "p99": 0.0005204170010983944,
+       "mean": 0.00020752117631669378,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "milk_starved",
+      "seed": 1000,
+      "seat": 1,
+      "me": 97319.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21110,
+       "WHEAT": 4264,
+       "WOOL": 26034,
+       "MILK": 9915,
+       "MELON": 20026,
+       "CARROT": 2767,
+       "EGG": 2492,
+       "STRAWBERRY": 35932,
+       "TOMATO": 1696
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 302,
+       "WHEAT": 95,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 70,
+       "EGG": 32,
+       "STRAWBERRY": 164,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0012430420028977096,
+       "p99": 0.0004902500077150762,
+       "mean": 0.0001996880921312402,
+       "n": 719
+      },
+      "shops": [
+       "BAKERY",
+       "BAKERY",
+       "BRUNCH_SPOT",
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "BAKERY",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 0,
+      "me": 131220.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20786,
+       "WHEAT": 4257,
+       "WOOL": 11763,
+       "MILK": 54241,
+       "MELON": 20026,
+       "CARROT": 2983,
+       "EGG": 1958,
+       "STRAWBERRY": 40023,
+       "TOMATO": 2005
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 294,
+       "WHEAT": 92,
+       "WOOL": 127,
+       "MILK": 231,
+       "MELON": 84,
+       "CARROT": 68,
+       "EGG": 32,
+       "STRAWBERRY": 172,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.055898541992064565,
+       "p99": 0.00045895803486928344,
+       "mean": 0.00027536909174956435,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarnless",
+      "seed": 1000,
+      "seat": 1,
+      "me": 132795.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20703,
+       "WHEAT": 5199,
+       "WOOL": 11793,
+       "MILK": 53736,
+       "MELON": 20026,
+       "CARROT": 3449,
+       "EGG": 1960,
+       "STRAWBERRY": 41542,
+       "TOMATO": 2411
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 292,
+       "WHEAT": 110,
+       "WOOL": 127,
+       "MILK": 228,
+       "MELON": 84,
+       "CARROT": 76,
+       "EGG": 32,
+       "STRAWBERRY": 178,
+       "TOMATO": 28
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0015981250326149166,
+       "p99": 0.0006602080538868904,
+       "mean": 0.00021677824713274194,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "BAKERY",
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "BAKERY",
+       "SMOOTHIE_SHOP"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 0,
+      "me": 123156.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20909,
+       "WHEAT": 3464,
+       "WOOL": 31012,
+       "MILK": 29839,
+       "MELON": 20031,
+       "CARROT": 2527,
+       "EGG": 1704,
+       "STRAWBERRY": 37903,
+       "TOMATO": 1869
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 90,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 54,
+       "EGG": 34,
+       "STRAWBERRY": 161,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.001438374980352819,
+       "p99": 0.0005419579683803022,
+       "mean": 0.00020606483998922151,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "yarn_x3",
+      "seed": 1000,
+      "seat": 1,
+      "me": 126700.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20909,
+       "WHEAT": 3802,
+       "WOOL": 31012,
+       "MILK": 29796,
+       "MELON": 20034,
+       "CARROT": 2920,
+       "EGG": 1704,
+       "STRAWBERRY": 41225,
+       "TOMATO": 1686
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 99,
+       "WOOL": 127,
+       "MILK": 229,
+       "MELON": 84,
+       "CARROT": 62,
+       "EGG": 34,
+       "STRAWBERRY": 177,
+       "TOMATO": 22
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0011285420041531324,
+       "p99": 0.0005437500076368451,
+       "mean": 0.00020590760126277307,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "YARN_STORE",
+       "YARN_STORE",
+       "YARN_STORE",
+       "SMOOTHIE_SHOP",
+       "SMOOTHIE_SHOP",
+       "PET_CAFE",
+       "FARMERS_MARKET"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 0,
+      "me": 153722.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20786,
+       "WHEAT": 4117,
+       "WOOL": 11763,
+       "MILK": 74174,
+       "MELON": 20026,
+       "CARROT": 2156,
+       "EGG": 1613,
+       "STRAWBERRY": 43770,
+       "TOMATO": 1966
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 294,
+       "WHEAT": 92,
+       "WOOL": 127,
+       "MILK": 231,
+       "MELON": 84,
+       "CARROT": 68,
+       "EGG": 32,
+       "STRAWBERRY": 172,
+       "TOMATO": 24
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.05721645802259445,
+       "p99": 0.0005621250020340085,
+       "mean": 0.00033412536116244376,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "milk_rich",
+      "seed": 1000,
+      "seat": 1,
+      "me": 156231.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20990,
+       "WHEAT": 5258,
+       "WOOL": 11763,
+       "MILK": 75304,
+       "MELON": 20026,
+       "CARROT": 2377,
+       "EGG": 1703,
+       "STRAWBERRY": 45435,
+       "TOMATO": 1912
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 299,
+       "WHEAT": 122,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 76,
+       "EGG": 34,
+       "STRAWBERRY": 179,
+       "TOMATO": 19
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0012149579706601799,
+       "p99": 0.000721791002433747,
+       "mean": 0.00021240186828327194,
+       "n": 719
+      },
+      "shops": [
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP",
+       "SMOOTHIE_SHOP",
+       "PIZZA_SHOP",
+       "ICE_CREAM_SHOP"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 0,
+      "me": 110108.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20827,
+       "WHEAT": 6354,
+       "WOOL": 11793,
+       "MILK": 30205,
+       "MELON": 20034,
+       "CARROT": 3265,
+       "EGG": 1957,
+       "STRAWBERRY": 42615,
+       "TOMATO": 2685
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 295,
+       "WHEAT": 134,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 60,
+       "EGG": 32,
+       "STRAWBERRY": 173,
+       "TOMATO": 22
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0012325830175541341,
+       "p99": 0.0004591670003719628,
+       "mean": 0.0001995288295754243,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_a",
+      "seed": 1000,
+      "seat": 1,
+      "me": 110315.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 21070,
+       "WHEAT": 6708,
+       "WOOL": 11763,
+       "MILK": 30080,
+       "MELON": 20026,
+       "CARROT": 3431,
+       "EGG": 1957,
+       "STRAWBERRY": 41921,
+       "TOMATO": 2790
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 301,
+       "WHEAT": 144,
+       "WOOL": 127,
+       "MILK": 237,
+       "MELON": 84,
+       "CARROT": 68,
+       "EGG": 32,
+       "STRAWBERRY": 170,
+       "TOMATO": 23
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.04456112498883158,
+       "p99": 0.000509665987920016,
+       "mean": 0.00026272318451581146,
+       "n": 719
+      },
+      "shops": [
+       "FARMERS_MARKET",
+       "BRUNCH_SPOT",
+       "PIZZA_SHOP",
+       "BAKERY",
+       "PET_CAFE",
+       "FARMERS_MARKET",
+       "BAKERY",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 0,
+      "me": 149978.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20950,
+       "WHEAT": 4606,
+       "WOOL": 29136,
+       "MILK": 56042,
+       "MELON": 20026,
+       "CARROT": 3520,
+       "EGG": 1651,
+       "STRAWBERRY": 40079,
+       "TOMATO": 1112
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 298,
+       "WHEAT": 111,
+       "WOOL": 127,
+       "MILK": 234,
+       "MELON": 84,
+       "CARROT": 52,
+       "EGG": 32,
+       "STRAWBERRY": 175,
+       "TOMATO": 18
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0015674579772166908,
+       "p99": 0.0004948339774273336,
+       "mean": 0.00020186421273584492,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     },
+     {
+      "schedule": "random_b",
+      "seed": 1000,
+      "seat": 1,
+      "me": 151356.0,
+      "opp": 3000.0,
+      "me_rev": {
+       "FERTILIZER": 20909,
+       "WHEAT": 2992,
+       "WOOL": 29133,
+       "MILK": 55726,
+       "MELON": 20026,
+       "CARROT": 5356,
+       "EGG": 1651,
+       "STRAWBERRY": 40037,
+       "TOMATO": 1361
+      },
+      "opp_rev": {},
+      "me_units": {
+       "FERTILIZER": 297,
+       "WHEAT": 73,
+       "WOOL": 127,
+       "MILK": 233,
+       "MELON": 84,
+       "CARROT": 74,
+       "EGG": 32,
+       "STRAWBERRY": 174,
+       "TOMATO": 22
+      },
+      "opp_units": {},
+      "me_lat": {
+       "max": 0.0027778329676948488,
+       "p99": 0.0005140419816598296,
+       "mean": 0.00020295610644573524,
+       "n": 719
+      },
+      "shops": [
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "YARN_STORE",
+       "ICE_CREAM_SHOP",
+       "PET_CAFE",
+       "PET_CAFE",
+       "BRUNCH_SPOT",
+       "PET_CAFE"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "walking": {
+  "control_vs_sol5": {
+   "games": 12,
+   "moves": 52512,
+   "actions": 29677,
+   "idle": 6905,
+   "unit_turns": 89094,
+   "walk_share": 0.5893999595932387,
+   "action_share": 0.3330976272251779,
+   "idle_share": 0.07750241318158349,
+   "crew_walk_share": 0.6738454141802653,
+   "feeder_walk_share": 0.2644209838920331,
+   "actions_per_game": 2473.0833333333335,
+   "moves_per_game": 4376.0,
+   "lat_max_ms": 126.34199997410178,
+   "lat_p99_ms_max": 13.024667045101523,
+   "lat_mean_ms": 0.4954072630537958,
+   "hung_ncols_max": 0,
+   "me_mean_check": 79195.33333333333
+  },
+  "control_vs_pass": {
+   "games": 12,
+   "moves": 52244,
+   "actions": 29670,
+   "idle": 7126,
+   "unit_turns": 89040,
+   "walk_share": 0.5867475292003594,
+   "action_share": 0.3332210242587601,
+   "idle_share": 0.0800314465408805,
+   "crew_walk_share": 0.6729962589275592,
+   "feeder_walk_share": 0.2572542226071893,
+   "actions_per_game": 2472.5,
+   "moves_per_game": 4353.666666666667,
+   "lat_max_ms": 53.9900409639813,
+   "lat_p99_ms_max": 0.4730409709736705,
+   "lat_mean_ms": 0.21117158945537387,
+   "hung_ncols_max": 0,
+   "me_mean_check": 121206.91666666667
+  },
+  "hungarian_vs_sol5": {
+   "games": 12,
+   "moves": 49966,
+   "actions": 31125,
+   "idle": 8360,
+   "unit_turns": 89451,
+   "walk_share": 0.5585851471755486,
+   "action_share": 0.34795586410437,
+   "idle_share": 0.09345898872008139,
+   "crew_walk_share": 0.6355625624639293,
+   "feeder_walk_share": 0.26154263986963605,
+   "actions_per_game": 2593.75,
+   "moves_per_game": 4163.833333333333,
+   "lat_max_ms": 73.82466696435586,
+   "lat_p99_ms_max": 0.9692089515738189,
+   "lat_mean_ms": 0.3716790695055347,
+   "hung_ncols_max": 66,
+   "me_mean_check": 86718.5
+  },
+  "hungarian_vs_pass": {
+   "games": 12,
+   "moves": 49988,
+   "actions": 31426,
+   "idle": 7715,
+   "unit_turns": 89129,
+   "walk_share": 0.5608500039268924,
+   "action_share": 0.3525900660839906,
+   "idle_share": 0.0865599299891169,
+   "crew_walk_share": 0.6405722712191249,
+   "feeder_walk_share": 0.25861420201042845,
+   "actions_per_game": 2618.8333333333335,
+   "moves_per_game": 4165.666666666667,
+   "lat_max_ms": 70.49737498164177,
+   "lat_p99_ms_max": 0.9598750039003789,
+   "lat_mean_ms": 0.22763410528843697,
+   "hung_ncols_max": 67,
+   "me_mean_check": 128531.08333333333
+  }
+ },
+ "table": {
+  "sol5": {
+   "control": {
+    "me_mean": 79195.33333333333,
+    "margin": 0.0,
+    "wins": 6,
+    "lat_max_ms": 77.7631250093691,
+    "lat_p99_ms": 0.976166978944093,
+    "by_schedule": {
+     "milk_starved": 55597.0,
+     "yarnless": 68766.5,
+     "yarn_x3": 80252.0,
+     "milk_rich": 118977.5,
+     "random_a": 60152.0,
+     "random_b": 91427.0
+    }
+   },
+   "hungarian": {
+    "me_mean": 86718.5,
+    "margin": 10150.166666666666,
+    "wins": 12,
+    "lat_max_ms": 79.6947079943493,
+    "lat_p99_ms": 0.9286249987781048,
+    "by_schedule": {
+     "milk_starved": 62825.0,
+     "yarnless": 79016.0,
+     "yarn_x3": 83378.5,
+     "milk_rich": 127433.0,
+     "random_a": 70117.0,
+     "random_b": 97541.5
+    }
+   },
+   "delta_me_mean": 7523.1666666666715,
+   "delta_margin": 10150.166666666666,
+   "paired_delta": {
+    "mean": 7523.166666666667,
+    "min": 193.0,
+    "max": 11833.0,
+    "wins": 12,
+    "n": 12,
+    "stdev": 2955.0668915158813
+   }
+  },
+  "pass": {
+   "control": {
+    "me_mean": 121206.91666666667,
+    "margin": 118206.91666666667,
+    "wins": 12,
+    "lat_max_ms": 51.85179098043591,
+    "lat_p99_ms": 1.0020000045187771,
+    "by_schedule": {
+     "milk_starved": 91215.5,
+     "yarnless": 125795.0,
+     "yarn_x3": 118355.5,
+     "milk_rich": 148161.5,
+     "random_a": 101223.0,
+     "random_b": 142491.0
+    }
+   },
+   "hungarian": {
+    "me_mean": 128531.08333333333,
+    "margin": 125531.08333333333,
+    "wins": 12,
+    "lat_max_ms": 57.21645802259445,
+    "lat_p99_ms": 0.721791002433747,
+    "by_schedule": {
+     "milk_starved": 98396.0,
+     "yarnless": 132007.5,
+     "yarn_x3": 124928.0,
+     "milk_rich": 154976.5,
+     "random_a": 110211.5,
+     "random_b": 150667.0
+    }
+   },
+   "delta_me_mean": 7324.166666666657,
+   "delta_margin": 7324.166666666657,
+   "paired_delta": {
+    "mean": 7324.166666666667,
+    "min": 4375.0,
+    "max": 9260.0,
+    "wins": 12,
+    "n": 12,
+    "stdev": 1655.2991947809387
+   }
+  }
+ },
+ "elapsed_s": 59.23076105117798
+}

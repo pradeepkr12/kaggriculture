@@ -1,0 +1,172 @@
+{
+ "n_steps_per_game": 719,
+ "repeats": 3,
+ "python": "3.13.13",
+ "workloads": {
+  "pass": {
+   "description": "both players PASS, no market orders",
+   "seed": 1,
+   "fastsim_cross_validation": {
+    "rng": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      3000.0,
+      3000.0
+     ],
+     "final_money_recorded": [
+      3000.0,
+      3000.0
+     ]
+    },
+    "patch": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      3000.0,
+      3000.0
+     ],
+     "final_money_recorded": [
+      3000.0,
+      3000.0
+     ],
+     "weed_patches_tiles": 5,
+     "weed_patch_days": 3
+    }
+   },
+   "direct": {
+    "runs": [
+     0.01186141703510657,
+     0.011736000014934689,
+     0.01170658296905458
+    ],
+    "best_s": 0.01170658296905458,
+    "median_s": 0.011736000014934689,
+    "best_steps_per_s": 61418.43455947985,
+    "median_steps_per_s": 61264.4852662776,
+    "n_steps": 719
+   },
+   "final_money": [
+    3000.0,
+    3000.0
+   ],
+   "env_step": {
+    "runs": [
+     0.3761319170007482,
+     0.3225578749552369,
+     0.3596721250214614
+    ],
+    "best_s": 0.3225578749552369,
+    "median_s": 0.3596721250214614,
+    "best_steps_per_s": 2229.0573438945785,
+    "median_steps_per_s": 1999.042878168826,
+    "n_steps": 719
+   }
+  },
+  "busy": {
+   "description": "scripted wheat loop: 11 units WATER/HARVEST/PLANT + SELL/BUY_SEED each step + 10 HIRE at hour 0",
+   "seed": 1,
+   "mean_units_per_farm": 10.180806675938804,
+   "mean_market_orders_per_player_step": 0.47844228094575797,
+   "final_money_engine": [
+    4573.0,
+    4573.0
+   ],
+   "fastsim_cross_validation": {
+    "rng": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      4573.0,
+      4573.0
+     ],
+     "final_money_recorded": [
+      4573.0,
+      4573.0
+     ]
+    },
+    "patch": {
+     "exact_match": true,
+     "divergent_steps": 0,
+     "first_divergence": null,
+     "final_money_sim": [
+      4573.0,
+      4573.0
+     ],
+     "final_money_recorded": [
+      4573.0,
+      4573.0
+     ],
+     "weed_patches_tiles": 4,
+     "weed_patch_days": 3
+    }
+   },
+   "direct": {
+    "runs": [
+     0.020684832998085767,
+     0.02041724999435246,
+     0.020619582966901362
+    ],
+    "best_s": 0.02041724999435246,
+    "median_s": 0.020619582966901362,
+    "best_steps_per_s": 35215.32038834221,
+    "median_steps_per_s": 34869.76439601818,
+    "n_steps": 719
+   },
+   "env_step": {
+    "runs": [
+     0.4974857500055805,
+     0.48035879200324416,
+     0.49401570798363537
+    ],
+    "best_s": 0.48035879200324416,
+    "median_s": 0.49401570798363537,
+    "best_steps_per_s": 1496.797835221353,
+    "median_steps_per_s": 1455.4193082941756,
+    "n_steps": 719
+   }
+  },
+  "replay": {
+   "description": "recorded top-player actions from replay 109564916 (mean 9.4 units/farm)",
+   "seed": 1296760754,
+   "replay": "/private/tmp/109564916.json",
+   "direct": {
+    "runs": [
+     0.03598633303772658,
+     0.034289291012100875,
+     0.035296791000291705
+    ],
+    "best_s": 0.034289291012100875,
+    "median_s": 0.035296791000291705,
+    "best_steps_per_s": 20968.645859322696,
+    "median_steps_per_s": 20370.123731476266,
+    "n_steps": 719
+   },
+   "final_money_engine": [
+    95542.0,
+    91465.0
+   ],
+   "final_money_recorded": [
+    95542.0,
+    91465.0
+   ],
+   "engine_reproduces_recorded_final_money": true,
+   "env_step": {
+    "runs": [
+     1.0254107500077225,
+     0.9845619169645943,
+     0.9747264999896288
+    ],
+    "best_s": 0.9747264999896288,
+    "median_s": 0.9845619169645943,
+    "best_steps_per_s": 737.6428157105098,
+    "median_steps_per_s": 730.274031131204,
+    "n_steps": 719
+   }
+  }
+ },
+ "make_env_seconds": 0.008664624998345971
+}

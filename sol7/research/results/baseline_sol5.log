@@ -1,0 +1,10 @@
+== sol5 ==
+  vs sol5      me=   79195 opp=   79195 margin=      +0 wins=6/12 min=55522 lat_max=138ms p99=4ms
+     by schedule: milk_starved=55597  yarnless=68766  yarn_x3=80252  milk_rich=118978  random_a=60152  random_b=91427
+  vs gideon    me=   77850 opp=   70966 margin=   +6884 wins=9/12 min=45568 lat_max=108ms p99=2ms
+     by schedule: milk_starved=45985  yarnless=78374  yarn_x3=80416  milk_rich=111769  random_a=58775  random_b=91778
+  vs pass      me=  121207 opp=    3000 margin= +118207 wins=12/12 min=90401 lat_max=57ms p99=1ms
+     by schedule: milk_starved=91216  yarnless=125795  yarn_x3=118356  milk_rich=148162  random_a=101223  random_b=142491
+  vs mirror    me=   79195 opp=   79195 margin=      +0 wins=6/12 min=55522 lat_max=67ms p99=1ms
+     by schedule: milk_starved=55597  yarnless=68766  yarn_x3=80252  milk_rich=118978  random_a=60152  random_b=91427
+saved results/baseline_sol5.json  (25s)

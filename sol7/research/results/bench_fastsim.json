@@ -1,0 +1,158 @@
+{
+ "n_steps_per_game": 719,
+ "repeats": 5,
+ "python": "3.13.13",
+ "workloads": {
+  "pass": {
+   "description": "both players PASS",
+   "full_game": {
+    "runs": [
+     0.0009407919715158641,
+     0.00090637500397861,
+     0.0008987499750219285,
+     0.0009036670089699328,
+     0.0009177500032819808
+    ],
+    "best_s": 0.0008987499750219285,
+    "median_s": 0.00090637500397861,
+    "best_steps_per_s": 800000.0222336109,
+    "median_steps_per_s": 793269.8903256251,
+    "n_steps": 719
+   },
+   "final_money": [
+    3000.0,
+    3000.0
+   ]
+  },
+  "busy": {
+   "description": "scripted wheat loop, ~10 units/farm + market orders (see bench_engine.py)",
+   "full_game": {
+    "runs": [
+     0.004656374978367239,
+     0.004559541994240135,
+     0.0045302079524844885,
+     0.0045002090046182275,
+     0.004546625015791506
+    ],
+    "best_s": 0.0045002090046182275,
+    "median_s": 0.004546625015791506,
+    "best_steps_per_s": 159770.35716833244,
+    "median_steps_per_s": 158139.2785863674,
+    "n_steps": 719
+   },
+   "final_money": [
+    5819.0,
+    5819.0
+   ]
+  },
+  "replay": {
+   "description": "recorded top-player actions, replay 109564916 (mean 9.4 units/farm)",
+   "full_game": {
+    "runs": [
+     0.010147999972105026,
+     0.009852416987996548,
+     0.00966674997471273,
+     0.009628291998524219,
+     0.009664707991760224
+    ],
+    "best_s": 0.009628291998524219,
+    "median_s": 0.00966674997471273,
+    "best_steps_per_s": 74675.75766399743,
+    "median_steps_per_s": 74378.6693439712,
+    "n_steps": 719
+   },
+   "final_money": [
+    95542.0,
+    91465.0
+   ]
+  }
+ },
+ "rollouts": {
+  "from_step_240": {
+   "clone_us": 8.071583491982892,
+   "units_per_farm": [
+    1,
+    1
+   ],
+   "1day_replay_actions_ms": 0.41972947990871035,
+   "1day_pass_actions_ms": 0.05413885257439688,
+   "5day_replay_actions_ms": 1.7455066600814462,
+   "5day_pass_actions_ms": 0.22572209010832012
+  },
+  "from_step_480": {
+   "clone_us": 8.461729012196884,
+   "units_per_farm": [
+    1,
+    1
+   ],
+   "1day_replay_actions_ms": 0.4069483350031078,
+   "1day_pass_actions_ms": 0.06015864491928369,
+   "5day_replay_actions_ms": 1.9712349999463186,
+   "5day_pass_actions_ms": 0.2642254199599847
+  }
+ },
+ "market_only": {
+  "24step": {
+   "seconds_per_rollout": 1.1228777662230035e-05,
+   "rollouts_per_s": 89056.88847715594,
+   "units_sold_per_rollout": 32,
+   "shops": 3
+  },
+  "120step": {
+   "seconds_per_rollout": 5.8292291651014236e-05,
+   "rollouts_per_s": 17154.926863860925,
+   "units_sold_per_rollout": 160,
+   "shops": 3
+  },
+  "market_price_call_us": 0.14941040135454386
+ },
+ "budget": {
+  "kaggle_seconds_per_turn": 0.48333333333333334,
+  "usable_per_turn_s": 0.4,
+  "overage_per_turn_s": 0.08333333333333333,
+  "kaggle_slowdown_factor": 2.0,
+  "local_seconds_per_turn_equivalent": 0.24166666666666667,
+  "rollouts_per_turn": {
+   "1day_realistic": {
+    "local_seconds_per_rollout": 0.00041972947990871035,
+    "kaggle_seconds_per_rollout": 0.0008394589598174207,
+    "rollouts_per_turn": 575.767674739521
+   },
+   "1day_pass": {
+    "local_seconds_per_rollout": 5.413885257439688e-05,
+    "kaggle_seconds_per_rollout": 0.00010827770514879376,
+    "rollouts_per_turn": 4463.8305980824325
+   },
+   "5day_realistic": {
+    "local_seconds_per_rollout": 0.001745506660081446,
+    "kaggle_seconds_per_rollout": 0.003491013320162892,
+    "rollouts_per_turn": 138.45072734090306
+   },
+   "5day_pass": {
+    "local_seconds_per_rollout": 0.00022572209010832012,
+    "kaggle_seconds_per_rollout": 0.00045144418021664023,
+    "rollouts_per_turn": 1070.6380866431593
+   },
+   "full_game_realistic": {
+    "local_seconds_per_rollout": 0.009628291998524219,
+    "kaggle_seconds_per_rollout": 0.019256583997048438,
+    "rollouts_per_turn": 25.099640383123845
+   },
+   "full_game_pass": {
+    "local_seconds_per_rollout": 0.0008987499750219285,
+    "kaggle_seconds_per_rollout": 0.001797499950043857,
+    "rollouts_per_turn": 268.89198707434764
+   },
+   "market_only_24step": {
+    "local_seconds_per_rollout": 1.1228777662230035e-05,
+    "kaggle_seconds_per_rollout": 2.245755532446007e-05,
+    "rollouts_per_turn": 21522.08138197935
+   },
+   "market_only_120step": {
+    "local_seconds_per_rollout": 5.8292291651014236e-05,
+    "kaggle_seconds_per_rollout": 0.00011658458330202847,
+    "rollouts_per_turn": 4145.773992099724
+   }
+  }
+ }
+}

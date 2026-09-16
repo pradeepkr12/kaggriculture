@@ -1,0 +1,996 @@
+"""RESEARCH COPY of sol5/farmlib.py (sol7/research/labor). Adds: per-turn
+assignment logging, per-unit trace, feeder/crew sub-counters, and an optional
+Hungarian (optimal) crop-crew assignment. Control path is byte-identical logic.
+
+sol4 parametrized policy: animal-core + throttled multi-market farm.
+
+See PLAN.md. Strategy = a 19-dim vector (animal counts, crop tiles, hire
+schedule, land, sell thresholds, taper); decoder = role-based labor:
+
+  * ANIMAL CREWS: each day the animals are partitioned into fixed routes, one per
+    feeder unit. A feeder picks up wheat at the shed, then visits each of its
+    animals and does everything pending there (FEED -> CARE -> HARVEST ->
+    COLLECT_FERTILIZER) before moving on, then drops at the shed and joins the
+    crop crew. This keeps walking ~1 move per action and guarantees feeding.
+  * CROP CREW: the remaining units run a greedy nearest-unit task assignment
+    (water / harvest / plant / fertilize / build+place animals / drop / dig)
+    with commitment so units don't re-target every turn.
+
+Selling reads the live shared market inventory: fragile products are throttled
+to a price floor, with a pressure valve so stock never piles up (shed cap 100),
+melon/egg/wheat-surplus are dumped, and the last days taper to a final dump.
+"""
+import math
+
+LAST_DAY = 29
+TURNS_PER_DAY = 24
+BOARD = 10
+SHED_CAP = 100
+
+# ---- engine mirrors ---------------------------------------------------------
+CROPS = {
+    "WHEAT":      {"seed": 10,  "fy": 2,  "myd": 4,  "interval": 0, "maxy": 6, "ongoing": False},
+    "CARROT":     {"seed": 20,  "fy": 2,  "myd": 3,  "interval": 0, "maxy": 4, "ongoing": False},
+    "TOMATO":     {"seed": 50,  "fy": 8,  "myd": 8,  "interval": 1, "maxy": 4, "ongoing": True},
+    "STRAWBERRY": {"seed": 100, "fy": 10, "myd": 10, "interval": 2, "maxy": 4, "ongoing": True},
+    "MELON":      {"seed": 80,  "fy": 10, "myd": 12, "interval": 0, "maxy": 6, "ongoing": False},
+}
+for _c, _d in CROPS.items():
+    _d["window_start"] = (_d["myd"] + 1) // 2
+    if _d["ongoing"]:
+        _d["target_yield"] = _d["maxy"]
+    else:
+        _d["target_yield"] = min(_d["maxy"], 1 + (_d["myd"] - _d["window_start"] + 1))
+
+ANIMALS = {
+    "GOOSE": {"cost": 300, "structure": "COOP",    "fy": 4, "interval": 1, "max_held": 4, "product": "EGG"},
+    "COW":   {"cost": 400, "structure": "PASTURE", "fy": 8, "interval": 2, "max_held": 6, "product": "MILK"},
+    "SHEEP": {"cost": 500, "structure": "PASTURE", "fy": 6, "interval": 3, "max_held": 6, "product": "WOOL"},
+}
+ANIMAL_BUY_DEADLINE = {"COW": 19, "SHEEP": 21, "GOOSE": 24}
+
+LAND_PRICES = [1000, 2000, 4000]
+
+MARKET_I0 = 10000
+PRICE_FLOOR = 1
+HINGE_GAIN = 8.0
+MARKET_PARAMS = {
+    "WHEAT":      {"base":  25, "T": 400, "below_func": "sqrt",   "below_target": 0.80, "above_func": "log",    "above_target": 0.20},
+    "CARROT":     {"base":  35, "T": 450, "below_func": "hinge",  "below_target": 1.00, "above_func": "sqrt",   "above_target": 0.70},
+    "TOMATO":     {"base":  60, "T": 200, "below_func": "hinge",  "below_target": 0.40, "above_func": "sqrt",   "above_target": 0.60},
+    "STRAWBERRY": {"base": 120, "T": 100, "below_func": "sqrt",   "below_target": 0.70, "above_func": "linear", "above_target": 1.60},
+    "MELON":      {"base": 250, "T": 300, "below_func": "log",    "below_target": 0.20, "above_func": "sq",     "above_target": 3.60},
+    "EGG":        {"base":  50, "T": 332, "below_func": "hinge",  "below_target": 0.40, "above_func": "log",    "above_target": 0.20},
+    "MILK":       {"base": 160, "T": 122, "below_func": "sqrt",   "below_target": 0.60, "above_func": "linear", "above_target": 1.60},
+    "WOOL":       {"base": 200, "T": 105, "below_func": "log",    "below_target": 0.20, "above_func": "sq",     "above_target": 3.20},
+    "FERTILIZER": {"base": 100, "T": 200, "below_func": "linear", "below_target": 0.40, "above_func": "linear", "above_target": 0.40},
+}
+PRODUCTS = ["WHEAT", "CARROT", "TOMATO", "STRAWBERRY", "MELON", "EGG", "MILK", "WOOL", "FERTILIZER"]
+FRAGILE = ("WOOL", "MILK", "STRAWBERRY")
+ELASTIC = ("TOMATO", "CARROT")
+SELL_ORDER = ["MELON", "WOOL", "MILK", "STRAWBERRY", "FERTILIZER", "TOMATO", "EGG", "CARROT", "WHEAT"]
+
+
+def _shape(func, x, T=None):
+    x = max(0.0, x)
+    if func == "linear": return x
+    if func == "sq":     return x * x
+    if func == "sqrt":   return math.sqrt(x)
+    if func == "log":    return math.log(1.0 + x)
+    if func == "log10":  return math.log10(1.0 + x)
+    if func == "hinge":
+        if not T or T <= 0:
+            return x
+        u = x / T
+        return u + HINGE_GAIN * max(0.0, u - 1.0) ** 2
+    return x
+
+
+def market_price(item, inventory):
+    p = MARKET_PARAMS[item]
+    base, T = p["base"], p["T"]
+    if inventory < MARKET_I0:
+        amp = p["below_target"] * base / _shape(p["below_func"], T, T)
+        price = base + amp * _shape(p["below_func"], MARKET_I0 - inventory, T)
+    else:
+        amp = p["above_target"] * base / _shape(p["above_func"], T, T)
+        price = base - amp * _shape(p["above_func"], inventory - MARKET_I0, T)
+    return max(PRICE_FLOOR, int(round(price)))
+
+
+def sellable_qty(item, inventory, thresh_frac, cap):
+    """Largest k <= cap such that the k-th unit still sells at >= thresh_frac*base."""
+    if cap <= 0:
+        return 0
+    thr = thresh_frac * MARKET_PARAMS[item]["base"]
+    lo, hi = 0, cap
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if market_price(item, inventory + mid - 1) >= thr:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
+
+
+def _fib(n):
+    a, b = 1, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+
+# ---- parameters -------------------------------------------------------------
+# (name, lo, hi, seed)
+PARAM_SPEC = [
+    ("melon_tiles",      6,   16,   14),
+    ("n_cows",           3,   10,   10),
+    ("n_sheep",          2,   8,    4),
+    ("n_geese",          0,   8,    1),
+    ("straw_tiles",      15,  45,   32),
+    ("tomato_tiles",     0,   16,   4),
+    ("wheat_tiles",      8,   30,   17),
+    ("hands_early",      3,   8,    6),
+    ("hands_mid",        5,   12,   7),
+    ("hands_late",       8,   15,   12),
+    ("buy_SE",           0,   1,    0.43),
+    ("thr_fragile",      0.60, 0.97, 0.862),
+    ("thr_elastic",      0.40, 0.95, 0.709),
+    ("fert_reserve",     0,   12,   2),
+    ("taper_start_day",  25,  29,   27),
+    ("wheat_buy_buffer", 0,   10,   3),
+    ("drop_threshold",   4,   20,   9),
+    ("animal_day2",      4,   12,   6),
+    ("straw_deadline",   11,  18,   15),
+]
+DIM = len(PARAM_SPEC)
+SEED_VEC = [s for (_, _, _, s) in PARAM_SPEC]
+INT_PARAMS = {"melon_tiles", "n_cows", "n_sheep", "n_geese", "straw_tiles", "tomato_tiles",
+              "wheat_tiles", "hands_early", "hands_mid", "hands_late", "fert_reserve",
+              "taper_start_day", "wheat_buy_buffer", "drop_threshold", "animal_day2", "straw_deadline"}
+ANIMALS_PER_FEEDER = 4
+
+
+def clip_vec(v):
+    out = [max(lo, min(hi, x)) for x, (_, lo, hi, _) in zip(v, PARAM_SPEC)]
+    for i in range(len(out), DIM):
+        out.append(PARAM_SPEC[i][3])
+    return out
+
+
+def vec_to_params(v):
+    v = clip_vec(v)
+    p = {}
+    for val, (name, _, _, _) in zip(v, PARAM_SPEC):
+        p[name] = int(round(val)) if name in INT_PARAMS else float(val)
+    p["buy_SE"] = p["buy_SE"] > 0.5
+    return p
+
+
+# ---- geometry ---------------------------------------------------------------
+SHED_TILES = [(4, 4), (5, 4), (4, 5), (5, 5)]
+QUAD_ORDER = ["NW", "NE", "SW", "SE"]
+
+
+def quadrant_of(x, y):
+    return ("N" if y < 5 else "S") + ("W" if x < 5 else "E")
+
+
+def dist_to_shed(x, y):
+    return min(abs(x - sx) + abs(y - sy) for sx, sy in SHED_TILES)
+
+
+def _dist(ax, ay, bx, by):
+    return abs(ax - bx) + abs(ay - by)
+
+
+def _nearest_shed(x, y):
+    return min(SHED_TILES, key=lambda s: _dist(x, y, s[0], s[1]))
+
+
+def _step_toward(fx, fy, tx, ty):
+    dx, dy = tx - fx, ty - fy
+    if abs(dx) >= abs(dy) and dx != 0:
+        return "EAST" if dx > 0 else "WEST"
+    if dy != 0:
+        return "SOUTH" if dy > 0 else "NORTH"
+    if dx != 0:
+        return "EAST" if dx > 0 else "WEST"
+    return "PASS"
+
+
+_ALL_TILES = [(x, y) for y in range(BOARD) for x in range(BOARD)]
+_SLOT_CACHE = {}
+
+
+def animal_slots(unlocked):
+    """Tiles within distance 2 of the shed in unlocked quadrants, nearest first."""
+    key = tuple(sorted(unlocked))
+    if key not in _SLOT_CACHE:
+        slots = [(x, y) for (x, y) in _ALL_TILES
+                 if quadrant_of(x, y) in unlocked and dist_to_shed(x, y) <= 2]
+        slots.sort(key=lambda t: (dist_to_shed(*t), QUAD_ORDER.index(quadrant_of(*t)), t[1], t[0]))
+        _SLOT_CACHE[key] = slots
+    return _SLOT_CACHE[key]
+
+
+# ---- Hungarian (rectangular, minimise cost; rows <= cols) ------------------------
+def hungarian_min(cost):
+    """cost: n x m (n <= m) list of lists. Returns list col-index per row.
+    e-maxx / Kuhn-Munkres with potentials, O(n^2 m)."""
+    n = len(cost)
+    m = len(cost[0]) if n else 0
+    assert n <= m
+    INF = float("inf")
+    u = [0.0] * (n + 1)
+    v = [0.0] * (m + 1)
+    p = [0] * (m + 1)          # p[j] = row matched to column j (1-based), 0 = none
+    way = [0] * (m + 1)
+    for i in range(1, n + 1):
+        p[0] = i
+        j0 = 0
+        minv = [INF] * (m + 1)
+        used = [False] * (m + 1)
+        while True:
+            used[j0] = True
+            i0 = p[j0]
+            delta = INF
+            j1 = 0
+            row = cost[i0 - 1]
+            for j in range(1, m + 1):
+                if not used[j]:
+                    cur = row[j - 1] - u[i0] - v[j]
+                    if cur < minv[j]:
+                        minv[j] = cur
+                        way[j] = j0
+                    if minv[j] < delta:
+                        delta = minv[j]
+                        j1 = j
+            for j in range(m + 1):
+                if used[j]:
+                    u[p[j]] += delta
+                    v[j] -= delta
+                else:
+                    minv[j] -= delta
+            j0 = j1
+            if p[j0] == 0:
+                break
+        while True:
+            j1 = way[j0]
+            p[j0] = p[j1]
+            j0 = j1
+            if j0 == 0:
+                break
+    ans = [-1] * n
+    for j in range(1, m + 1):
+        if p[j]:
+            ans[p[j] - 1] = j - 1
+    return ans
+
+
+HUNG_C0 = 200.0        # cost = C0 - score for eligible pairs (score in [-20, 40])
+HUNG_INELIG = 1e6
+HUNG_COL_CAP = 40
+
+
+def hungarian_assign(score):
+    """score: n_units x n_cols, None = ineligible. Maximise total score.
+    Returns col index per unit, -1 if unassigned (no eligible column)."""
+    n = len(score)
+    if n == 0:
+        return []
+    m = len(score[0])
+    if m == 0:
+        return [-1] * n
+    width = max(n, m)
+    cost = []
+    for r in score:
+        row = [HUNG_C0 - s if s is not None else HUNG_INELIG for s in r]
+        row.extend([HUNG_INELIG] * (width - m))
+        cost.append(row)
+    a = hungarian_min(cost)
+    out = []
+    for i, j in enumerate(a):
+        out.append(j if (j >= 0 and j < m and score[i][j] is not None) else -1)
+    return out
+
+
+# priorities (crop crew)
+P_WATER_CRIT = 8
+P_HARVEST_HI = 8
+P_ANIMAL_PIPE = 7
+P_HARVEST = 7
+P_FERTILIZE = 5
+P_WATER_BONUS = 5
+P_PLANT = 4
+P_DROP = 4
+P_PICK_FERT = 3
+P_DIG = 2
+
+
+def build_agent(params_or_vec=None, hungarian=False, log=None, trace=None):
+    """hungarian: crop-crew assignment by Hungarian instead of greedy sweep.
+    log: list -> per-turn assignment matrices appended (offline experiment).
+    trace: list -> per-turn unit positions/ops appended (route analysis)."""
+    if params_or_vec is None:
+        params_or_vec = SEED_VEC
+    P = params_or_vec if isinstance(params_or_vec, dict) and "n_cows" in params_or_vec \
+        else vec_to_params(params_or_vec)
+
+    mem = {"day": -1, "last_key": {}, "crew": None,
+           "stats": {"days": {}, "escapes": 0, "plant_blocked": 0,
+                     "hungarian": bool(hungarian), "hung_turns": 0, "hung_ncols_max": 0}}
+
+    def hands_target(day):
+        if day >= LAST_DAY:
+            return 8
+        if day <= 5:
+            return P["hands_early"]
+        if day <= 9:
+            return P["hands_mid"]
+        return P["hands_late"]
+
+    def animal_targets(day):
+        if day < P["animal_day2"]:
+            return {"SHEEP": min(3, P["n_sheep"]), "COW": min(1, P["n_cows"]), "GOOSE": 0}
+        if day < 10:
+            return {"SHEEP": min(4, P["n_sheep"]), "COW": min(3, P["n_cows"]), "GOOSE": 0}
+        return {"SHEEP": P["n_sheep"], "COW": P["n_cows"], "GOOSE": P["n_geese"]}
+
+    def agent(obs):
+        player = obs["player"]
+        me = obs["farms"][player]
+        priv = obs["private"]
+        day = obs["day"]
+        hour = obs["hour"]
+        tiles = me["tiles"]
+        money = me["money"]
+        seeds = priv.get("seeds", {}) or {}
+        shed = priv.get("shed", {}) or {}
+        inventories = priv.get("inventories", []) or []
+        mkt_inv = (obs.get("market", {}) or {}).get("inventory", {}) or {}
+        unlocked = me.get("unlocked_quadrants", ["NW"])
+        stats = mem["stats"]
+
+        if day != mem["day"]:
+            mem["day"] = day
+            mem["last_key"] = {}
+            mem["crew"] = None
+            stats["days"][day] = {"fed": 0, "cared": 0, "animals": 0, "money_h0": money,
+                                  "idle": 0, "moves": 0, "actions": 0,
+                                  # research sub-counters (moves = feeder_moves + crew_moves + home_moves)
+                                  "unit_turns": 0, "feeder_turns": 0, "feeder_moves": 0,
+                                  "crew_turns": 0, "crew_moves": 0, "home_moves": 0}
+        dstat = stats["days"][day]
+
+        units = [tuple(me["farmer"])] + [tuple(h) for h in me.get("hands", [])]
+        nu = len(units)
+        invs = [dict(inventories[i]) if i < len(inventories) and inventories[i] else {} for i in range(nu)]
+        carried = {}
+        for inv in invs:
+            for k, v in inv.items():
+                carried[k] = carried.get(k, 0) + v
+        shed_total = sum(shed.values())
+        carried_total = sum(carried.values())
+        last_day = day >= LAST_DAY
+        feed_today = not last_day
+        endgame_turns_left = (LAST_DAY - day) * TURNS_PER_DAY + (22 - hour)  # acted turns after this one
+
+        # ---- tile scan -----------------------------------------------------
+        empties, weeds, plants, animals, empty_structs = [], [], [], [], []
+        crop_count = {c: 0 for c in CROPS}
+        animal_count = {a: 0 for a in ANIMALS}
+        struct_count = {"PASTURE": 0, "COOP": 0}
+        for y in range(BOARD):
+            for x in range(BOARD):
+                t = tiles[y][x]
+                if t == "LOCKED":
+                    continue
+                if t is None:
+                    empties.append((x, y))
+                elif isinstance(t, dict):
+                    k = t.get("kind")
+                    if k == "WEED":
+                        weeds.append((x, y))
+                    elif k == "PLANT":
+                        crop_count[t["crop"]] = crop_count.get(t["crop"], 0) + 1
+                        plants.append((x, y, t))
+                    elif "animal" in t:
+                        animals.append((x, y, t))
+                        animal_count[t["animal"]] += 1
+                        struct_count[k] += 1
+                    elif k in struct_count:
+                        empty_structs.append((x, y, k))
+                        struct_count[k] += 1
+        n_animals = len(animals)
+        dstat["animals"] = n_animals
+        dstat["fed"] = sum(1 for _, _, t in animals if t.get("fed_today"))
+        dstat["cared"] = sum(1 for _, _, t in animals if t.get("cared_today"))
+        animal_at = {(x, y): t for (x, y, t) in animals}
+
+        # ---- day plan --------------------------------------------------------
+        a_target = animal_targets(day)
+        for a in ANIMALS:
+            if day > ANIMAL_BUY_DEADLINE[a]:
+                a_target[a] = min(a_target[a], animal_count[a] + shed.get(a, 0) + carried.get(a, 0))
+        want_struct = {"PASTURE": a_target["COW"] + a_target["SHEEP"], "COOP": a_target["GOOSE"]}
+        total_animal_goal = P["n_cows"] + P["n_sheep"] + P["n_geese"]
+        slots = animal_slots(unlocked)
+        reserved = set(slots[:total_animal_goal])
+
+        crop_target = {
+            "MELON": P["melon_tiles"] if day <= 4 else 0,
+            "STRAWBERRY": P["straw_tiles"] if 5 <= day <= P["straw_deadline"] else 0,
+            "TOMATO": P["tomato_tiles"] if 10 <= day <= 18 else 0,
+            "WHEAT": P["wheat_tiles"] if day <= 25 else 0,
+            "CARROT": 999 if day <= 26 else 0,  # filler
+        }
+        if day == 0:
+            crop_target["CARROT"] = 3
+        deficits = {c: max(0, crop_target[c] - crop_count[c]) for c in CROPS}
+
+        # ---- pending animal ops -------------------------------------------------
+        def animal_pending(t):
+            """Ordered list of ops still to do at this animal today."""
+            a = ANIMALS[t["animal"]]
+            ops = []
+            if feed_today and not t.get("fed_today"):
+                ops.append("FEED")
+            if feed_today and not t.get("cared_today"):
+                ops.append("CARE")
+            yu = t.get("yield_units", 0)
+            if yu > 0:
+                dsf = (day + 1) - t["placed_day"] - a["fy"]
+                prod_tonight = dsf >= 0 and dsf % a["interval"] == 0
+                pending = t.get("pending_care_bonus", 0) + 1
+                if last_day or yu >= 2 or (prod_tonight and yu + 1 + pending > a["max_held"]):
+                    ops.append("HARVEST")
+            if t.get("fertilizer_available") and not (last_day and hour >= 14):
+                ops.append("COLLECT_FERTILIZER")
+            return ops
+
+        # ---- animal crews ------------------------------------------------------
+        # Build (or rebuild when the unit count changes) the day's feeder routes.
+        crew = mem["crew"]
+        animals_with_work = [(x, y) for (x, y, t) in animals if animal_pending(t)]
+        if animals_with_work and (crew is None or crew["nu"] != nu):
+            n_feeders = min(nu, max(1, math.ceil(n_animals / ANIMALS_PER_FEEDER)))
+            if last_day:
+                n_feeders = min(nu, max(1, math.ceil(n_animals / 8)))
+            # prefer units already carrying wheat, then those nearest the shed
+            order = sorted(range(nu), key=lambda ui: (-invs[ui].get("WHEAT", 0), dist_to_shed(*units[ui]), ui))
+            feeders = order[:n_feeders]
+            # route: sort animals around the shed, chunk into contiguous groups
+            alist = sorted(animal_at.keys(), key=lambda p: (math.atan2(p[1] - 4.5, p[0] - 4.5), dist_to_shed(*p)))
+            routes = {}
+            per = math.ceil(len(alist) / max(1, n_feeders))
+            for i, ui in enumerate(feeders):
+                routes[ui] = alist[i * per:(i + 1) * per]
+            crew = {"nu": nu, "routes": routes}
+            mem["crew"] = crew
+        routes = crew["routes"] if crew else {}
+
+        ops_out = [None] * nu
+        busy = set()
+
+        def do_feeder(ui):
+            ux, uy = units[ui]
+            inv = invs[ui]
+            route = [p for p in routes.get(ui, []) if p in animal_at and animal_pending(animal_at[p])]
+            if not route:
+                return False
+            unfed = [p for p in route if "FEED" in animal_pending(animal_at[p])]
+            wheat = inv.get("WHEAT", 0)
+            # need wheat first (only if some is available to pick up)
+            if unfed and wheat == 0 and shed.get("WHEAT", 0) > 0:
+                if (ux, uy) in SHED_TILES:
+                    q = min(len(unfed), shed.get("WHEAT", 0), 8)
+                    ops_out[ui] = ["PICKUP", "WHEAT", q]
+                else:
+                    sx, sy = _nearest_shed(ux, uy)
+                    ops_out[ui] = [_step_toward(ux, uy, sx, sy)]
+                return True
+            # standing on one of my animals with work? do it
+            here = animal_at.get((ux, uy))
+            if here is not None and (ux, uy) in route:
+                pend = animal_pending(here)
+                for op in pend:
+                    if op == "FEED" and wheat == 0:
+                        continue
+                    ops_out[ui] = [op]
+                    return True
+            # go to the nearest animal on my route with doable work
+            best, bd = None, None
+            for p in route:
+                pend = animal_pending(animal_at[p])
+                doable = [o for o in pend if not (o == "FEED" and wheat == 0)]
+                if not doable:
+                    continue
+                d = _dist(ux, uy, p[0], p[1])
+                if bd is None or d < bd:
+                    bd, best = d, p
+            if best is None:
+                return False
+            ops_out[ui] = [_step_toward(ux, uy, best[0], best[1])]
+            return True
+
+        for ui in list(routes.keys()):
+            if ui < nu and do_feeder(ui):
+                busy.add(ui)
+
+        # ---- crop-crew tasks -----------------------------------------------------
+        tasks = []
+
+        def add(prio, x, y, op, need=None, key=None, shed_task=False, only=None):
+            tasks.append({"prio": prio, "x": x, "y": y, "op": op, "need": need,
+                          "key": key or f"{op[0]}@{x},{y}", "shed": shed_task, "only": only})
+
+        # late-day safety net: unfed animals become everyone's problem
+        if feed_today and hour >= 14:
+            unfed_all = [(x, y) for (x, y, t) in animals if not t.get("fed_today")]
+            if unfed_all:
+                for (x, y) in unfed_all:
+                    add(10, x, y, ["FEED"], need="WHEAT")
+                if carried.get("WHEAT", 0) < len(unfed_all) and shed.get("WHEAT", 0) > 0:
+                    add(10, None, None, ["PICKUP", "WHEAT", min(8, shed.get("WHEAT", 0), len(unfed_all))],
+                        key="PICKW_SOS", shed_task=True, only="nowheat")
+        # animals not covered by any route (e.g. placed today) -> crop crew handles
+        routed = set(p for r in routes.values() for p in r)
+        for (x, y, t) in animals:
+            if (x, y) in routed:
+                continue
+            for op in animal_pending(t):
+                if op == "FEED":
+                    add(P_HARVEST_HI, x, y, ["FEED"], need="WHEAT")
+                else:
+                    add(P_HARVEST, x, y, [op])
+        if any((x, y) not in routed and "FEED" in animal_pending(t) for (x, y, t) in animals) \
+                and carried.get("WHEAT", 0) == 0 and shed.get("WHEAT", 0) > 0:
+            add(P_HARVEST_HI, None, None, ["PICKUP", "WHEAT", min(6, shed.get("WHEAT", 0))],
+                key="PICKW_X", shed_task=True, only="nowheat")
+
+        # animal pipeline: build structures, pick up & place animals
+        for k in ("PASTURE", "COOP"):
+            deficit = want_struct[k] - struct_count[k]
+            if deficit > 0:
+                built = 0
+                for (sx, sy) in slots:
+                    if built >= deficit:
+                        break
+                    if tiles[sy][sx] is None:
+                        add(P_ANIMAL_PIPE, sx, sy, ["BUILD_" + k])
+                        built += 1
+                    elif isinstance(tiles[sy][sx], dict) and tiles[sy][sx].get("kind") == "WEED":
+                        add(P_ANIMAL_PIPE, sx, sy, ["DIG"])
+                        built += 1
+        for a, ad in ANIMALS.items():
+            free_structs = [(x, y) for (x, y, k) in empty_structs if k == ad["structure"]]
+            if shed.get(a, 0) > 0 and free_structs:
+                add(P_ANIMAL_PIPE, None, None, ["PICKUP", a, 1], key=f"PICKA{a}", shed_task=True, only="empty")
+            if carried.get(a, 0) > 0:
+                for (x, y) in free_structs:
+                    add(P_ANIMAL_PIPE, x, y, ["PLACE", a], need=a)
+
+        # crops
+        fert_tasks = 0
+        for (x, y, t) in plants:
+            c = t["crop"]
+            cd = CROPS[c]
+            age = day - t["planted_day"]
+            watered = t.get("watered_today", False)
+            yu = t.get("yield_units", 0)
+            decaying = t.get("max_lifespan_step", -1) >= 0 and cd["ongoing"]
+            if yu > 0 and age >= cd["fy"]:
+                if cd["ongoing"]:
+                    thr = 2 if c == "STRAWBERRY" else 3
+                    if yu >= thr or decaying or last_day:
+                        add(P_HARVEST, x, y, ["HARVEST"])
+                elif yu >= cd["target_yield"] or age >= cd["myd"] or last_day:
+                    add(P_HARVEST_HI if age >= cd["myd"] else P_HARVEST, x, y, ["HARVEST"])
+                    continue
+            if last_day:
+                continue
+            if not watered:
+                if t.get("consecutive_unwatered", 0) >= 1:
+                    add(P_WATER_CRIT, x, y, ["WATER"])
+                elif not cd["ongoing"] and cd["window_start"] <= age <= cd["myd"] and yu < cd["target_yield"]:
+                    add(P_WATER_BONUS, x, y, ["WATER"])
+                elif cd["ongoing"] and t.get("fertilized_until_day", -1) >= day:
+                    add(P_WATER_BONUS, x, y, ["WATER"])
+            if cd["ongoing"] and not decaying and t.get("fertilized_until_day", -1) < day and day <= 26:
+                want = (c == "STRAWBERRY" and age in (9, 13)) or (c == "TOMATO" and age in (7, 10))
+                if want:
+                    add(P_FERTILIZE, x, y, ["FERTILIZE"], need="FERTILIZER")
+                    fert_tasks += 1
+
+        # planting
+        plant_count = {c: 0 for c in CROPS}
+        if not last_day:
+            def crop_pref(x, y):
+                d = dist_to_shed(x, y)
+                q = quadrant_of(x, y)
+                if day <= 4 and q == "NW" and d >= 3:
+                    return ["MELON", "WHEAT", "CARROT"]
+                if 3 <= d <= 4:
+                    return ["STRAWBERRY", "TOMATO", "WHEAT", "CARROT"]
+                return ["WHEAT", "STRAWBERRY", "TOMATO", "CARROT"]
+            avail = [(x, y) for (x, y) in empties if (x, y) not in reserved]
+            avail.sort(key=lambda t: dist_to_shed(*t))
+            for (x, y) in avail:
+                for c in crop_pref(x, y):
+                    if deficits[c] - plant_count[c] > 0 and seeds.get(c, 0) - plant_count[c] > 0:
+                        add(P_PLANT, x, y, ["PLANT", c])
+                        plant_count[c] += 1
+                        break
+            still_need = sum(max(0, deficits[c] - plant_count[c]) for c in CROPS if deficits[c] < 900)
+            if still_need > 0:
+                for (x, y) in weeds:
+                    if (x, y) not in reserved:
+                        add(P_DIG, x, y, ["DIG"])
+
+        # drop logistics (feeders drop when their route is done: they are not busy)
+        for ui in range(nu):
+            if ui in busy:
+                continue
+            inv = invs[ui]
+            tot = sum(inv.values())
+            if tot == 0:
+                continue
+            ux, uy = units[ui]
+            d = dist_to_shed(ux, uy)
+            fragile_carry = any(inv.get(i, 0) for i in ("MILK", "WOOL", "STRAWBERRY", "MELON"))
+            fert_keep = min(inv.get("FERTILIZER", 0), fert_tasks)
+            wheat_keep = inv.get("WHEAT", 0) if (feed_today and hour < 20) else 0
+            goods = tot - wheat_keep - fert_keep - sum(inv.get(a, 0) for a in ANIMALS)
+            cash_poor = money < 400
+            want_drop = (goods >= P["drop_threshold"] or (fragile_carry and d <= 1)
+                         or (goods >= 1 and d == 0)
+                         or (goods >= 2 and d <= 1 and cash_poor)
+                         or (hour >= 20 and goods >= 2) or (last_day and hour >= 14 and tot > 0)
+                         or (shed_total + carried_total > 80 and hour >= 16 and tot >= 4)
+                         or (ui in routes and goods >= 1))
+            if want_drop:
+                add(P_HARVEST_HI if (last_day and hour >= 14) else P_DROP, None, None, ["DROP"],
+                    key=f"DROP{ui}", shed_task=True, only=ui)
+
+        if fert_tasks > carried.get("FERTILIZER", 0) and shed.get("FERTILIZER", 0) > 0:
+            q = min(shed.get("FERTILIZER", 0), fert_tasks, 6)
+            add(P_PICK_FERT, None, None, ["PICKUP", "FERTILIZER", q], key="PICKF", shed_task=True, only="nofert")
+
+        # ---- crop-crew assignment ------------------------------------------------
+        tasks.sort(key=lambda t: (-t["prio"], t["key"]))
+        assigned = [None] * nu
+        used = set()
+        last_key = mem["last_key"]
+        live_keys = {tk["key"] for tk in tasks}
+        committed = {ui: k for ui, k in last_key.items() if k in live_keys}
+
+        def eligible(ui, tk):
+            if ui in busy or assigned[ui] is not None:
+                return False
+            inv = invs[ui]
+            if tk["need"] and inv.get(tk["need"], 0) <= 0:
+                return False
+            o = tk["only"]
+            if o is None:
+                return True
+            if isinstance(o, int):
+                return ui == o
+            if o == "nowheat":
+                return inv.get("WHEAT", 0) == 0
+            if o == "nofert":
+                return inv.get("FERTILIZER", 0) == 0
+            if o == "empty":
+                return sum(inv.values()) == 0
+            return True
+
+        def target_of(ui, tk):
+            if tk["shed"]:
+                return _nearest_shed(*units[ui])
+            return (tk["x"], tk["y"])
+
+        # pre-pass: finish work on the tile you're standing on
+        for ui in range(nu):
+            if ui in busy:
+                continue
+            ux, uy = units[ui]
+            here = [tk for tk in tasks if not tk["shed"] and (tk["x"], tk["y"]) == (ux, uy)
+                    and tk["prio"] >= P_FERTILIZE and eligible(ui, tk)]
+            if here:
+                tk = here[0]
+                dk = (tk["x"], tk["y"], tk["op"][0])
+                if dk not in used:
+                    assigned[ui] = tk
+                    used.add(dk)
+
+        # unit-centric sweep: each free unit takes the task with the best
+        # (priority-weighted) score near it, so units work their neighbourhood
+        # instead of criss-crossing the farm. Early in the day distance matters
+        # as much as priority (there is slack); late in the day priority wins so
+        # critical work (survival water, harvest) never slips.
+        K = 1.0 if hour < 16 else 3.0
+        # units carrying a needed item (wheat/fertilizer/animal) go first so the
+        # tasks that require them are not grabbed by ineligible units
+        unit_order = sorted((ui for ui in range(nu) if ui not in busy and assigned[ui] is None),
+                            key=lambda ui: -sum(invs[ui].get(k, 0) for k in ("WHEAT", "FERTILIZER", *ANIMALS)))
+        # -- research: score matrix over free units x distinct task columns (dk) --
+        free = list(unit_order)
+        col_of, cols = {}, []
+        for ti, tk in enumerate(tasks):
+            dk = (tk["x"], tk["y"], tk["op"][0]) if not tk["shed"] else tk["key"]
+            if dk in used:
+                continue
+            if dk not in col_of:
+                col_of[dk] = len(cols)
+                cols.append({"dk": dk, "tis": []})
+            cols[col_of[dk]]["tis"].append(ti)
+        score_m, dist_m, best_ti = [], [], []
+        for ui in free:
+            ux, uy = units[ui]
+            srow, drow, brow = [], [], []
+            for c in cols:
+                bs, bd, bt = None, None, None
+                for ti in c["tis"]:
+                    tk = tasks[ti]
+                    if not eligible(ui, tk):
+                        continue
+                    tx, ty = target_of(ui, tk)
+                    d = _dist(ux, uy, tx, ty)
+                    s = tk["prio"] * K - d + (3 if committed.get(ui) == tk["key"] else 0)
+                    if bs is None or s > bs:
+                        bs, bd, bt = s, d, ti
+                srow.append(bs); drow.append(bd); brow.append(bt)
+            score_m.append(srow); dist_m.append(drow); best_ti.append(brow)
+
+        # greedy (original sol5 sweep, verbatim) ---------------------------------
+        greedy_pick = {}
+        if not hungarian or log is not None:
+            g_used = set(used)
+            g_assigned = dict()
+            for ui in unit_order:
+                ux, uy = units[ui]
+                best, best_s = None, None
+                for tk in tasks:
+                    dk = (tk["x"], tk["y"], tk["op"][0]) if not tk["shed"] else tk["key"]
+                    if dk in g_used or not eligible(ui, tk):
+                        continue
+                    tx, ty = target_of(ui, tk)
+                    s = tk["prio"] * K - _dist(ux, uy, tx, ty) + (3 if committed.get(ui) == tk["key"] else 0)
+                    if best_s is None or s > best_s:
+                        best_s, best = s, tk
+                if best is not None:
+                    g_assigned[ui] = best
+                    dk = (best["x"], best["y"], best["op"][0]) if not best["shed"] else best["key"]
+                    g_used.add(dk)
+                    greedy_pick[ui] = col_of[dk]
+            if not hungarian:
+                for ui, tk in g_assigned.items():
+                    assigned[ui] = tk
+                used = g_used
+
+        # hungarian ----------------------------------------------------------------
+        hung_pick = {}
+        if hungarian and free and cols:
+            keep = list(range(len(cols)))
+            if len(cols) > HUNG_COL_CAP:
+                def colbest(j):
+                    return max((score_m[i][j] for i in range(len(free)) if score_m[i][j] is not None), default=-1e9)
+                keep = sorted(range(len(cols)), key=lambda j: -colbest(j))[:HUNG_COL_CAP]
+            sub = [[score_m[i][j] for j in keep] for i in range(len(free))]
+            res = hungarian_assign(sub)
+            stats["hung_turns"] += 1
+            stats["hung_ncols_max"] = max(stats["hung_ncols_max"], len(cols))
+            for i, jj in enumerate(res):
+                if jj >= 0:
+                    j = keep[jj]
+                    ui = free[i]
+                    hung_pick[ui] = j
+                    assigned[ui] = tasks[best_ti[i][j]]
+                    used.add(cols[j]["dk"])
+
+        if log is not None and free and cols:
+            log.append({"day": day, "hour": hour, "K": K, "nu": nu, "n_busy": len(busy),
+                        "free": [[ui, units[ui][0], units[ui][1]] for ui in free],
+                        "cols": [{"key": str(c["dk"]), "prio": tasks[c["tis"][0]]["prio"],
+                                  "shed": tasks[c["tis"][0]]["shed"]} for c in cols],
+                        "score": score_m, "dist": dist_m,
+                        "greedy": [greedy_pick.get(ui, -1) for ui in free],
+                        "hung": [hung_pick.get(ui, -1) for ui in free] if hungarian else None})
+
+        plant_used = {}
+        new_last = {}
+        dstat["unit_turns"] += nu
+        for ui in range(nu):
+            if ui in busy:
+                dstat["feeder_turns"] += 1
+                if len(ops_out[ui]) > 1 or ops_out[ui][0] not in ("NORTH", "SOUTH", "EAST", "WEST"):
+                    dstat["actions"] += 1
+                else:
+                    dstat["moves"] += 1
+                    dstat["feeder_moves"] += 1
+                continue
+            dstat["crew_turns"] += 1
+            tk = assigned[ui]
+            ux, uy = units[ui]
+            if tk is None:
+                if dist_to_shed(ux, uy) > 1:
+                    sx, sy = _nearest_shed(ux, uy)
+                    ops_out[ui] = [_step_toward(ux, uy, sx, sy)]
+                    dstat["moves"] += 1
+                    dstat["home_moves"] += 1
+                else:
+                    ops_out[ui] = ["PASS"]
+                    dstat["idle"] += 1
+                continue
+            tx, ty = target_of(ui, tk)
+            new_last[ui] = tk["key"]
+            if (ux, uy) == (tx, ty):
+                op = tk["op"]
+                if op[0] == "PLANT":
+                    c = op[1]
+                    if seeds.get(c, 0) - plant_used.get(c, 0) > 0:
+                        plant_used[c] = plant_used.get(c, 0) + 1
+                        ops_out[ui] = op
+                    else:
+                        ops_out[ui] = ["PASS"]
+                        dstat["idle"] += 1
+                        continue
+                else:
+                    ops_out[ui] = op
+                dstat["actions"] += 1
+            else:
+                ops_out[ui] = [_step_toward(ux, uy, tx, ty)]
+                dstat["moves"] += 1
+                dstat["crew_moves"] += 1
+        mem["last_key"] = new_last
+        if trace is not None:
+            trace.append({"day": day, "hour": hour, "units": [list(u) for u in units],
+                          "ops": [list(o) for o in ops_out], "busy": sorted(busy),
+                          "assigned_key": [tk["key"] if tk else None for tk in assigned]})
+        mem["debug"] = {"tasks": tasks, "assigned": assigned, "deficits": deficits,
+                        "seeds": dict(seeds), "empties": len(empties), "reserved": len(reserved),
+                        "routes": routes, "busy": busy}
+
+        # ---- market orders -----------------------------------------------------
+        orders = []
+        unfed_n = sum(1 for (_, _, t) in animals if not t.get("fed_today")) if feed_today else 0
+        animals_total = n_animals + sum(shed.get(a, 0) + carried.get(a, 0) for a in ANIMALS)
+        wheat_reserve = unfed_n + (animals_total if day < LAST_DAY - 1 else 0) + P["wheat_buy_buffer"]
+        overflow = shed_total + carried_total > 80
+        taper = day >= P["taper_start_day"]
+        final_dump = last_day and hour >= 19
+
+        def sell_qty(item):
+            q = shed.get(item, 0)
+            if q <= 0:
+                return 0
+            if final_dump:
+                return q
+            inv = mkt_inv.get(item, MARKET_I0)
+            if item == "MELON":
+                return q
+            if item == "FERTILIZER":
+                n_ongoing = crop_count.get("STRAWBERRY", 0) + crop_count.get("TOMATO", 0)
+                keep = 0 if (day >= 27 or n_ongoing == 0 or money < 300) else min(P["fert_reserve"], n_ongoing)
+                q2 = max(0, q - keep)
+                return sellable_qty(item, inv, 0.15, q2) if q2 > 0 else 0
+            if item == "WHEAT":
+                return max(0, q - wheat_reserve) if not overflow else q
+            if item == "EGG":
+                return q
+            thr = P["thr_fragile"] if item in FRAGILE else P["thr_elastic"]
+            cap = 6 if item in FRAGILE else 10
+            if overflow:
+                thr -= 0.15
+                cap = 10
+            k = sellable_qty(item, inv, thr, min(q, cap))
+            # pressure valve: never let stock pile up (shed cap / end-game crash)
+            stock = q + carried.get(item, 0)
+            hold = 10 if item in FRAGILE else 15
+            if stock > hold:
+                k = max(k, min(q, math.ceil((stock - hold) / 4)))
+            if taper:
+                turns = max(1, endgame_turns_left + 1)
+                quota = math.ceil(stock / turns)
+                if endgame_turns_left < 48:
+                    frac = endgame_turns_left / 48.0
+                    thr2 = 0.25 + (thr - 0.25) * frac
+                    k = max(k, sellable_qty(item, inv, thr2, q))
+                k = max(k, min(q, quota))
+            return k
+
+        for item in SELL_ORDER:
+            k = sell_qty(item)
+            if k > 0:
+                orders.append(["SELL", item, int(k)])
+        if hour <= 1:
+            orders = orders[:4]
+
+        # feed cash first
+        wheat_price = market_price("WHEAT", mkt_inv.get("WHEAT", MARKET_I0) - 1) + 2
+        have_wheat = shed.get("WHEAT", 0) + carried.get("WHEAT", 0)
+        feed_short = 0
+        if feed_today:
+            need = unfed_n + (animals_total - n_animals)
+            if hour >= 20:
+                need = animals_total + P["wheat_buy_buffer"]
+            feed_short = max(0, need - have_wheat)
+        reserve_cash = feed_short * wheat_price + 15
+
+        # hires (hour 0, spill to hour 1)
+        if hour <= 1 and not (last_day and hour == 1):
+            already = me.get("hires_today", 0)
+            tgt = hands_target(day)
+            k = already
+            while k < tgt and len(orders) < 10:
+                cost = _fib(k)
+                if money < cost or (cost > 3 and money < cost + reserve_cash):
+                    break
+                orders.append(["HIRE"])
+                money -= cost
+                k += 1
+
+        # land
+        if hour >= 1 or day > 0:
+            n_extra = len(unlocked) - 1
+            if len(orders) < 10 and n_extra < 3 and day <= 16:
+                price = LAND_PRICES[n_extra]
+                gates = [(4, 1200), (8, 2600), (10, 5500)]
+                dmin, need = gates[n_extra]
+                if (n_extra < 2 or P["buy_SE"]) and day >= dmin and money >= need:
+                    orders.append(["BUY_LAND"])
+                    money -= price
+
+        # animals
+        if not last_day and shed_total < 95:
+            for a in ("SHEEP", "COW", "GOOSE"):
+                have = animal_count[a] + shed.get(a, 0) + carried.get(a, 0)
+                deficit = a_target[a] - have
+                if deficit <= 0 or len(orders) >= 10:
+                    continue
+                cost = ANIMALS[a]["cost"]
+                n = 0
+                while (n < deficit and shed_total + n < 95
+                       and money >= cost + reserve_cash + (animals_total + n + 1) * wheat_price):
+                    money -= cost
+                    n += 1
+                if n > 0:
+                    orders.append(["BUY_ANIMAL", a, n])
+                    animals_total += n
+
+        # wheat for feed
+        if feed_short > 0 and len(orders) < 10 and shed_total < 95:
+            n = min(feed_short, int(max(0, money - 10) // wheat_price), 95 - shed_total)
+            if n > 0:
+                orders.append(["BUY_PRODUCT", "WHEAT", n])
+                money -= n * wheat_price
+        reserve_cash = animals_total * wheat_price + 25
+
+        # seeds
+        if not last_day:
+            for c in ("MELON", "STRAWBERRY", "TOMATO", "WHEAT", "CARROT"):
+                if len(orders) >= 10:
+                    break
+                if deficits[c] <= 0:
+                    continue
+                want = min(deficits[c], 10 if c == "MELON" else 6)
+                need = want - seeds.get(c, 0)
+                if need <= 0:
+                    continue
+                cost = CROPS[c]["seed"]
+                n = min(need, int(max(0, money - reserve_cash) // cost))
+                if n > 0:
+                    orders.append(["BUY_SEED", c, n])
+                    money -= n * cost
+
+        return {"farmer": ops_out[0], "hands": ops_out[1:], "market": orders[:10]}
+
+    agent.stats = mem["stats"]
+    agent.params = P
+    agent.mem = mem
+    return agent
+
+
+def build_agent_hungarian(params_or_vec=None, log=None, trace=None):
+    """sol5 SEED_VEC agent with the Hungarian crop-crew assignment enabled."""
+    return build_agent(params_or_vec, hungarian=True, log=log, trace=trace)

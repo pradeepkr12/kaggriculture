@@ -1,0 +1,8 @@
+== planner+hungarian vs sol6 ==
+  vs sol6      me=  100704 opp=   86025 margin=  +14678 wins=10/12 min=64793 lat_max=93ms p99=2ms
+     by schedule: milk_starved=64850  yarnless=92214  yarn_x3=115668  milk_rich=152458  random_a=84396  random_b=94636
+  margin by schedule: milk_starved=-5076  yarnless=+23868  yarn_x3=+13430  milk_rich=+35926  random_a=+14790  random_b=+5132 (5s)
+== sol5 vs sol6 ==
+  vs sol6      me=   85839 opp=   92112 margin=   -6273 wins=2/12 min=55177 lat_max=100ms p99=1ms
+     by schedule: milk_starved=56499  yarnless=85908  yarn_x3=91243  milk_rich=118376  random_a=68042  random_b=94965
+  margin by schedule: milk_starved=-6251  yarnless=+9678  yarn_x3=-27818  milk_rich=-5560  random_a=-6152  random_b=-1534 (4s)
